@@ -10,6 +10,7 @@
 #import "JieClass.h"
 @protocol RequestDelegate<NSObject>
 -(void)getResult:(id)response;
+-(void)getError;
 @end
 @interface Request : NSObject
 @property(nonatomic,assign) id<RequestDelegate> delegate;
@@ -20,4 +21,7 @@
 -(void)resetPasswordWithEmail:(NSString *)email;
 -(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob;
 -(void)getAllJie;
+-(void)getAllUserForUser;
+-(void)getUserForSearchString:(NSString *)str;
+-(void)addFriendWithFriendId:(NSString *)fid;
 @end

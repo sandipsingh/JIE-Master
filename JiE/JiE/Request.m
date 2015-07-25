@@ -7,8 +7,9 @@
 //
 
 #import "Request.h"
-#import "JSONKit.h"
+#import "UserDetail.h"
 @implementation Request
+
 -(void)createConnection:(NSMutableURLRequest *)postRequest{
     _urlConnecction = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
     
@@ -27,9 +28,65 @@
 }
 
 -(void)getAllJie{
-    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=retrive"];
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getFriends"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     [postRequest setHTTPBody:nil];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)getUserForSearchString:(NSString *)string{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getAllUsers"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSMutableData *body = [NSMutableData data];
+    
+    NSString *str=@"Content-Disposition: form-data; name=\"searchString\"\r\n\r\n";
+    [body appendData:[[NSString stringWithString:str] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"%@",string] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)addFriendWithFriendId:(NSString *)fid{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=acceptFriend"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSMutableData *body = [NSMutableData data];
+    
+    NSString *str=@"Content-Disposition: form-data; name=\"userId\"\r\n\r\n";
+    [body appendData:[[NSString stringWithString:str] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"%@",((UserDetail *)[[NSUserDefaults standardUserDefaults] objectForKey:UserDetails]).userId] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    str=@"Content-Disposition: form-data; name=\"friendId\"\r\n\r\n";
+    [body appendData:[[NSString stringWithString:str] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"%@",fid] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)getAllUserForUser{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=retrive"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSMutableData *body = [NSMutableData data];
+    
+    NSString *str=@"Content-Disposition: form-data; name=\"userId\"\r\n\r\n";
+    [body appendData:[[NSString stringWithString:str] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"%@",((UserDetail *)[[NSUserDefaults standardUserDefaults] objectForKey:UserDetails]).userId] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [self createConnection:postRequest];
@@ -207,6 +264,9 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     _urlConnecction=nil;
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(getError)]) {
+        [_delegate getError];
+    }
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -231,6 +291,9 @@
     }
     else
     {
+        if (_delegate != nil && [_delegate respondsToSelector:@selector(getError)]) {
+            [_delegate getError];
+        }
     }
 }
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18303AA61B598BA400201878 /* dropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18303AA51B598BA400201878 /* dropDownView.m */; };
+		18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18503F421B640D7000FD8B34 /* FriendsTableViewCell.m */; };
+		18503F461B64152400FD8B34 /* UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18503F451B64152400FD8B34 /* UserDetail.m */; };
 		18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18977B741B554F3E005401C9 /* AddJieViewController.m */; };
 		18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B761B5583A6005401C9 /* CoreFoundation.framework */; };
 		18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B781B5583F8005401C9 /* MobileCoreServices.framework */; };
@@ -102,6 +104,10 @@
 /* Begin PBXFileReference section */
 		18303AA41B598BA400201878 /* dropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dropDownView.h; sourceTree = "<group>"; };
 		18303AA51B598BA400201878 /* dropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dropDownView.m; sourceTree = "<group>"; };
+		18503F411B640D7000FD8B34 /* FriendsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewCell.h; sourceTree = "<group>"; };
+		18503F421B640D7000FD8B34 /* FriendsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewCell.m; sourceTree = "<group>"; };
+		18503F441B64152400FD8B34 /* UserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetail.h; sourceTree = "<group>"; };
+		18503F451B64152400FD8B34 /* UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetail.m; sourceTree = "<group>"; };
 		18977B731B554F3E005401C9 /* AddJieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddJieViewController.h; sourceTree = "<group>"; };
 		18977B741B554F3E005401C9 /* AddJieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJieViewController.m; sourceTree = "<group>"; };
 		18977B761B5583A6005401C9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -252,6 +258,17 @@
 			name = AddJiE;
 			sourceTree = "<group>";
 		};
+		18503F401B640D3400FD8B34 /* Addfriends */ = {
+			isa = PBXGroup;
+			children = (
+				F96B1A931B63864A007B5674 /* FriendsViewController.h */,
+				F96B1A941B63864A007B5674 /* FriendsViewController.m */,
+				18503F411B640D7000FD8B34 /* FriendsTableViewCell.h */,
+				18503F421B640D7000FD8B34 /* FriendsTableViewCell.m */,
+			);
+			name = Addfriends;
+			sourceTree = "<group>";
+		};
 		18B07EA71B5D599300E649FD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +306,7 @@
 		F9176CC31B39115200D6B7D1 /* JiE */ = {
 			isa = PBXGroup;
 			children = (
+				18503F401B640D3400FD8B34 /* Addfriends */,
 				18B07EA71B5D599300E649FD /* Home */,
 				18303AA71B59939900201878 /* AddJiE */,
 				F9D1B9DA1B4573FF008E9616 /* AMSlideMenu */,
@@ -316,10 +334,8 @@
 				F9F1CE191B39984200D45540 /* LogIn */,
 				F9F1CE1F1B399DF900D45540 /* LoggedIn */,
 				F9209F2A1B3AE38F001C8BE5 /* Sign Up */,
-				F96B1A931B63864A007B5674 /* FriendsViewController.h */,
 				F96B1A961B6396C8007B5674 /* AccountsViewController.h */,
 				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
-				F96B1A941B63864A007B5674 /* FriendsViewController.m */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -481,6 +497,8 @@
 				F938E9541B3A69EE005A7224 /* ParsingClasses */,
 				F941B9F41B43AAA200B33459 /* ForgotPassword.h */,
 				F941B9F51B43AAA200B33459 /* ForgotPassword.m */,
+				18503F441B64152400FD8B34 /* UserDetail.h */,
+				18503F451B64152400FD8B34 /* UserDetail.m */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";
@@ -657,7 +675,9 @@
 				F9BD00731B4A8B0900C17DB8 /* MainVC.m in Sources */,
 				F9F1CE1E1B399DF300D45540 /* LoggedInUserVC.m in Sources */,
 				F9D1B9EF1B4573FF008E9616 /* AMSlideMenuRightTableViewController.m in Sources */,
+				18503F461B64152400FD8B34 /* UserDetail.m in Sources */,
 				18B07EB01B5D6A1B00E649FD /* JieModel.m in Sources */,
+				18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */,
 				F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */,
 				F9D1B9EB1B4573FF008E9616 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				F9D1B9ED1B4573FF008E9616 /* AMSlideMenuMainViewController.m in Sources */,

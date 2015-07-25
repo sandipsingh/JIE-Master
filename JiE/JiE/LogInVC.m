@@ -12,6 +12,7 @@
 #import "LoggedInUserVC.h"
 #import "ForgotPassword.h"
 #import "MainVC.h"
+#import "UserDetail.h"
 @interface LogInVC (){
     NSString *logInURLString;
     MBProgressHUD *HUD;
@@ -58,6 +59,21 @@
     if ([response isKindOfClass:[NSArray class]]) {
         for(NSDictionary *dict in response) {
             loginResult = [[dict objectForKey:@"result"] boolValue];
+            id result = [dict objectForKey:@"result1"];
+            if ([result isKindOfClass:[NSArray class]]) {
+                NSArray *array = (NSArray *)result;
+                for (NSDictionary *dic in array) {
+                    UserDetail *obj = [[UserDetail alloc] init];
+                    obj.dob = [dic objectForKey:@"dob"];
+                    obj.email = [dic objectForKey:@"email"];
+                    obj.userId = [dic objectForKey:@"id"];
+                    obj.profilepic = [dic objectForKey:@"profilepic"];
+                    obj.username = [dic objectForKey:@"username"];
+                    [[NSUserDefaults standardUserDefaults] setObject:obj forKey:UserDetails];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    break;
+                }
+            }
         }
         [HUD hide:YES];
         // redirection user to the app as per login status
