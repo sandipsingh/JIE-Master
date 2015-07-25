@@ -48,6 +48,8 @@
 		F93B380D1B3AB3D2005F3769 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F93B380C1B3AB3D2005F3769 /* MBProgressHUD.m */; };
 		F93B38101B3ACFE2005F3769 /* profile_img.png in Resources */ = {isa = PBXBuildFile; fileRef = F93B380F1B3ACFE2005F3769 /* profile_img.png */; };
 		F941B9F61B43AAA200B33459 /* ForgotPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = F941B9F51B43AAA200B33459 /* ForgotPassword.m */; };
+		F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B1A941B63864A007B5674 /* FriendsViewController.m */; };
+		F96B1A981B6396C8007B5674 /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B1A971B6396C8007B5674 /* AccountsViewController.m */; };
 		F99209671B44249D00D8F3AC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99209631B44249D00D8F3AC /* Fabric.framework */; };
 		F99209681B44249D00D8F3AC /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99209641B44249D00D8F3AC /* TwitterKit.framework */; };
 		F99209691B44249D00D8F3AC /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F99209651B44249D00D8F3AC /* TwitterKitResources.bundle */; };
@@ -156,6 +158,10 @@
 		F93B380F1B3ACFE2005F3769 /* profile_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_img.png; path = images/profile_img.png; sourceTree = SOURCE_ROOT; };
 		F941B9F41B43AAA200B33459 /* ForgotPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword.h; sourceTree = "<group>"; };
 		F941B9F51B43AAA200B33459 /* ForgotPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword.m; sourceTree = "<group>"; };
+		F96B1A931B63864A007B5674 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		F96B1A941B63864A007B5674 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		F96B1A961B6396C8007B5674 /* AccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsViewController.h; sourceTree = "<group>"; };
+		F96B1A971B6396C8007B5674 /* AccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsViewController.m; sourceTree = "<group>"; };
 		F99209631B44249D00D8F3AC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		F99209641B44249D00D8F3AC /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
 		F99209651B44249D00D8F3AC /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
@@ -310,6 +316,10 @@
 				F9F1CE191B39984200D45540 /* LogIn */,
 				F9F1CE1F1B399DF900D45540 /* LoggedIn */,
 				F9209F2A1B3AE38F001C8BE5 /* Sign Up */,
+				F96B1A931B63864A007B5674 /* FriendsViewController.h */,
+				F96B1A961B6396C8007B5674 /* AccountsViewController.h */,
+				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
+				F96B1A941B63864A007B5674 /* FriendsViewController.m */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -655,11 +665,13 @@
 				F9D1B9EE1B4573FF008E9616 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */,
 				18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */,
+				F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */,
 				F9176CCA1B39115200D6B7D1 /* AppDelegate.m in Sources */,
 				F9FCFF671B4D03950028F0B7 /* Request.m in Sources */,
 				F938E9531B3A69E6005A7224 /* ParsingLogInClasses.m in Sources */,
 				F93B380D1B3AB3D2005F3769 /* MBProgressHUD.m in Sources */,
 				F9F1CE181B39983D00D45540 /* LogInVC.m in Sources */,
+				F96B1A981B6396C8007B5674 /* AccountsViewController.m in Sources */,
 				F941B9F61B43AAA200B33459 /* ForgotPassword.m in Sources */,
 				F9176CC71B39115200D6B7D1 /* main.m in Sources */,
 				F9FCFF651B4D03950028F0B7 /* JieClass.m in Sources */,
