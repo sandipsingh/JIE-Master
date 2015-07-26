@@ -22,6 +22,12 @@
     [self getJie];
     // Do any additional setup after loading the view.
 }
+
+-(void)getError{
+    NSLog(@"getError");
+    [_HUD hide:YES];
+}
+
 -(void)getResult:(id)response{
     if ([response isKindOfClass:[NSDictionary class]]) {
         [_jieArray removeAllObjects];

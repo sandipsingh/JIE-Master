@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Request.h"
+#import "MBProgressHUD.h"
+typedef enum {
+    getMyFriendList = 0,
+    getUserBySearch,
+    addFriendWithFriendId
+} friendRequest;
 
-@interface FriendsViewController : UIViewController
+@interface FriendsViewController : UIViewController<RequestDelegate>
+@property (strong,nonatomic) MBProgressHUD *loadingView;
+@property (weak, nonatomic) IBOutlet UITextField *txtSearch;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddFriend;
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (assign, nonatomic) friendRequest fReq;
+@property (strong, nonatomic) NSMutableArray *myFriendsArray;
+@property (strong, nonatomic) NSMutableArray *usersArray;
 
+@property (strong, nonatomic) NSString *friendId;
+- (IBAction)addFriend:(id)sender;
 @end

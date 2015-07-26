@@ -7,8 +7,9 @@
 //
 
 #import "Request.h"
-#import "JSONKit.h"
+#import "UserDetail.h"
 @implementation Request
+
 -(void)createConnection:(NSMutableURLRequest *)postRequest{
     _urlConnecction = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
     
@@ -26,10 +27,52 @@
     return [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
 }
 
+-(void)getAllUserForUser{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getFriends"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)getUserForSearchString:(NSString *)string{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getAllUsers"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"searchString=%@",string];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)addFriendWithFriendId:(NSString *)fid{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=acceptFriend"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@",getUser().userId,fid];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
 -(void)getAllJie{
     NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=retrive"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    [postRequest setHTTPBody:nil];
+    
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [self createConnection:postRequest];
@@ -207,6 +250,9 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     _urlConnecction=nil;
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(getError)]) {
+        [_delegate getError];
+    }
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -231,6 +277,9 @@
     }
     else
     {
+        if (_delegate != nil && [_delegate respondsToSelector:@selector(getError)]) {
+            [_delegate getError];
+        }
     }
 }
 @end
