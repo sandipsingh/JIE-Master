@@ -10,6 +10,7 @@
 		18303AA61B598BA400201878 /* dropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18303AA51B598BA400201878 /* dropDownView.m */; };
 		18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18503F421B640D7000FD8B34 /* FriendsTableViewCell.m */; };
 		18503F461B64152400FD8B34 /* UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18503F451B64152400FD8B34 /* UserDetail.m */; };
+		18551BA71B6540630045BFC2 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18551BA61B6540630045BFC2 /* menu_icon.png */; };
 		18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18977B741B554F3E005401C9 /* AddJieViewController.m */; };
 		18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B761B5583A6005401C9 /* CoreFoundation.framework */; };
 		18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B781B5583F8005401C9 /* MobileCoreServices.framework */; };
@@ -108,6 +109,8 @@
 		18503F421B640D7000FD8B34 /* FriendsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewCell.m; sourceTree = "<group>"; };
 		18503F441B64152400FD8B34 /* UserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetail.h; sourceTree = "<group>"; };
 		18503F451B64152400FD8B34 /* UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetail.m; sourceTree = "<group>"; };
+		18551BA21B6522C20045BFC2 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		18551BA61B6540630045BFC2 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_icon.png; path = images/menu_icon.png; sourceTree = SOURCE_ROOT; };
 		18977B731B554F3E005401C9 /* AddJieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddJieViewController.h; sourceTree = "<group>"; };
 		18977B741B554F3E005401C9 /* AddJieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJieViewController.m; sourceTree = "<group>"; };
 		18977B761B5583A6005401C9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -336,6 +339,7 @@
 				F9209F2A1B3AE38F001C8BE5 /* Sign Up */,
 				F96B1A961B6396C8007B5674 /* AccountsViewController.h */,
 				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
+				18551BA21B6522C20045BFC2 /* Common.h */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -476,6 +480,7 @@
 		F9F1CE151B3992EC00D45540 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18551BA61B6540630045BFC2 /* menu_icon.png */,
 				F9D1B9FE1B458072008E9616 /* add_jie */,
 				F93B380F1B3ACFE2005F3769 /* profile_img.png */,
 				F9B5F9F01B44F6BF00C444F9 /* splash.png */,
@@ -599,6 +604,7 @@
 				F9F1CE121B3992DE00D45540 /* or.png in Resources */,
 				F9354D7E1B4AB4550014B13D /* signup1.png in Resources */,
 				F9D1BA211B458072008E9616 /* video_icon.png in Resources */,
+				18551BA71B6540630045BFC2 /* menu_icon.png in Resources */,
 				F9D1BA1C1B458072008E9616 /* Privacy.png in Resources */,
 				F9354D7A1B4AAACD0014B13D /* bg1.png in Resources */,
 				F9F1CE101B3992DE00D45540 /* fb.png in Resources */,

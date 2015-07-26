@@ -9,6 +9,7 @@
 #import "FriendsViewController.h"
 #import "FriendsTableViewCell.h"
 #import "UserDetail.h"
+
 @interface FriendsViewController ()
 
 @end
@@ -17,15 +18,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"My Friend List";
+    _myFriendsArray = [[NSMutableArray alloc] init];
+    _usersArray = [[NSMutableArray alloc] init];
+    [self getMyFriendList];
     // Do any additional setup after loading the view.
 }
+
+-(void)showLoading{
+    _loadingView= [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:_loadingView];
+    [_loadingView show:YES];
+}
+
+-(void) removeLoading{
+    [_loadingView hide:YES];
+}
+-(void)makeSearch{
+    [self getUserBySearch:_txtSearch.text];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    if (textField.text.length>0) {
+        [self makeSearch];
+    }else{
+        _btnAddFriend.enabled = NO;
+    }
+    return YES;
+}
 -(void)getResult:(id)response{
+    [self removeLoading];
     switch (_fReq) {
         case getMyFriendList:
         case getUserBySearch:
         {
-            if ([response isKindOfClass:[NSArray class]]) {
-                NSArray *array = (NSArray *)response;
+            id resultValue = [response valueForKey:@"result"];
+            if ([resultValue isKindOfClass:[NSArray class]]) {
+                NSArray *array = (NSArray *)resultValue;
                 for (int i = 0; i< [array count]; i++) {
                     NSDictionary *dic = [array objectAtIndex:i];
                     UserDetail *obj = [[UserDetail alloc] init];
@@ -38,6 +68,7 @@
                         [_myFriendsArray addObject:obj];
                     }
                     else{
+                         _btnAddFriend.enabled = YES;
                          [_usersArray addObject:obj];
                     }
                 }
@@ -54,24 +85,33 @@
             break;
     }
 }
+
 -(void)getError{
+    [self removeLoading];
     NSLog(@"getError");
 }
+
 -(void)getMyFriendList{
+    [self showLoading];
+    _btnAddFriend.enabled = NO;
     _fReq = getMyFriendList;
     [_myFriendsArray removeAllObjects];
     Request *req = [[Request alloc] init];
     req.delegate = self;
     [req getAllUserForUser];
 }
+
 -(void)getUserBySearch:(NSString *)search{
     [_usersArray removeAllObjects];
+    [self showLoading];
     _fReq = getUserBySearch;
     Request *req = [[Request alloc] init];
     req.delegate = self;
-    [req getAllUserForUser];
+    [req getUserForSearchString:search];
 }
+
 -(void)addFriendWithFriendId:(NSString *)fid{
+    [self showLoading];
     _fReq = addFriendWithFriendId;
     Request *req = [[Request alloc] init];
     req.delegate = self;
@@ -127,14 +167,22 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     return cell;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UserDetail *obj = nil;
+    if (_fReq == getMyFriendList) {
+        obj = [_myFriendsArray objectAtIndex:indexPath.row];
+    }
+    else{
+        obj = [_usersArray objectAtIndex:indexPath.row];
+        _friendId = obj.userId;
+    }
+    
 }
-*/
-
+-(void)sendFriendRequest{
+    [self addFriendWithFriendId:_friendId];
+}
+- (IBAction)addFriend:(id)sender {
+    [self sendFriendRequest];
+}
 @end

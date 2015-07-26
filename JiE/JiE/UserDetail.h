@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserDetail : NSObject
+@interface UserDetail : NSObject<NSCoding>
 @property(strong,nonatomic) NSString *dob;
 @property(strong,nonatomic) NSString *email;
 @property(strong,nonatomic) NSString *userId;

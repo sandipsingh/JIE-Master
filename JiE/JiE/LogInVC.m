@@ -69,8 +69,7 @@
                     obj.userId = [dic objectForKey:@"id"];
                     obj.profilepic = [dic objectForKey:@"profilepic"];
                     obj.username = [dic objectForKey:@"username"];
-                    [[NSUserDefaults standardUserDefaults] setObject:obj forKey:UserDetails];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    saveUserData(obj);
                     break;
                 }
             }
