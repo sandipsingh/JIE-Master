@@ -115,7 +115,7 @@
     _fReq = addFriendWithFriendId;
     Request *req = [[Request alloc] init];
     req.delegate = self;
-    [req addFriendWithFriendId:fid];
+    [req sendFriendRequest:fid];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

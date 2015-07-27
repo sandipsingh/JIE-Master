@@ -10,14 +10,15 @@
 #import <CoreData/CoreData.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "Request.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate,RequestDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property(strong,nonatomic) UINavigationController *localNavigationController123;
-
+@property(strong,nonatomic) NSString *fId;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
