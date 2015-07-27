@@ -29,9 +29,46 @@
     
     [FBLoginView class];
     [FBProfilePictureView class];
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
     return YES;
 }
-
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"content---%@", token);
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:pushtoken];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(void)getResult:(id)response{
+    _fId = nil;
+}
+-(void)acceptFriendRequest{
+    Request *req = [[Request alloc] init];
+    req.delegate = self;
+    [req addFriendWithFriendId:_fId];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 1:
+        {
+            [self acceptFriendRequest];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+ {
+     NSLog(@"remote notification: %@",[userInfo description]);
+     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+     NSString *alert = [apsInfo objectForKey:@"alert"];
+     _fId = [userInfo objectForKey:@"friendId"];
+     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:alert delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+     [alertView show];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

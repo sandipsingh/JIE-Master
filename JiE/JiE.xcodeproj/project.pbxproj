@@ -11,6 +11,9 @@
 		18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18503F421B640D7000FD8B34 /* FriendsTableViewCell.m */; };
 		18503F461B64152400FD8B34 /* UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18503F451B64152400FD8B34 /* UserDetail.m */; };
 		18551BA71B6540630045BFC2 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18551BA61B6540630045BFC2 /* menu_icon.png */; };
+		1866D33E1B6678430063227B /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866D33D1B6678430063227B /* CommentsViewController.m */; };
+		1866D3421B667F770063227B /* commentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866D3411B667F770063227B /* commentsTableViewCell.m */; };
+		1866D3481B668C6A0063227B /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866D3471B668C6A0063227B /* Comments.m */; };
 		18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18977B741B554F3E005401C9 /* AddJieViewController.m */; };
 		18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B761B5583A6005401C9 /* CoreFoundation.framework */; };
 		18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B781B5583F8005401C9 /* MobileCoreServices.framework */; };
@@ -111,6 +114,12 @@
 		18503F451B64152400FD8B34 /* UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetail.m; sourceTree = "<group>"; };
 		18551BA21B6522C20045BFC2 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		18551BA61B6540630045BFC2 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_icon.png; path = images/menu_icon.png; sourceTree = SOURCE_ROOT; };
+		1866D33C1B6678430063227B /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		1866D33D1B6678430063227B /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		1866D3401B667F770063227B /* commentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentsTableViewCell.h; sourceTree = "<group>"; };
+		1866D3411B667F770063227B /* commentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentsTableViewCell.m; sourceTree = "<group>"; };
+		1866D3461B668C6A0063227B /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
+		1866D3471B668C6A0063227B /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 		18977B731B554F3E005401C9 /* AddJieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddJieViewController.h; sourceTree = "<group>"; };
 		18977B741B554F3E005401C9 /* AddJieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJieViewController.m; sourceTree = "<group>"; };
 		18977B761B5583A6005401C9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -272,9 +281,23 @@
 			name = Addfriends;
 			sourceTree = "<group>";
 		};
+		1866D33F1B667F4F0063227B /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				1866D33C1B6678430063227B /* CommentsViewController.h */,
+				1866D33D1B6678430063227B /* CommentsViewController.m */,
+				1866D3401B667F770063227B /* commentsTableViewCell.h */,
+				1866D3411B667F770063227B /* commentsTableViewCell.m */,
+				1866D3461B668C6A0063227B /* Comments.h */,
+				1866D3471B668C6A0063227B /* Comments.m */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 		18B07EA71B5D599300E649FD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1866D33F1B667F4F0063227B /* Comments */,
 				18B07EA81B5D59BC00E649FD /* HomeViewController.h */,
 				18B07EA91B5D59BC00E649FD /* HomeViewController.m */,
 				18B07EAA1B5D59BC00E649FD /* HomeTableViewCell.h */,
@@ -683,6 +706,8 @@
 				F9D1B9EF1B4573FF008E9616 /* AMSlideMenuRightTableViewController.m in Sources */,
 				18503F461B64152400FD8B34 /* UserDetail.m in Sources */,
 				18B07EB01B5D6A1B00E649FD /* JieModel.m in Sources */,
+				1866D33E1B6678430063227B /* CommentsViewController.m in Sources */,
+				1866D3481B668C6A0063227B /* Comments.m in Sources */,
 				18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */,
 				F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */,
 				F9D1B9EB1B4573FF008E9616 /* AMSlideMenuLeftMenuSegue.m in Sources */,
@@ -703,6 +728,7 @@
 				F9FCFF651B4D03950028F0B7 /* JieClass.m in Sources */,
 				18B07EAC1B5D59BC00E649FD /* HomeViewController.m in Sources */,
 				F9D1B9EC1B4573FF008E9616 /* AMSlideMenuLeftTableViewController.m in Sources */,
+				1866D3421B667F770063227B /* commentsTableViewCell.m in Sources */,
 				F9D1B9F01B4573FF008E9616 /* UIViewController+AMSlideMenu.m in Sources */,
 				F9176CD01B39115200D6B7D1 /* ViewController.m in Sources */,
 				F9176CCD1B39115200D6B7D1 /* JiE.xcdatamodeld in Sources */,
@@ -765,7 +791,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -807,7 +833,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -831,8 +857,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (SVRKU63B48)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (SVRKU63B48)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -846,7 +872,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a81452e0-1e80-4f11-a1f7-82a0a71f555d";
+				PROVISIONING_PROFILE = "6ed231f7-cd23-43ba-806a-3ac26a59765e";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -856,8 +883,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (SVRKU63B48)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (SVRKU63B48)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -871,7 +898,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a81452e0-1e80-4f11-a1f7-82a0a71f555d";
+				PROVISIONING_PROFILE = "6ed231f7-cd23-43ba-806a-3ac26a59765e";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -880,6 +908,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -899,6 +928,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

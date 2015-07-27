@@ -7,7 +7,7 @@
 //
 
 #import "HomeTableViewCell.h"
-
+#import "CommentsViewController.h"
 @implementation HomeTableViewCell
 
 - (void)awakeFromNib {
@@ -20,4 +20,9 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)onClickComment:(id)sender {
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(didClickOnComment:)]) {
+        [_delegate didClickOnComment:_postId];
+    }
+}
 @end

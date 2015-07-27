@@ -2345,6 +2345,138 @@
             </objects>
             <point key="canvasLocation" x="4280" y="1707"/>
         </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="Xxn-mD-aXX">
+            <objects>
+                <viewController id="wWq-kJ-oln" customClass="CommentsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rUd-Un-5EK"/>
+                        <viewControllerLayoutGuide type="bottom" id="4cA-wC-OCL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sKw-8t-Dzp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg1.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Jc-2e-V1u" userLabel="bottomBG">
+                                <rect key="frame" x="0.0" y="490" width="150" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="McR-Va-HPn">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="270"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="150" id="kRS-n4-RLb">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="280"/>
+                                    </constraint>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSJ-od-TnD">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ble-r0-r21">
+                                        <rect key="frame" x="15" y="10" width="490" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="wWq-kJ-oln" id="SPm-KN-Efd"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL0-rE-TSc" userLabel="Comment button">
+                                        <rect key="frame" x="517" y="10" width="68" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1OG-Iz-LSC"/>
+                                            <constraint firstAttribute="width" constant="68" id="6md-Wl-Hhc"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="coi-O2-rtg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="f5e-u9-DGq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Comment">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendComment:" destination="wWq-kJ-oln" eventType="touchUpInside" id="mSN-GU-lID"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bL0-rE-TSc" firstAttribute="leading" secondItem="ble-r0-r21" secondAttribute="trailing" constant="12" id="BGr-Ug-jSH"/>
+                                    <constraint firstAttribute="bottom" secondItem="ble-r0-r21" secondAttribute="bottom" constant="10" id="ItG-ki-PJA"/>
+                                    <constraint firstItem="bL0-rE-TSc" firstAttribute="top" secondItem="ZSJ-od-TnD" secondAttribute="top" constant="10" id="Pk8-It-Kha"/>
+                                    <constraint firstAttribute="height" constant="50" id="TNK-Zm-tkG"/>
+                                    <constraint firstItem="ble-r0-r21" firstAttribute="leading" secondItem="ZSJ-od-TnD" secondAttribute="leading" constant="15" id="Y7t-cS-U0V"/>
+                                    <constraint firstItem="ble-r0-r21" firstAttribute="top" secondItem="ZSJ-od-TnD" secondAttribute="top" constant="10" id="egA-I8-en9"/>
+                                    <constraint firstAttribute="trailing" secondItem="bL0-rE-TSc" secondAttribute="trailing" constant="15" id="jN5-W1-cyR"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UbZ-Rw-hsh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentsTableViewCell" rowHeight="65" id="Jfa-oB-liO" customClass="commentsTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jfa-oB-liO" id="re7-co-9CQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UV-sZ-Xsb" userLabel="username">
+                                                    <rect key="frame" x="5" y="2" width="590" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="WQu-cH-jre"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfx-X8-GrR" userLabel="comment">
+                                                    <rect key="frame" x="5" y="22" width="588" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="bGN-WM-MPV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mfx-X8-GrR" firstAttribute="top" secondItem="1UV-sZ-Xsb" secondAttribute="bottom" id="TWO-Mt-a4c"/>
+                                                <constraint firstItem="1UV-sZ-Xsb" firstAttribute="top" secondItem="re7-co-9CQ" secondAttribute="top" constant="2" id="lUV-oV-dgY"/>
+                                                <constraint firstAttribute="trailing" secondItem="1UV-sZ-Xsb" secondAttribute="trailing" constant="5" id="mHg-Av-TQ9"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mfx-X8-GrR" secondAttribute="trailing" constant="7" id="nKw-gR-inC"/>
+                                                <constraint firstItem="1UV-sZ-Xsb" firstAttribute="leading" secondItem="re7-co-9CQ" secondAttribute="leading" constant="5" id="ssv-aH-yOw"/>
+                                                <constraint firstItem="Mfx-X8-GrR" firstAttribute="leading" secondItem="re7-co-9CQ" secondAttribute="leading" constant="5" id="wgG-Us-3LC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblComment" destination="Mfx-X8-GrR" id="fDX-DM-UbG"/>
+                                            <outlet property="lblUserName" destination="1UV-sZ-Xsb" id="kyf-r2-GcC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4cA-wC-OCL" firstAttribute="top" secondItem="6Jc-2e-V1u" secondAttribute="bottom" id="9V8-lR-TgO"/>
+                            <constraint firstItem="UbZ-Rw-hsh" firstAttribute="leading" secondItem="sKw-8t-Dzp" secondAttribute="leading" id="BsC-X1-d1N"/>
+                            <constraint firstItem="6Jc-2e-V1u" firstAttribute="leading" secondItem="sKw-8t-Dzp" secondAttribute="leading" id="T9s-kJ-ezf"/>
+                            <constraint firstAttribute="trailing" secondItem="UbZ-Rw-hsh" secondAttribute="trailing" id="XSv-3K-2zn"/>
+                            <constraint firstItem="ZSJ-od-TnD" firstAttribute="leading" secondItem="sKw-8t-Dzp" secondAttribute="leading" id="dup-jt-0ac"/>
+                            <constraint firstItem="ZSJ-od-TnD" firstAttribute="top" secondItem="UbZ-Rw-hsh" secondAttribute="bottom" id="gKx-o9-eRw"/>
+                            <constraint firstAttribute="bottom" secondItem="ZSJ-od-TnD" secondAttribute="bottom" id="gX5-yU-nbR"/>
+                            <constraint firstItem="UbZ-Rw-hsh" firstAttribute="top" secondItem="rUd-Un-5EK" secondAttribute="bottom" id="vIt-GQ-Qkf"/>
+                            <constraint firstAttribute="trailing" secondItem="ZSJ-od-TnD" secondAttribute="trailing" id="y0a-L6-Ui5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vvg-af-VUw"/>
+                    <connections>
+                        <outlet property="btnComment" destination="bL0-rE-TSc" id="bXA-yB-HL3"/>
+                        <outlet property="tblView" destination="UbZ-Rw-hsh" id="63a-lR-q4m"/>
+                        <outlet property="txtComment" destination="ble-r0-r21" id="pnf-ii-Ndc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ9-Zd-bju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4607" y="-235"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="2gQ-7T-AnM">
             <objects>
@@ -2463,6 +2595,9 @@
                                                     <state key="normal" title="Comment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="onClickComment:" destination="A7P-2f-MY7" eventType="touchUpInside" id="ElN-OX-m6c"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -2495,6 +2630,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnComment" destination="ngU-pE-TWS" id="8rd-el-LqM"/>
+                                            <outlet property="delegate" destination="dyV-sQ-Q3r" id="yjq-CY-5PB"/>
                                             <outlet property="imgPost" destination="T08-b7-308" id="nDW-KY-aVQ"/>
                                             <outlet property="imgProfile" destination="rY2-I4-yUG" id="Yqa-cP-O6T"/>
                                             <outlet property="lblComment" destination="Voh-uc-tou" id="czo-NM-noJ"/>

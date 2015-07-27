@@ -55,39 +55,59 @@
     reqObj.delegate = self;
     [reqObj loginWithUserName:userName withPassword:password];
 }
+-(void)updateDeviceTokenWithUser:(NSString *)userId
+{
+    Request * reqObj = [[Request alloc] init];
+    reqObj.delegate = self;
+    [reqObj updateDeviceToken:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken] WithUserId:userId];
+}
 -(void)getResult:(id)response{
-    if ([response isKindOfClass:[NSArray class]]) {
-        for(NSDictionary *dict in response) {
-            loginResult = [[dict objectForKey:@"result"] boolValue];
-            id result = [dict objectForKey:@"result1"];
-            if ([result isKindOfClass:[NSArray class]]) {
-                NSArray *array = (NSArray *)result;
-                for (NSDictionary *dic in array) {
-                    UserDetail *obj = [[UserDetail alloc] init];
-                    obj.dob = [dic objectForKey:@"dob"];
-                    obj.email = [dic objectForKey:@"email"];
-                    obj.userId = [dic objectForKey:@"id"];
-                    obj.profilepic = [dic objectForKey:@"profilepic"];
-                    obj.username = [dic objectForKey:@"username"];
-                    saveUserData(obj);
-                    break;
+    switch (_lReq) {
+        case getLogin:
+        {
+            if ([response isKindOfClass:[NSArray class]]) {
+                for(NSDictionary *dict in response) {
+                    loginResult = [[dict objectForKey:@"result"] boolValue];
+                    id result = [dict objectForKey:@"result1"];
+                    if ([result isKindOfClass:[NSArray class]]) {
+                        NSArray *array = (NSArray *)result;
+                        for (NSDictionary *dic in array) {
+                            UserDetail *obj = [[UserDetail alloc] init];
+                            obj.dob = [dic objectForKey:@"dob"];
+                            obj.email = [dic objectForKey:@"email"];
+                            obj.userId = [dic objectForKey:@"id"];
+                            obj.profilepic = [dic objectForKey:@"profilepic"];
+                            obj.username = [dic objectForKey:@"username"];
+                            saveUserData(obj);
+                            [self updateDeviceTokenWithUser:obj.userId];
+                            break;
+                        }
+                    }
+                }
+                
+                [HUD hide:YES];
+                // redirection user to the app as per login status
+                if(loginResult  == true){
+                    MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
+                    [self.navigationController pushViewController:mainVCObj animated:YES];
+                }else{
+                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Incorrect Username/Password" delegate:nil //or self
+                                                         cancelButtonTitle:@"OK"
+                                                         otherButtonTitles:nil];
+                    [alert show];
                 }
             }
+            else{
+                NSLog(@"Web service returned null");
+            }
         }
-        [HUD hide:YES];
-        // redirection user to the app as per login status
-        if(loginResult  == true){
-            MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
-            [self.navigationController pushViewController:mainVCObj animated:YES];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Incorrect Username/Password" delegate:nil //or self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-            [alert show];
+            break;
+        case updateDeviceToken:
+        {
+            NSLog(@"Successfully Updated");
         }
-    }
-    else{
-        NSLog(@"Web service returned null");
+        default:
+            break;
     }
 }
 - (IBAction)logInButtonAction:(id)sender {

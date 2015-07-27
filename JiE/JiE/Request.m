@@ -12,10 +12,8 @@
 
 -(void)createConnection:(NSMutableURLRequest *)postRequest{
     _urlConnecction = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
-    
     if(_urlConnecction)
     {
-        
         _webData = [NSMutableData data];
     }
     else
@@ -23,40 +21,39 @@
         NSLog(@"theConnection is NULL");
     }
 }
+
 - (NSString *) timeStamp {
     return [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
 }
 
+//Get all user
 -(void)getAllUserForUser{
     NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getFriends"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
-    
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [self createConnection:postRequest];
 }
 
+//Get user with search
 -(void)getUserForSearchString:(NSString *)string{
     NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getAllUsers"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"searchString=%@",string];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
-    
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [self createConnection:postRequest];
 }
 
+//AcceptFriend
 -(void)addFriendWithFriendId:(NSString *)fid{
     NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=acceptFriend"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@",getUser().userId,fid];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     [postRequest setHTTPBody:body];
@@ -65,19 +62,55 @@
     [self createConnection:postRequest];
 }
 
--(void)getAllJie{
-    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=retrive"];
+//AcceptFriend
+-(void)sendFriendRequest:(NSString *)fid{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=sendFriendReq"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@",getUser().userId,fid];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
-    
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [self createConnection:postRequest];
 }
 
+//Get post
+-(void)getAllJie{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=retrive"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+//GetComments
+-(void)getComments:(NSString *)postId{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=getComment"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@",postId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+//PostComment
+-(void)postComments:(NSString *)postId comment:(NSString *)comment{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=postComment"];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@&userId=%@&comment=%@",postId,getUser().userId,comment];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+//SignUp
 -(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob{
     NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subscriber.php?action=register"];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"username=%@&email=%@&pass=%@&profilepic=%@&dob=%@",username,email,password,profilePic,dob];
@@ -102,6 +135,17 @@
     [self createConnection:postRequest];
 }
 
+-(void)updateDeviceToken:(NSString *)deviceToken WithUserId:(NSString *)userId{
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=updateDevice"];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userID=%@&deviceToken=%@&deviceID=iOS",userId,deviceToken];
+    NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    [postRequest setHTTPBody:POSTData];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
 //Login
 -(void)loginWithUserName:(NSString *)userName withPassword:(NSString *)password{
     NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subscriber.php?action=login"];
@@ -112,10 +156,9 @@
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [self createConnection:postRequest];
-    
 }
 
-// Method to add Jie into server
+//Method to add Jie into server
 -(void)addJieWithParameter:(JieClass *)jObj{
    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=addjie"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:45.0];
@@ -139,6 +182,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.userEmail.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"user_email\"\r\n\r\n";
@@ -147,6 +191,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.username.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"username\"\r\n\r\n";
@@ -155,6 +200,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.title.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"title\"\r\n\r\n";
@@ -163,6 +209,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.des.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"des\"\r\n\r\n";
@@ -171,6 +218,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.video != nil && jObj.video.length>0) {
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uploaded_video_file\"; filename=\"%@.MOV\"\r\n",TimeStamp] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -178,6 +226,7 @@
         [body appendData:[NSData dataWithData:jObj.video]];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.image != nil && jObj.image.length>0) {
         
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -186,6 +235,7 @@
         [body appendData:[NSData dataWithData:jObj.image]];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.result.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"result\"\r\n\r\n";
@@ -194,6 +244,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.privacy.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"privacy\"\r\n\r\n";
@@ -202,6 +253,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.salary > 0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"salary\"\r\n\r\n";
@@ -210,6 +262,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.cost > 0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"cost\"\r\n\r\n";
@@ -218,6 +271,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.time.length>0) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *str=@"Content-Disposition: form-data; name=\"time\"\r\n\r\n";
@@ -226,6 +280,7 @@
         [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     if (jObj.profilepic != nil && jObj.profilepic.length>0) {
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uploaded_file_thumb\"; filename=\"%@.png\"\r\n",TimeStamp] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -233,6 +288,7 @@
         [body appendData:[NSData dataWithData:jObj.profilepic]];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     }
+    
     [postRequest setHTTPBody:body];
     [self createConnection:postRequest];
 }
@@ -258,19 +314,12 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSLog(@"DONE. Received Bytes: %lu", (unsigned long)[_webData length]);
-    
-    NSStringEncoding responseEncoding = NSUTF8StringEncoding;
-    
-    NSString *jsonString = [[NSString alloc] initWithData:_webData encoding:responseEncoding];
-    
-    NSLog(@"jsonString=%@",jsonString);
-    
-    id responseData= [NSJSONSerialization JSONObjectWithData:_webData options:NSJSONReadingMutableContainers error:nil];;
-    
+    NSString *jsonString = [[NSString alloc] initWithData:_webData encoding:NSUTF8StringEncoding];
+    NSLog(@"jsonString = %@",jsonString);
+    id responseData = [NSJSONSerialization JSONObjectWithData:_webData options:NSJSONReadingMutableContainers error:nil];;
     _urlConnecction=nil;
-    
-    NSLog(@"%@",[responseData description]);
-    if (responseData!=nil) {
+    NSLog(@"response = %@",[responseData description]);
+    if (responseData != nil) {
         if (_delegate != nil && [_delegate respondsToSelector:@selector(getResult:)]) {
             [_delegate getResult:responseData];
         }

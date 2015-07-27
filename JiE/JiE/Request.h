@@ -24,4 +24,8 @@
 -(void)getAllUserForUser;
 -(void)getUserForSearchString:(NSString *)str;
 -(void)addFriendWithFriendId:(NSString *)fid;
+-(void)getComments:(NSString *)postId;
+-(void)postComments:(NSString *)postId comment:(NSString *)comment;
+-(void)sendFriendRequest:(NSString *)fid;
+-(void)updateDeviceToken:(NSString *)deviceToken WithUserId:(NSString *)userId;
 @end
