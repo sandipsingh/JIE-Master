@@ -23,5 +23,7 @@
 @property(strong,nonatomic) NSString *jieVideoURL;
 @property(strong,nonatomic) NSString *videoTag;
 @property(strong,nonatomic) NSString *imgTag;
-
+@property(strong,nonatomic) NSString *jiecomment;
+@property(strong,nonatomic) NSString *jieLike;
+@property(strong,nonatomic) NSString *jieUnlike;
 @end

@@ -76,7 +76,7 @@
 
 //Get post
 -(void)getAllJie{
-    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=retrive"];
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=retrive"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -88,7 +88,7 @@
 
 //GetComments
 -(void)getComments:(NSString *)postId{
-    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=getComment"];
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=getComment"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@",postId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -100,9 +100,9 @@
 
 //PostComment
 -(void)postComments:(NSString *)postId comment:(NSString *)comment{
-    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/sub.php?action=postComment"];
+    NSURL *url = [NSURL URLWithString:@"http://www.support-4-pc.com/clients/jie/subjie.php?action=addComment"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@&userId=%@&comment=%@",postId,getUser().userId,comment];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@&userId=%@&comment=%@&time=%@",postId,getUser().userId,comment,TimeStamp];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];

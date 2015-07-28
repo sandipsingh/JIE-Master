@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property(strong,nonatomic) NSMutableArray *jieArray;
 @property(strong,nonatomic) MBProgressHUD *HUD;
+-(IBAction)openAddJie:(id)sender;
 @end

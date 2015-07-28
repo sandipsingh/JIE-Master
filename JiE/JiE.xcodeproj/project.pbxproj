@@ -308,6 +308,15 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		18C0BEAF1B67D1A200E82A7C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F9FCFF631B4D03950028F0B7 /* Request.h */,
+				F9FCFF641B4D03950028F0B7 /* Request.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
 		F9176CB81B39115200D6B7D1 = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +341,7 @@
 		F9176CC31B39115200D6B7D1 /* JiE */ = {
 			isa = PBXGroup;
 			children = (
+				18C0BEAF1B67D1A200E82A7C /* Request */,
 				18503F401B640D3400FD8B34 /* Addfriends */,
 				18B07EA71B5D599300E649FD /* Home */,
 				18303AA71B59939900201878 /* AddJiE */,
@@ -348,8 +358,6 @@
 				F9176CCE1B39115200D6B7D1 /* ViewController.h */,
 				F9176CCF1B39115200D6B7D1 /* ViewController.m */,
 				F9176CD11B39115200D6B7D1 /* Main.storyboard */,
-				F9FCFF631B4D03950028F0B7 /* Request.h */,
-				F9FCFF641B4D03950028F0B7 /* Request.m */,
 				F9354D791B4AAACD0014B13D /* bg1.png */,
 				F9354D771B4AAAA10014B13D /* logo1.png */,
 				F9176CD41B39115200D6B7D1 /* Images.xcassets */,
