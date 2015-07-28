@@ -10,7 +10,7 @@
 #import "HomeTableViewCell.h"
 #import "CommentsViewController.h"
 #import "JieModel.h"
-
+#import "AddJieViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -20,9 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Home";
-    _jieArray = [[NSMutableArray alloc] init];
-    [self getJie];
     // Do any additional setup after loading the view.
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getJie];
 }
 
 -(void)getError{
@@ -53,6 +55,9 @@
                 obj.time = [innerDic valueForKey:@"time"];
                 obj.imgTag = [innerDic valueForKey:@"img_tag"];
                 obj.videoTag = [innerDic valueForKey:@"video_tag"];
+                obj.jieLike = [innerDic valueForKey:@"LikeCount"];
+                obj.jiecomment = [innerDic valueForKey:@"comments"];
+                obj.jieUnlike = [innerDic valueForKey:@"unlikeCount"];
                 [_jieArray addObject:obj];
             }
         }
@@ -90,7 +95,10 @@
     JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
     cell.lbluserName.text = obj.username;
     cell.lblTitle.text = obj.title;
+    cell.postId = obj.jieId;
     cell.lblDescription.text = obj.jieDescription;
+    cell.lblComment.text = obj.jiecomment;
+    cell.lblLike.text = obj.jieLike;
    // cell.lblLastSeen.text = obj.time;
     
     if (obj.jieImageURL.length>0) {
@@ -123,10 +131,14 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)didClickOnComment:(NSString *)postId{
-    CommentsViewController * cvc = [[CommentsViewController alloc] init];
+    CommentsViewController * cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"commentsView"];
     cvc.postId = postId;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:cvc];
     [self presentViewController:navController animated:YES completion:nil];
 }
+-(IBAction)openAddJie:(id)sender{
+    [self performSegueWithIdentifier:@"AddJie" sender:self];
+}
+
 
 @end
