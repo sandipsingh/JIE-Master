@@ -42,6 +42,7 @@
 		F9176CE41B39115200D6B7D1 /* JiETests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9176CE31B39115200D6B7D1 /* JiETests.m */; };
 		F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F9176CF11B391A6600D6B7D1 /* FaceBookControllerVC.m */; };
 		F9209F291B3AE389001C8BE5 /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F9209F281B3AE389001C8BE5 /* SignUpVC.m */; };
+		F92687CF1B6756B400B36D75 /* Setting ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92687CE1B6756B400B36D75 /* Setting ViewController.m */; };
 		F932344C1B4FA06E0040CCDA /* log_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = F932344A1B4FA06E0040CCDA /* log_lg.png */; };
 		F932344D1B4FA06E0040CCDA /* sign_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = F932344B1B4FA06E0040CCDA /* sign_lg.png */; };
 		F932344F1B4FA6270040CCDA /* log-lg2.png in Resources */ = {isa = PBXBuildFile; fileRef = F932344E1B4FA6270040CCDA /* log-lg2.png */; };
@@ -161,6 +162,8 @@
 		F9176CF11B391A6600D6B7D1 /* FaceBookControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceBookControllerVC.m; sourceTree = "<group>"; };
 		F9209F271B3AE389001C8BE5 /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
 		F9209F281B3AE389001C8BE5 /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
+		F92687CD1B6756B400B36D75 /* Setting ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Setting ViewController.h"; sourceTree = "<group>"; };
+		F92687CE1B6756B400B36D75 /* Setting ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Setting ViewController.m"; sourceTree = "<group>"; };
 		F932344A1B4FA06E0040CCDA /* log_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_lg.png; sourceTree = "<group>"; };
 		F932344B1B4FA06E0040CCDA /* sign_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_lg.png; sourceTree = "<group>"; };
 		F932344E1B4FA6270040CCDA /* log-lg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log-lg2.png"; sourceTree = "<group>"; };
@@ -260,12 +263,6 @@
 		18303AA71B59939900201878 /* AddJiE */ = {
 			isa = PBXGroup;
 			children = (
-				18977B731B554F3E005401C9 /* AddJieViewController.h */,
-				18977B741B554F3E005401C9 /* AddJieViewController.m */,
-				18303AA41B598BA400201878 /* dropDownView.h */,
-				18303AA51B598BA400201878 /* dropDownView.m */,
-				F9FCFF5F1B4D03950028F0B7 /* JieClass.h */,
-				F9FCFF601B4D03950028F0B7 /* JieClass.m */,
 			);
 			name = AddJiE;
 			sourceTree = "<group>";
@@ -332,9 +329,16 @@
 		F9176CC31B39115200D6B7D1 /* JiE */ = {
 			isa = PBXGroup;
 			children = (
+				F92687D01B6785B500B36D75 /* Setting */,
 				18503F401B640D3400FD8B34 /* Addfriends */,
 				18B07EA71B5D599300E649FD /* Home */,
 				18303AA71B59939900201878 /* AddJiE */,
+				18977B731B554F3E005401C9 /* AddJieViewController.h */,
+				18977B741B554F3E005401C9 /* AddJieViewController.m */,
+				18303AA41B598BA400201878 /* dropDownView.h */,
+				18303AA51B598BA400201878 /* dropDownView.m */,
+				F9FCFF5F1B4D03950028F0B7 /* JieClass.h */,
+				F9FCFF601B4D03950028F0B7 /* JieClass.m */,
 				F9D1B9DA1B4573FF008E9616 /* AMSlideMenu */,
 				F99209631B44249D00D8F3AC /* Fabric.framework */,
 				F99209641B44249D00D8F3AC /* TwitterKit.framework */,
@@ -420,6 +424,15 @@
 				F9BD00711B4A899200C17DB8 /* MainVC.h */,
 			);
 			name = "Sign Up";
+			sourceTree = "<group>";
+		};
+		F92687D01B6785B500B36D75 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F92687CE1B6756B400B36D75 /* Setting ViewController.m */,
+				F92687CD1B6756B400B36D75 /* Setting ViewController.h */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		F938E9541B3A69EE005A7224 /* ParsingClasses */ = {
@@ -594,6 +607,7 @@
 					};
 					F9176CDC1B39115200D6B7D1 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QH3MGDX858;
 						TestTargetID = F9176CC01B39115200D6B7D1;
 					};
 				};
@@ -702,6 +716,7 @@
 			files = (
 				F9D1B9EA1B4573FF008E9616 /* AMSlideMenuContentSegue.m in Sources */,
 				F9BD00731B4A8B0900C17DB8 /* MainVC.m in Sources */,
+				F92687CF1B6756B400B36D75 /* Setting ViewController.m in Sources */,
 				F9F1CE1E1B399DF300D45540 /* LoggedInUserVC.m in Sources */,
 				F9D1B9EF1B4573FF008E9616 /* AMSlideMenuRightTableViewController.m in Sources */,
 				18503F461B64152400FD8B34 /* UserDetail.m in Sources */,
@@ -857,8 +872,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -872,7 +887,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6ed231f7-cd23-43ba-806a-3ac26a59765e";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -883,8 +898,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -898,7 +913,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6ed231f7-cd23-43ba-806a-3ac26a59765e";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -908,7 +923,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -920,6 +936,7 @@
 				INFOPLIST_FILE = JiETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JiE.app/JiE";
 			};
 			name = Debug;
@@ -928,7 +945,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -936,6 +954,7 @@
 				INFOPLIST_FILE = JiETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JiE.app/JiE";
 			};
 			name = Release;
