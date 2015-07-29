@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.title = @"Comments";
     _commentsArray = [[NSMutableArray alloc] init];
+    self.navigationController.navigationBar.barTintColor= [UIColor colorWithRed:157/255.0f green:218/255.0f blue:96/255.0f alpha:1.0f];
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneClick)];
     [self.navigationItem setRightBarButtonItem:rightBar];
     // Do any additional setup after loading the view.
