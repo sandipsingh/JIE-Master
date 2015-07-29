@@ -59,8 +59,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "-loginWithUserName:withPassword:"
-            landmarkType = "5">
+            landmarkName = "@implementation Request"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -75,7 +75,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "-loginWithUserName:withPassword:"
+            landmarkName = "-sendFriendRequest:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -91,7 +91,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "-loginWithUserName:withPassword:"
+            landmarkName = "-sendFriendRequest:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
