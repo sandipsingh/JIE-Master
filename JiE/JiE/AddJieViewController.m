@@ -17,6 +17,11 @@
 -(void)getResult:(id)response{
     NSLog(@" getResult ");
 }
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"My Jie";
@@ -153,6 +158,98 @@
     [textField resignFirstResponder];
     return YES;
 }
+/*
+- (AVAsset *)performWithAsset:(NSURL*)inputURL
+{
+    
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:inputURL options:nil];
+    
+    AVMutableComposition *mutableComposition = [AVMutableComposition composition];
+    AVAssetTrack *assetVideoTrack = nil;
+    AVAssetTrack *assetAudioTrack = nil;
+    
+    // Check if the asset contains video and audio tracks
+    if ([[asset tracksWithMediaType:AVMediaTypeVideo] count] != 0) {
+        assetVideoTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    }
+    if ([[asset tracksWithMediaType:AVMediaTypeAudio] count] != 0) {
+        assetAudioTrack = [[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    }
+    NSError *error = nil;
+    
+    // Step 1
+    // Extract the custom audio track to be added to the composition
+    AVAsset *audioAsset = [[AVURLAsset alloc] initWithURL:inputURL options:nil];
+    AVAssetTrack *newAudioTrack = [[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    
+    
+    // Step 2
+    // Create a composition with the given asset and insert audio and video tracks into it from the asset
+    if (mutableComposition) {
+        
+        // Check whether a composition has already been created, i.e, some other tool has already been applied.
+        // Create a new composition
+        mutableComposition = [AVMutableComposition composition];
+        
+        // Add tracks to composition from the input video asset
+        if (assetVideoTrack != nil) {
+            AVMutableCompositionTrack *compositionVideoTrack = [mutableComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+            [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [asset duration]) ofTrack:assetVideoTrack atTime:kCMTimeZero error:&error];
+        }
+        if (assetAudioTrack != nil) {
+            AVMutableCompositionTrack *compositionAudioTrack = [mutableComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+            [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [asset duration]) ofTrack:assetAudioTrack atTime:kCMTimeZero error:&error];
+        }
+        
+    }
+    
+    
+    // Step 3
+    // Add custom audio track to the composition
+    AVMutableCompositionTrack *customAudioTrack = [mutableComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    [customAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, [mutableComposition duration]) ofTrack:newAudioTrack atTime:kCMTimeZero error:&error];
+    
+    
+    // Step 4
+    // Mix parameters sets a volume ramp for the audio track to be mixed with existing audio track for the duration of the composition
+    AVMutableAudioMixInputParameters *mixParameters = [AVMutableAudioMixInputParameters audioMixInputParametersWithTrack:customAudioTrack];
+    [mixParameters setVolumeRampFromStartVolume:1 toEndVolume:0 timeRange:CMTimeRangeMake(kCMTimeZero, mutableComposition.duration)];
+    AVMutableAudioMix *mutableAudioMix;
+    
+    mutableAudioMix = [AVMutableAudioMix audioMix];
+    mutableAudioMix.inputParameters = [NSArray arrayWithObject:mixParameters];
+    
+    return asset;
+    
+    // Step 5
+    // Notify AVSEViewController about add music operation completion
+    //[[NSNotificationCenter defaultCenter] postNotificationName:AVSEEditCommandCompletionNotification object:self];
+}
+- (void)convertVideoToLowQuailtyWithInputURL:(NSURL*)inputURL
+                                   outputURL:(NSURL*)outputURL
+                                     handler:(void (^)(AVAssetExportSession*))handler
+{
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSError *err = nil;
+    [fm removeItemAtPath:[outputURL path] error:&err];
+    if(err)
+        NSLog(@"File Manager: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
+    
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:inputURL options:nil];
+    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:[self performWithAsset:inputURL] presetName:AVAssetExportPreset640x480];
+    
+    exportSession.outputURL = outputURL;
+    exportSession.outputFileType = AVFileTypeMPEG4;
+    
+    [exportSession exportAsynchronouslyWithCompletionHandler:^(void)
+    {
+         handler(exportSession);
+     }];
+    
+    
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:nil];
     if (_isImage) {
@@ -180,6 +277,7 @@
         }
     }
 }
+*/
 - (IBAction)openImagePicker:(id)sender {
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Image" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Camera" otherButtonTitles:@"Gallery", nil];
     [sheet showInView:self.view];

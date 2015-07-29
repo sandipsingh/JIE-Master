@@ -54,6 +54,7 @@
 		F93B380D1B3AB3D2005F3769 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F93B380C1B3AB3D2005F3769 /* MBProgressHUD.m */; };
 		F93B38101B3ACFE2005F3769 /* profile_img.png in Resources */ = {isa = PBXBuildFile; fileRef = F93B380F1B3ACFE2005F3769 /* profile_img.png */; };
 		F941B9F61B43AAA200B33459 /* ForgotPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = F941B9F51B43AAA200B33459 /* ForgotPassword.m */; };
+		F9638E351B68E39500647D70 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F9638E341B68E39500647D70 /* logo.png */; };
 		F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B1A941B63864A007B5674 /* FriendsViewController.m */; };
 		F96B1A981B6396C8007B5674 /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B1A971B6396C8007B5674 /* AccountsViewController.m */; };
 		F99209671B44249D00D8F3AC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99209631B44249D00D8F3AC /* Fabric.framework */; };
@@ -176,6 +177,7 @@
 		F93B380F1B3ACFE2005F3769 /* profile_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_img.png; path = images/profile_img.png; sourceTree = SOURCE_ROOT; };
 		F941B9F41B43AAA200B33459 /* ForgotPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPassword.h; sourceTree = "<group>"; };
 		F941B9F51B43AAA200B33459 /* ForgotPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPassword.m; sourceTree = "<group>"; };
+		F9638E341B68E39500647D70 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = JiE/logo.png; sourceTree = "<group>"; };
 		F96B1A931B63864A007B5674 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		F96B1A941B63864A007B5674 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		F96B1A961B6396C8007B5674 /* AccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsViewController.h; sourceTree = "<group>"; };
@@ -308,9 +310,19 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		18C0BEAF1B67D1A200E82A7C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F9FCFF631B4D03950028F0B7 /* Request.h */,
+				F9FCFF641B4D03950028F0B7 /* Request.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
 		F9176CB81B39115200D6B7D1 = {
 			isa = PBXGroup;
 			children = (
+				F9638E341B68E39500647D70 /* logo.png */,
 				18B13E321B5AB47900FCE106 /* AVFoundation.framework */,
 				18977B781B5583F8005401C9 /* MobileCoreServices.framework */,
 				18977B761B5583A6005401C9 /* CoreFoundation.framework */,
@@ -332,6 +344,7 @@
 		F9176CC31B39115200D6B7D1 /* JiE */ = {
 			isa = PBXGroup;
 			children = (
+				18C0BEAF1B67D1A200E82A7C /* Request */,
 				18503F401B640D3400FD8B34 /* Addfriends */,
 				18B07EA71B5D599300E649FD /* Home */,
 				18303AA71B59939900201878 /* AddJiE */,
@@ -348,8 +361,6 @@
 				F9176CCE1B39115200D6B7D1 /* ViewController.h */,
 				F9176CCF1B39115200D6B7D1 /* ViewController.m */,
 				F9176CD11B39115200D6B7D1 /* Main.storyboard */,
-				F9FCFF631B4D03950028F0B7 /* Request.h */,
-				F9FCFF641B4D03950028F0B7 /* Request.m */,
 				F9354D791B4AAACD0014B13D /* bg1.png */,
 				F9354D771B4AAAA10014B13D /* logo1.png */,
 				F9176CD41B39115200D6B7D1 /* Images.xcassets */,
@@ -594,6 +605,7 @@
 					};
 					F9176CDC1B39115200D6B7D1 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 684TN6TSNA;
 						TestTargetID = F9176CC01B39115200D6B7D1;
 					};
 				};
@@ -646,6 +658,7 @@
 				F9F1CE141B3992DE00D45540 /* tw.png in Resources */,
 				F9D1BA141B458072008E9616 /* chek_box.png in Resources */,
 				F9D1BA1D1B458072008E9616 /* tag_line.png in Resources */,
+				F9638E351B68E39500647D70 /* logo.png in Resources */,
 				F9176CD31B39115200D6B7D1 /* Main.storyboard in Resources */,
 				F90A09C91B4BC88600B6AB9F /* username.png in Resources */,
 				F9D1BA1B1B458072008E9616 /* post.png in Resources */,
@@ -908,7 +921,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -920,6 +934,7 @@
 				INFOPLIST_FILE = JiETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JiE.app/JiE";
 			};
 			name = Debug;
@@ -928,7 +943,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -936,6 +952,7 @@
 				INFOPLIST_FILE = JiETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JiE.app/JiE";
 			};
 			name = Release;
