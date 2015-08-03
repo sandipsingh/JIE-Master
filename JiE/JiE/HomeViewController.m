@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Home";
+    _jieArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -134,6 +135,7 @@
     CommentsViewController * cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"commentsView"];
     cvc.postId = postId;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:cvc];
+    cvc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:navController animated:YES completion:nil];
 }
 -(IBAction)openAddJie:(id)sender{
