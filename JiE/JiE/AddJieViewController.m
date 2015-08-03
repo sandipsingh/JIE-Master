@@ -12,7 +12,7 @@
 
 @end
 
-@implementation AddJieViewController
+@implementation  AddJieViewController
 
 -(void)getResult:(id)response{
     NSLog(@" getResult ");
@@ -24,6 +24,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"My Jie";
     [_privacyView setItems:@[@"Only me",@"Friends",@"Public"]];
     
@@ -37,6 +38,7 @@
                                                object:nil];
     // Do any additional setup after loading the view.
 }
+
 -(void)keyboardWillHide:(NSNotification *)notification{
     _bottomSpaceForScrollView.constant = 0;
 }
@@ -114,6 +116,7 @@
     }
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
     if (textField == _txtMinutes) {
         [_jieScrollView setContentOffset:CGPointMake(0, _jieScrollView.frame.origin.y+165)];
     }
@@ -133,7 +136,8 @@
         [_jieScrollView setContentOffset:CGPointMake(0, _jieScrollView.frame.origin.y+165)];
     }
 }
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
     if (_isMoneySelected == YES && textField == _txtSalary && _txtCost.text.length>0) {
         _lblSalary.text = [NSString stringWithFormat:@"%f%% of Salary.",([_txtSalary.text floatValue]/[_txtCost.text floatValue])*100];
     }
@@ -317,6 +321,7 @@
     if (_image != nil) {
         obj.image = UIImagePNGRepresentation(_image);
     }
+    
     if (_videoData.length>0) {
         obj.video = _videoData;
     }

@@ -132,6 +132,7 @@
     if (cell == nil) {
         cell = [[commentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
     Comments *obj = [_commentsArray objectAtIndex:indexPath.row];
     cell.lblUserName.text = obj.userName;
     cell.lblComment.text = obj.comment;
