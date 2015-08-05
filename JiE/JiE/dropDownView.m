@@ -10,18 +10,28 @@
 
 @implementation dropDownView
 -(id)initWithCoder:(NSCoder *)aDecoder{
-    if ((self = [super initWithCoder:aDecoder])){
+    if ((self = [super initWithCoder:aDecoder]))
+    
+    
+    {
         _lbltitle = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, self.bounds.size.width-5, self.bounds.size.height)];
-        _lbltitle.textAlignment = NSTextAlignmentLeft;
-        
+ _lbltitle.textAlignment = NSTextAlignmentLeft;
+       
         _lbltitle.textColor = [UIColor blackColor];
+        
         _lbltitle.font = [UIFont systemFontOfSize:14.0f];
+        
+        
+        
         [self addSubview:_lbltitle];
+        
         _btnOption = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
         [_btnOption addTarget:self action:@selector(openTable:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_btnOption];
         
+        
         _tblView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_btnOption.frame), self.bounds.size.width, 0)];
+        
         _tblView.delegate = self;
         _tblView.dataSource = self;
         _tblView.scrollEnabled = YES;
@@ -76,6 +86,7 @@
 #pragma -mark TableViewDelegate methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     _lbltitle.text = [_items objectAtIndex:indexPath.row];
+    
     [self openTable:nil];
     if (_delegate != nil && [_delegate respondsToSelector:@selector(didSelectItemOnDropDownList:)]) {
         [_delegate didSelectItemOnDropDownList:_lbltitle.text];
