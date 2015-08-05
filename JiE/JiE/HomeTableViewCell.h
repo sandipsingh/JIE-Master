@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 @protocol HomeTableViewCellDelegate<NSObject>
+
 -(void)didClickOnComment:(NSString *)postId;
+
 @end
+
 @interface HomeTableViewCell : UITableViewCell
 @property (assign, nonatomic) IBOutlet id <HomeTableViewCellDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIImageView *imgProfile;
@@ -21,6 +24,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnComment;
 @property (strong, nonatomic) IBOutlet UILabel *lblComment;
 @property (strong, nonatomic) NSString *postId;
+
+
 - (IBAction)onClickComment:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UILabel *lblLike;
 @end

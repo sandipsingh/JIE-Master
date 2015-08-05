@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Request.h"
 #import "MBProgressHUD.h"
+
 @interface HomeViewController : UIViewController<RequestDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property(strong,nonatomic) NSMutableArray *jieArray;
 @property(strong,nonatomic) MBProgressHUD *HUD;
+
+-(IBAction)openAddJie:(id)sender;
 @end

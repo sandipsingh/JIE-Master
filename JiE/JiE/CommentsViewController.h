@@ -19,7 +19,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (strong, nonatomic) NSMutableArray *commentsArray;
 @property (weak, nonatomic) IBOutlet UIButton *btnComment;
-@property (assign, nonatomic) commentOperations *cReq;
+@property (assign, nonatomic) commentOperations cReq;
 @property (weak, nonatomic) IBOutlet UITextField *txtComment;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraints;
 - (IBAction)sendComment:(id)sender;
 @end
