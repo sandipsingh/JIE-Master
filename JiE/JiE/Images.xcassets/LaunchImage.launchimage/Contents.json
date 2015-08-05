@@ -21,14 +21,22 @@
       "idiom" : "iphone",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+<<<<<<< HEAD
       "filename" : "default.png",
+=======
+      "filename" : "jie.png",
+>>>>>>> master
       "scale" : "2x"
     },
     {
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
+<<<<<<< HEAD
       "filename" : "Default-568h@2x.png",
+=======
+      "filename" : "jie640_1136.png",
+>>>>>>> master
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
