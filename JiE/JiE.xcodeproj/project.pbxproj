@@ -38,7 +38,6 @@
 		F9176CD01B39115200D6B7D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9176CCF1B39115200D6B7D1 /* ViewController.m */; };
 		F9176CD31B39115200D6B7D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9176CD11B39115200D6B7D1 /* Main.storyboard */; };
 		F9176CD51B39115200D6B7D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9176CD41B39115200D6B7D1 /* Images.xcassets */; };
-		F9176CD81B39115200D6B7D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9176CD61B39115200D6B7D1 /* LaunchScreen.xib */; };
 		F9176CE41B39115200D6B7D1 /* JiETests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9176CE31B39115200D6B7D1 /* JiETests.m */; };
 		F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F9176CF11B391A6600D6B7D1 /* FaceBookControllerVC.m */; };
 		F9209F291B3AE389001C8BE5 /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F9209F281B3AE389001C8BE5 /* SignUpVC.m */; };
@@ -86,6 +85,9 @@
 		F9D1BA1F1B458072008E9616 /* time-Calculator_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0A1B458072008E9616 /* time-Calculator_2.png */; };
 		F9D1BA201B458072008E9616 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0B1B458072008E9616 /* Title.png */; };
 		F9D1BA211B458072008E9616 /* video_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0C1B458072008E9616 /* video_icon.png */; };
+		F9F032391B6B3585003F39D3 /* jie.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F032381B6B3585003F39D3 /* jie.png */; };
+		F9F032701B6B547B003F39D3 /* jie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F0326F1B6B547B003F39D3 /* jie_1.png */; };
+		F9F032721B6B7FE9003F39D3 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */; };
 		F9F1CE0F1B3992DE00D45540 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F1CE091B3992DE00D45540 /* bg.png */; };
 		F9F1CE101B3992DE00D45540 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F1CE0A1B3992DE00D45540 /* fb.png */; };
 		F9F1CE111B3992DE00D45540 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F1CE0B1B3992DE00D45540 /* login.png */; };
@@ -156,7 +158,6 @@
 		F9176CCF1B39115200D6B7D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F9176CD21B39115200D6B7D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9176CD41B39115200D6B7D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F9176CD71B39115200D6B7D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9176CDD1B39115200D6B7D1 /* JiETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JiETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176CE21B39115200D6B7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9176CE31B39115200D6B7D1 /* JiETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JiETests.m; sourceTree = "<group>"; };
@@ -222,6 +223,9 @@
 		F9D1BA0A1B458072008E9616 /* time-Calculator_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time-Calculator_2.png"; sourceTree = "<group>"; };
 		F9D1BA0B1B458072008E9616 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
 		F9D1BA0C1B458072008E9616 /* video_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_icon.png; sourceTree = "<group>"; };
+		F9F032381B6B3585003F39D3 /* jie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie.png; sourceTree = "<group>"; };
+		F9F0326F1B6B547B003F39D3 /* jie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie_1.png; sourceTree = "<group>"; };
+		F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		F9F1CE091B3992DE00D45540 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = images/bg.png; sourceTree = SOURCE_ROOT; };
 		F9F1CE0A1B3992DE00D45540 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = images/fb.png; sourceTree = SOURCE_ROOT; };
 		F9F1CE0B1B3992DE00D45540 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login.png; path = images/login.png; sourceTree = SOURCE_ROOT; };
@@ -365,13 +369,12 @@
 				F9176CCE1B39115200D6B7D1 /* ViewController.h */,
 				F9176CCF1B39115200D6B7D1 /* ViewController.m */,
 				F9176CD11B39115200D6B7D1 /* Main.storyboard */,
+				F9176CF31B391A7100D6B7D1 /* Facebook */,
 				F9354D791B4AAACD0014B13D /* bg1.png */,
 				F9354D771B4AAAA10014B13D /* logo1.png */,
 				F9176CD41B39115200D6B7D1 /* Images.xcassets */,
-				F9176CD61B39115200D6B7D1 /* LaunchScreen.xib */,
 				F9176CCB1B39115200D6B7D1 /* JiE.xcdatamodeld */,
 				F9176CC41B39115200D6B7D1 /* Supporting Files */,
-				F9176CF31B391A7100D6B7D1 /* Facebook */,
 				F9F1CE191B39984200D45540 /* LogIn */,
 				F9F1CE1F1B399DF900D45540 /* LoggedIn */,
 				F9209F2A1B3AE38F001C8BE5 /* Sign Up */,
@@ -413,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				18F2A3581B4EDCF200BF426E /* FacebookSDK.framework */,
+				F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -523,6 +527,8 @@
 				F942978F1B69EF8C00E8E4A1 /* jie.png */,
 				F9D1B9FE1B458072008E9616 /* add_jie */,
 				F93B380F1B3ACFE2005F3769 /* profile_img.png */,
+				F9F032381B6B3585003F39D3 /* jie.png */,
+				F9F0326F1B6B547B003F39D3 /* jie_1.png */,
 				F9B5F9F01B44F6BF00C444F9 /* splash.png */,
 				F9F1CE091B3992DE00D45540 /* bg.png */,
 				F9F1CE0A1B3992DE00D45540 /* fb.png */,
@@ -607,11 +613,11 @@
 				TargetAttributes = {
 					F9176CC01B39115200D6B7D1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 684TN6TSNA;
+						DevelopmentTeam = QH3MGDX858;
 					};
 					F9176CDC1B39115200D6B7D1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 684TN6TSNA;
+						DevelopmentTeam = QH3MGDX858;
 						TestTargetID = F9176CC01B39115200D6B7D1;
 					};
 				};
@@ -654,7 +660,11 @@
 				F9354D7C1B4AB4400014B13D /* login1.png in Resources */,
 				F9B5F9F11B44F6BF00C444F9 /* splash.png in Resources */,
 				F932344F1B4FA6270040CCDA /* log-lg2.png in Resources */,
+<<<<<<< HEAD
+				F9F032391B6B3585003F39D3 /* jie.png in Resources */,
+=======
 				F94297901B69EF8C00E8E4A1 /* jie.png in Resources */,
+>>>>>>> master
 				F9D1BA1A1B458072008E9616 /* pic_icon.png in Resources */,
 				F9D1BA201B458072008E9616 /* Title.png in Resources */,
 				F9115E9C1B4FF7EF009C0DA0 /* Password@2x.png in Resources */,
@@ -669,14 +679,19 @@
 				F9176CD31B39115200D6B7D1 /* Main.storyboard in Resources */,
 				F90A09C91B4BC88600B6AB9F /* username.png in Resources */,
 				F9D1BA1B1B458072008E9616 /* post.png in Resources */,
+				F9F032721B6B7FE9003F39D3 /* Launch Screen.xib in Resources */,
 				F9D1BA161B458072008E9616 /* Description.png in Resources */,
 				F90A09C81B4BC88600B6AB9F /* Password.png in Resources */,
+<<<<<<< HEAD
+=======
 				F94297921B69EFF800E8E4A1 /* jie@2x.png in Resources */,
 				F9176CD81B39115200D6B7D1 /* LaunchScreen.xib in Resources */,
+>>>>>>> master
 				F90A09D11B4BF59200B6AB9F /* Email.png in Resources */,
 				F99209691B44249D00D8F3AC /* TwitterKitResources.bundle in Resources */,
 				F90A09C41B4BA97600B6AB9F /* 1.png in Resources */,
 				F9F1CE0F1B3992DE00D45540 /* bg.png in Resources */,
+				F9F032701B6B547B003F39D3 /* jie_1.png in Resources */,
 				F932344D1B4FA06E0040CCDA /* sign_lg.png in Resources */,
 				F90A09CD1B4BEC7C00B6AB9F /* 4.png in Resources */,
 				F90A09CC1B4BEC7C00B6AB9F /* 3.png in Resources */,
@@ -784,14 +799,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F9176CD61B39115200D6B7D1 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9176CD71B39115200D6B7D1 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -878,7 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
@@ -904,7 +911,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;

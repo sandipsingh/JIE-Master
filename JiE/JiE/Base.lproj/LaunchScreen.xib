@@ -23,16 +23,27 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+<<<<<<< HEAD
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jie.png" translatesAutoresizingMaskIntoConstraints="NO" id="8lH-ao-VRS">
+=======
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jie.png" translatesAutoresizingMaskIntoConstraints="NO" id="yHt-te-apZ">
+>>>>>>> master
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+<<<<<<< HEAD
+                <constraint firstAttribute="bottom" secondItem="8lH-ao-VRS" secondAttribute="bottom" id="Gh0-Jb-EOa"/>
+                <constraint firstAttribute="trailing" secondItem="8lH-ao-VRS" secondAttribute="trailing" id="VO6-DF-xEP"/>
+                <constraint firstItem="8lH-ao-VRS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yY4-72-NFJ"/>
+                <constraint firstItem="8lH-ao-VRS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zTp-MS-20t"/>
+=======
                 <constraint firstAttribute="trailing" secondItem="yHt-te-apZ" secondAttribute="trailing" id="Lhq-R8-y9d"/>
                 <constraint firstAttribute="bottom" secondItem="yHt-te-apZ" secondAttribute="bottom" id="Q5J-jf-MXg"/>
                 <constraint firstItem="yHt-te-apZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fZY-n7-iNt"/>
                 <constraint firstItem="yHt-te-apZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zjO-d3-s13"/>
+>>>>>>> master
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

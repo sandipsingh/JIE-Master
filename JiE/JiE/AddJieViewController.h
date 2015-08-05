@@ -13,6 +13,7 @@
 #import "Request.h"
 #import "JieClass.h"
 #import "dropDownView.h"
+
 @interface AddJieViewController : UIViewController<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,RequestDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtTitle;
 @property (weak, nonatomic) IBOutlet UITextField *txtDescription;
@@ -43,10 +44,13 @@
 @property (assign, nonatomic) BOOL isImage;
 @property (assign, nonatomic) BOOL isMoneySelected;
 @property (strong, nonatomic) UIImage *thumbImage;
+
+
 - (IBAction)openImagePicker:(id)sender;
 - (IBAction)openVideoPicker:(id)sender;
 - (IBAction)openTick:(id)sender;
 - (IBAction)openMoneyCalculator:(id)sender;
 - (IBAction)openTimeCalculator:(id)sender;
 - (IBAction)openPost:(id)sender;
+
 @end
