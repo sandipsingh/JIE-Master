@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JiE/SignUpVC.m"
@@ -111,6 +111,32 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
+            filePath = "JiE/dropDownView.h"
+            timestampString = "459770821.096083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "delegate"
+            landmarkType = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JiE/dropDownView.h"
+            timestampString = "459770836.895891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "items"
+            landmarkType = "19">
+=======
             filePath = "JiE/dropDownView.m"
             timestampString = "459956615.448638"
             startingColumnNumber = "9223372036854775807"
@@ -119,6 +145,7 @@
             endingLineNumber = "39"
             landmarkName = "-openTable:"
             landmarkType = "5">
+>>>>>>> master
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
