@@ -293,15 +293,20 @@
 }
 
 - (IBAction)openTick:(id)sender {
+    _btnTick.selected = !_btnTick.selected;
 }
 
 - (IBAction)openMoneyCalculator:(id)sender {
+    _btnMoneyCalculator.selected = YES;
+    _btnTimeCalculator.selected = NO;
     _isMoneySelected = YES;
     _mCalculatorView.hidden = NO;
     _timeView.hidden = YES;
 }
 
 - (IBAction)openTimeCalculator:(id)sender {
+    _btnMoneyCalculator.selected = NO;
+    _btnTimeCalculator.selected = YES;
     _isMoneySelected = NO;
     _mCalculatorView.hidden = YES;
     _timeView.hidden = NO;
