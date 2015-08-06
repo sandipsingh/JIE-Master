@@ -14,6 +14,8 @@ typedef enum {
     postComment
 } commentOperations;
 @interface CommentsViewController : UIViewController<RequestDelegate>
+
+
 @property (strong, nonatomic) NSString *postId;
 @property (strong, nonatomic) MBProgressHUD *HUD;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
@@ -22,5 +24,6 @@ typedef enum {
 @property (assign, nonatomic) commentOperations cReq;
 @property (weak, nonatomic) IBOutlet UITextField *txtComment;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraints;
+
 - (IBAction)sendComment:(id)sender;
 @end

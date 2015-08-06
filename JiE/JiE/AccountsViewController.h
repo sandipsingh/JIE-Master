@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LogInVC.h"
 
 @interface AccountsViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *txtField;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEmail;
+@property (weak, nonatomic) IBOutlet UITextField *txtDOB;
+@property(strong, nonatomic) NSMutableData *responseData;
+
+- (IBAction)buttonPress:(id)sender;
 
 @end

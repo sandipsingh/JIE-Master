@@ -26,4 +26,5 @@
 @property(strong,nonatomic) NSString *jiecomment;
 @property(strong,nonatomic) NSString *jieLike;
 @property(strong,nonatomic) NSString *jieUnlike;
+@property(strong,nonatomic) NSString *profilePicURL;
 @end
