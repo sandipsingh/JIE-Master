@@ -28,6 +28,7 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextOutlet;
 //@property(strong,nonatomic) UINavigationController *navigationController;
 @property (assign, nonatomic) loginReq lReq;
+@property(strong) NSMutableArray *LoginDetails;
 
 
 - (IBAction)button_forgotPassword:(id)sender;

@@ -1532,128 +1532,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMH-zM-EPH">
-                                        <rect key="frame" x="20" y="173" width="81" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="1P5-IH-I9Q"/>
-                                            <constraint firstAttribute="width" constant="81" id="fqk-KO-EK3">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" title="Password">
-                                            <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI2-6d-gDv">
-                                        <rect key="frame" x="493" y="173" width="55" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="Ad0-6u-5Ub">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="30" id="WZ6-Mu-LxU"/>
-                                        </constraints>
-                                        <state key="normal" title="Change">
-                                            <color key="titleColor" red="0.21568629145622253" green="0.84313732385635376" blue="0.94509810209274292" alpha="0.79000000000000004" colorSpace="deviceRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87b-6v-ziM" userLabel="FB_Button">
-                                        <rect key="frame" x="20" y="233" width="31" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="3jN-MQ-Veg">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="62"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="31" id="G4r-QA-pFP">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="62"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="fb_account">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpU-cJ-6EC" userLabel="fb_txt_btn">
-                                        <rect key="frame" x="71" y="233" width="72" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="H9n-ZZ-GkJ"/>
-                                            <constraint firstAttribute="width" constant="72" id="HaC-ud-CNy">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" title="Facebook">
-                                            <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C16-xy-c9r" userLabel="gmail_Button">
-                                        <rect key="frame" x="20" y="284" width="31" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="tLx-BK-v30">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="62"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="31" id="u0c-bS-In6">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="62"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="gmail_account">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFW-Ry-8PY" userLabel="gmail_txt">
-                                        <rect key="frame" x="71" y="285" width="72" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="UWC-KI-FlQ"/>
-                                            <constraint firstAttribute="width" constant="72" id="cmr-jg-sbR">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" title="Google+">
-                                            <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        </variation>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAI-Hp-PuO">
-                                        <rect key="frame" x="522" y="233" width="26" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="AQD-d9-egL">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="41"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="26" id="xxi-X7-zVh">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="53"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="sign_account">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSo-YW-Ig1">
-                                        <rect key="frame" x="458" y="285" width="90" height="30"/>
-                                        <color key="backgroundColor" red="0.63529413940000001" green="0.89019614459999996" blue="0.31764706970000001" alpha="1" colorSpace="deviceRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="WSf-Xl-bKn">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="30" id="nzu-up-a9f">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" title="Connect">
-                                            <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="   Email" minimumFontSize="17" background="search_box" translatesAutoresizingMaskIntoConstraints="NO" id="Zh6-KL-8NF">
                                         <rect key="frame" x="20" y="75" width="528" height="35"/>
                                         <constraints>
@@ -1667,43 +1545,41 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         </variation>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey3-1Y-tJT">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="68" y="272" width="65" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonPress:" destination="xuz-ZF-KNf" eventType="touchUpInside" id="Jpv-Ne-nBp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Zh6-KL-8NF" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="0a7-PH-CMo"/>
-                                    <constraint firstItem="87b-6v-ziM" firstAttribute="top" secondItem="QMH-zM-EPH" secondAttribute="bottom" constant="30" id="18N-rU-FPM"/>
                                     <constraint firstItem="bE0-Dd-suQ" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="5xg-Cd-P9E"/>
-                                    <constraint firstItem="QMH-zM-EPH" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="6W5-KH-6gJ"/>
                                     <constraint firstItem="x5b-Dz-KXy" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="9NL-Me-q2R"/>
                                     <constraint firstAttribute="trailing" secondItem="bE0-Dd-suQ" secondAttribute="trailing" constant="20" id="B1x-Zt-is6"/>
-                                    <constraint firstAttribute="trailing" secondItem="aAI-Hp-PuO" secondAttribute="trailing" constant="20" id="DkP-E8-25W"/>
                                     <constraint firstItem="bE0-Dd-suQ" firstAttribute="top" secondItem="Zh6-KL-8NF" secondAttribute="bottom" constant="20" id="Ex7-Lf-mym"/>
                                     <constraint firstAttribute="trailing" secondItem="x5b-Dz-KXy" secondAttribute="trailing" constant="20" id="Ko5-m7-vny"/>
-                                    <constraint firstItem="C16-xy-c9r" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="MJ4-Wg-D2P"/>
-                                    <constraint firstItem="hpU-cJ-6EC" firstAttribute="leading" secondItem="87b-6v-ziM" secondAttribute="trailing" constant="20" id="NSC-Vh-T8b"/>
                                     <constraint firstItem="x5b-Dz-KXy" firstAttribute="top" secondItem="9VI-KY-sJh" secondAttribute="top" constant="20" id="NaA-OW-CbQ"/>
-                                    <constraint firstItem="C16-xy-c9r" firstAttribute="top" secondItem="87b-6v-ziM" secondAttribute="bottom" constant="20" id="Q5N-Qu-10v"/>
-                                    <constraint firstItem="87b-6v-ziM" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="RXW-jm-96u"/>
-                                    <constraint firstAttribute="trailing" secondItem="JI2-6d-gDv" secondAttribute="trailing" constant="20" id="SAo-Pb-LNX"/>
-                                    <constraint firstAttribute="trailing" secondItem="YSo-YW-Ig1" secondAttribute="trailing" constant="20" id="Teq-Be-Jal"/>
-                                    <constraint firstItem="QMH-zM-EPH" firstAttribute="top" secondItem="bE0-Dd-suQ" secondAttribute="bottom" constant="8" id="Ttu-gy-1YQ"/>
-                                    <constraint firstItem="JI2-6d-gDv" firstAttribute="top" secondItem="bE0-Dd-suQ" secondAttribute="bottom" constant="8" id="aVJ-2t-p9y"/>
                                     <constraint firstItem="Zh6-KL-8NF" firstAttribute="top" secondItem="x5b-Dz-KXy" secondAttribute="bottom" constant="20" id="fAp-iW-TDB"/>
-                                    <constraint firstItem="aAI-Hp-PuO" firstAttribute="top" secondItem="JI2-6d-gDv" secondAttribute="bottom" constant="30" id="gDm-dX-XSc">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
-                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="Zh6-KL-8NF" secondAttribute="trailing" constant="20" id="nJ6-9H-y5N"/>
-                                    <constraint firstItem="SFW-Ry-8PY" firstAttribute="leading" secondItem="C16-xy-c9r" secondAttribute="trailing" constant="20" id="utC-sb-aHy"/>
-                                    <constraint firstItem="YSo-YW-Ig1" firstAttribute="top" secondItem="aAI-Hp-PuO" secondAttribute="bottom" constant="31" id="vIn-GI-L6q">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="43"/>
-                                    </constraint>
-                                    <constraint firstItem="hpU-cJ-6EC" firstAttribute="top" secondItem="bE0-Dd-suQ" secondAttribute="bottom" constant="68" id="xOg-th-YiC">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="82"/>
-                                    </constraint>
-                                    <constraint firstItem="SFW-Ry-8PY" firstAttribute="top" secondItem="hpU-cJ-6EC" secondAttribute="bottom" constant="22" id="zEN-6a-bmt">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="61"/>
-                                    </constraint>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="ey3-1Y-tJT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="ey3-1Y-tJT"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1717,10 +1593,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Account" id="IJH-rf-8be"/>
+                    <connections>
+                        <outlet property="txtDOB" destination="bE0-Dd-suQ" id="67j-qk-yLO"/>
+                        <outlet property="txtEmail" destination="Zh6-KL-8NF" id="JES-0j-6eT"/>
+                        <outlet property="txtField" destination="x5b-Dz-KXy" id="6Vm-pz-P0G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhs-1N-5hZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3643" y="2519"/>
+            <point key="canvasLocation" x="3642.75" y="2518.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="fmr-pd-oQ5">
@@ -3121,11 +3002,9 @@
         <image name="check_box" width="13" height="12"/>
         <image name="description" width="290" height="66"/>
         <image name="email_icon" width="13" height="8"/>
-        <image name="fb_account" width="15" height="15"/>
         <image name="fb_login" width="231" height="32"/>
         <image name="fb_round" width="28" height="28"/>
         <image name="friend_list_icon" width="14" height="12"/>
-        <image name="gmail_account" width="15" height="15"/>
         <image name="help_icon" width="14" height="12"/>
         <image name="home_icon" width="14" height="12"/>
         <image name="image_icon" width="39" height="25"/>
@@ -3142,7 +3021,6 @@
         <image name="search_box" width="208" height="23"/>
         <image name="setting_icon" width="14" height="12"/>
         <image name="sign" width="102" height="30"/>
-        <image name="sign_account" width="13" height="10"/>
         <image name="tag_line" width="247" height="8"/>
         <image name="time_activate" width="141" height="17"/>
         <image name="time_default" width="141" height="17"/>

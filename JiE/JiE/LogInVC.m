@@ -79,6 +79,8 @@
                             obj.profilepic = [dic objectForKey:@"profilepic"];
                             obj.username = [dic objectForKey:@"username"];
                             saveUserData(obj);
+                            [self.LoginDetails addObject : obj];
+                            
                             [self updateDeviceTokenWithUser:obj.userId];
                             break;
                         }
