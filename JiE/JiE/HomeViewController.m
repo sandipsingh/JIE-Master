@@ -65,6 +65,11 @@
                 obj.jieLike = [innerDic valueForKey:@"LikeCount"];
                 obj.jiecomment = [innerDic valueForKey:@"comments"];
                 obj.jieUnlike = [innerDic valueForKey:@"unlikeCount"];
+                obj.profilePicURL = [innerDic valueForKey:@"profilepic"];
+                
+       //         obj.profilepicURL = [innerDic valueForKey:@"profilepic"];
+                
+                
                 [_jieArray addObject:obj];
             }
         }
@@ -114,17 +119,43 @@
     cell.lblDescription.text = obj.jieDescription;
     cell.lblComment.text = obj.jiecomment;
     cell.lblLike.text = obj.jieLike;
-   // cell.lblLastSeen.text = obj.time;
+    // cell.lblLastSeen.text = obj.time;
     
+    
+    
+    
+    //////////////////////////////////// ////////imgProfile  , thumbImageURL , thumb_image
+   
+    
+    if (obj.profilePicURL.length>0) {
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            
+            UIImage *profileimage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.profilePicURL]]];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                cell.imgProfile.image = profileimage;
+                
+                
+                [cell setNeedsLayout];
+                
+            });
+        });
+    }
+    
+    
+    
+    
+    ///////////////////////////////////////////////////
     
     if (obj.jieImageURL.length>0) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
             
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.jieImageURL]]];
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 cell.imgPost.image = image;
-                
+               //cell.imgProfile.image=image;
                 [cell setNeedsLayout];
             });
         });
