@@ -82,6 +82,26 @@
                             [self.LoginDetails addObject : obj];
                             
                             [self updateDeviceTokenWithUser:obj.userId];
+                            
+                            
+                           /////////////////////////
+                            
+                           
+              
+                            
+                            
+                            [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"email"] forKey:@"USER_EMAIL"];
+                             [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"dob"] forKey:@"USER_DOB"];
+                             [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"username"] forKey:@"USER_NAME"];
+                            [[NSUserDefaults standardUserDefaults] synchronize];
+                            
+                       
+                            
+               
+
+                            
+                            
+                            ////////////////////////
                             break;
                         }
                     }
