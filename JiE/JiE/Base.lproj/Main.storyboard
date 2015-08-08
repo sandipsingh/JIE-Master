@@ -3120,13 +3120,11 @@
                                 <constraints>
                                     <constraint firstItem="cxK-kd-oWC" firstAttribute="leading" secondItem="ymv-3X-B8x" secondAttribute="leading" id="20u-6y-xf3"/>
                                     <constraint firstAttribute="trailing" secondItem="cxK-kd-oWC" secondAttribute="trailing" id="Ebg-3G-JmA"/>
-                                    <constraint firstAttribute="height" secondItem="cxK-kd-oWC" secondAttribute="height" id="I3n-GL-IvX">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="cxK-kd-oWC" secondAttribute="trailing" id="Ke9-IG-dbs"/>
                                     <constraint firstItem="cxK-kd-oWC" firstAttribute="top" secondItem="ymv-3X-B8x" secondAttribute="top" id="NYJ-gS-tAo"/>
                                     <constraint firstAttribute="width" secondItem="cxK-kd-oWC" secondAttribute="width" id="OTf-sJ-wqL"/>
                                     <constraint firstAttribute="height" secondItem="cxK-kd-oWC" secondAttribute="height" id="U4h-Uy-FKa"/>
+                                    <constraint firstAttribute="bottom" secondItem="cxK-kd-oWC" secondAttribute="bottom" id="dZt-TF-hqU"/>
                                     <constraint firstItem="cxK-kd-oWC" firstAttribute="width" secondItem="ymv-3X-B8x" secondAttribute="width" id="f47-Ms-75K">
                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
@@ -3147,7 +3145,6 @@
                                     <mask key="constraints">
                                         <include reference="20u-6y-xf3"/>
                                         <include reference="Ebg-3G-JmA"/>
-                                        <exclude reference="I3n-GL-IvX"/>
                                         <include reference="OTf-sJ-wqL"/>
                                         <include reference="U4h-Uy-FKa"/>
                                     </mask>
@@ -3195,6 +3192,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gzM-XU-fyQ"/>
                     <connections>
+                        <outlet property="bottomSpaceForScrollView" destination="K65-D4-2Nc" id="c01-Dp-moY"/>
                         <outlet property="btnImagePicker" destination="pyA-sn-q8U" id="7vZ-7X-xgD"/>
                         <outlet property="btnMoneyCalculator" destination="cF7-Hy-Usb" id="MTt-m5-Vqd"/>
                         <outlet property="btnPost" destination="Qg9-aV-j0W" id="mEL-oc-dpJ"/>

@@ -168,24 +168,6 @@
     return cell;
 }
 
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    if (indexPath.row %2 == 0)
-        
-        
-    
-    {
-        cell.contentView.backgroundColor = [UIColor whiteColor];
-    }
-    else{
-         cell.contentView.backgroundColor = [UIColor whiteColor];
-    }
-}
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
