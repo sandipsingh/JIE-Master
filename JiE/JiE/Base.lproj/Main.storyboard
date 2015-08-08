@@ -2547,9 +2547,9 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0p-qn-qqy" userLabel="Time-calculator_btn">
-                                                        <rect key="frame" x="309" y="5" width="283" height="40"/>
+                                                        <rect key="frame" x="309" y="5" width="283" height="42"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="Bhz-Js-Y7Y"/>
+                                                            <constraint firstAttribute="height" constant="42" id="Bhz-Js-Y7Y"/>
                                                         </constraints>
                                                         <state key="normal" image="time-Calculator_1.png">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

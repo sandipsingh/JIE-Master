@@ -195,9 +195,9 @@
     reqObj.delegate = self;
 
     JieClass *obj = [[JieClass alloc] init];
-    obj.userid = @"93";
-    obj.userEmail = @"rpatel9630@yahoo.com";
-    obj.username = @"rajesh";
+    obj.userid = getUser().userId;
+    obj.userEmail = getUser().email;
+    obj.username = getUser().username;
     obj.title = _txtTitle.text;
     obj.des = _txtDescription.text;
     if (_image != nil) {
