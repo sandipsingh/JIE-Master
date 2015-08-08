@@ -13,7 +13,7 @@
 -(void)getError;
 @end
 @interface Request : NSObject
-@property(nonatomic,assign) id<RequestDelegate> delegate;
+@property(nonatomic,weak) id<RequestDelegate> delegate;
 @property(nonatomic,strong) NSURLConnection *urlConnecction;
 @property(nonatomic,strong) NSMutableData *webData;
 -(void)addJieWithParameter:(JieClass *)jObj;
