@@ -14,5 +14,6 @@
 #define TimeStamp [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000]
 #define UserDetails @"UserDetail"
 #define pushtoken @"pushtoken"
+#define Server_domain @"http://www.support-4-pc.com/"
 #import "Common.h"
 #endif

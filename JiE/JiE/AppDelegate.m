@@ -34,7 +34,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Hide navigation bar from first page
-
+    [[Twitter sharedInstance] startWithConsumerKey:@"T4lm8Jnei47N2CRWoB3ZuXfQg" consumerSecret:@"Sp4laPCvSxCbvs1jFYrf6xGaF7fqMzHfggRwZ8d6a42cJ2mXMd"];
     [Fabric with:@[TwitterKit]];
 
     

@@ -40,7 +40,7 @@
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification{
-    _bottomSpaceForScrollView.constant = 0;
+    _bottomSpaceForScrollView.constant = 30;
 }
 -(void)keyboardDidShow:(NSNotification *)notification{
     NSDictionary * info = [notification userInfo];
