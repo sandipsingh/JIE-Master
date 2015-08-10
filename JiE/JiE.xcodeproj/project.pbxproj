@@ -272,6 +272,8 @@
 		18303AA71B59939900201878 /* AddJiE */ = {
 			isa = PBXGroup;
 			children = (
+				18977B731B554F3E005401C9 /* AddJieViewController.h */,
+				18977B741B554F3E005401C9 /* AddJieViewController.m */,
 			);
 			name = AddJiE;
 			sourceTree = "<group>";
@@ -353,8 +355,6 @@
 				18503F401B640D3400FD8B34 /* Addfriends */,
 				18B07EA71B5D599300E649FD /* Home */,
 				18303AA71B59939900201878 /* AddJiE */,
-				18977B731B554F3E005401C9 /* AddJieViewController.h */,
-				18977B741B554F3E005401C9 /* AddJieViewController.m */,
 				18303AA41B598BA400201878 /* dropDownView.h */,
 				18303AA51B598BA400201878 /* dropDownView.m */,
 				F9FCFF5F1B4D03950028F0B7 /* JieClass.h */,
