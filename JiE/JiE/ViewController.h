@@ -11,8 +11,9 @@
 #import <TwitterKit/TwitterKit.h>
 @interface ViewController : UIViewController<RequestDelegate>
 @property(strong,nonatomic) UINavigationController *localNavigationController123;
+@property (weak, nonatomic) IBOutlet UIView *startingView;
 
-@property (weak, nonatomic) IBOutlet TWTRLogInButton *logInButton;
-
+@property (weak, nonatomic) IBOutlet UIButton *logInButton;
+@property (strong,nonatomic) TWTRLogInButton *twitterlogInButton;
 @end
 

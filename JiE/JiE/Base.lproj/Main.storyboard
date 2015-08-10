@@ -134,7 +134,7 @@
                                             <segue destination="RGr-B9-qdJ" kind="show" id="ekS-W1-gMA"/>
                                         </connections>
                                     </button>
-                                    <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnj-Un-stk" userLabel="twitter" customClass="TWTRLogInButton">
+                                    <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnj-Un-stk" userLabel="twitter">
                                         <rect key="frame" x="53" y="324" width="464" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="Q1U-Fu-5zX">
