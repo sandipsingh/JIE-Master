@@ -29,6 +29,7 @@
 @class AMSlideMenuMainViewController;
 
 @interface AMSlideMenuLeftTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @property (weak, nonatomic) AMSlideMenuMainViewController *mainVC;
 

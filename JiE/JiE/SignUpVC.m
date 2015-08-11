@@ -20,6 +20,7 @@
 
 @implementation SignUpVC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -43,20 +44,28 @@
 }
 
 
-- (IBAction)imagePicker:(id)sender {
+- (IBAction)imagePicker:(id)sender
+
+{
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
     imagePickerController.delegate = self;
+    
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
+
 - (void)imagePickerController:(UIImagePickerController *)picker
         didFinishPickingImage:(UIImage *)image
                   editingInfo:(NSDictionary *)editingInfo
+
 {
     [picker dismissModalViewControllerAnimated:YES];
+    
     newImage = image;
+    
     [self.imagePickerOutLet setImage:newImage forState:UIControlStateNormal];
     //Converting in base 64
+    
     imageIn64 =[self encodeToBase64String:newImage];
     NSLog(@"This is ImageIn 64%@",imageIn64);
 }
@@ -157,6 +166,7 @@
     [self validateSignUP];
     
 }
+
 //text field delegate
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     
@@ -193,6 +203,7 @@
     [self.userName_OutLet resignFirstResponder];
     [picker removeFromSuperview];
 }
+
 //-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 //{
 //    // Here You can do additional code or task instead of writing with keyboard

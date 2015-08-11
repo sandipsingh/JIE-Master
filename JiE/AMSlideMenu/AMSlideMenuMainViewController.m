@@ -561,6 +561,11 @@ static NSMutableArray *allInstances;
 
 - (void)openLeftMenuAnimated:(BOOL)animated
 {
+    
+    ///////////////////////////////
+     [[NSNotificationCenter defaultCenter]postNotificationName:@"LOADPROFILE" object:nil];
+    
+    /////////////////////////////
     if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(leftMenuWillOpen)])
         [self.slideMenuDelegate leftMenuWillOpen];
     

@@ -13,6 +13,7 @@
 #import "ForgotPassword.h"
 #import "MainVC.h"
 #import "UserDetail.h"
+
 @interface LogInVC (){
     NSString *logInURLString;
     MBProgressHUD *HUD;
@@ -20,10 +21,12 @@
 }
 @end
 
-@implementation LogInVC
+@implementation LogInVC  
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //Making navigation bar transparent only back button is displayed
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -69,10 +72,14 @@
                 for(NSDictionary *dict in response) {
                     loginResult = [[dict objectForKey:@"result"] boolValue];
                     id result = [dict objectForKey:@"result1"];
-                    if ([result isKindOfClass:[NSArray class]]) {
+                    if ([result isKindOfClass:[NSArray class]])
+                    
+                    {
                         NSArray *array = (NSArray *)result;
                         for (NSDictionary *dic in array) {
+                            
                             UserDetail *obj = [[UserDetail alloc] init];
+                            
                             obj.dob = [dic objectForKey:@"dob"];
                             obj.email = [dic objectForKey:@"email"];
                             obj.userId = [dic objectForKey:@"id"];
@@ -84,7 +91,7 @@
                             [self updateDeviceTokenWithUser:obj.userId];
                             
                             
-                           /////////////////////////
+                           //////////////////////////////////////////
                             
                            
               
@@ -93,15 +100,47 @@
                             [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"email"] forKey:@"USER_EMAIL"];
                              [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"dob"] forKey:@"USER_DOB"];
                              [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"username"] forKey:@"USER_NAME"];
-                            [[NSUserDefaults standardUserDefaults] synchronize];
+                           [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"profilepic"]forKey:@"USER_NAME_1"];
                             
-                       
+                            ///////////////////////////////////////////////////////
                             
-               
+                            dispatch_async(dispatch_get_main_queue(), ^(void){
+                                
+        NSURL *profileURL = [NSURL URLWithString:[obj.profilepic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+                                
+                        // NSURL *profileURL = [NSURL URLWithString:[@"http://static.dnaindia.com/sites/default/files/2015/08/05/362359-salman-khan.jpg" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                                
+                                
+                            NSData *profilePic = [NSData dataWithContentsOfURL:profileURL];
+                            if (profilePic!=nil) {
+                                UIImage *profileImage = [[UIImage alloc]initWithData:profilePic];
+                                   if (profileImage!=nil) {
+                                    NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+                                    NSData *profileImageData = UIImagePNGRepresentation(profileImage);
+                        [[NSFileManager defaultManager]createFileAtPath:[docDir stringByAppendingPathComponent:@"profile.png"] contents:profileImageData attributes:nil];
+                                        
+                                    }
+                                }
+                                
+                                
+                            });
 
                             
                             
                             ////////////////////////
+                            
+                            
+                            
+                            [[NSUserDefaults standardUserDefaults] synchronize];
+                            
+                       
+                            
+             
+
+                            
+                            
+                            //////////////////////////////////////
                             break;
                         }
                     }

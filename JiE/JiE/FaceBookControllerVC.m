@@ -50,6 +50,7 @@
 }
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
     NSLog(@"%@", user);
+    
     self.profilePicture.profileID = user.id;
     self.lblUsername.text = user.name;
     self.lblEmail.text = [user objectForKey:@"email"];

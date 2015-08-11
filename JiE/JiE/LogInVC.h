@@ -13,7 +13,9 @@ typedef enum {
     getLogin = 0,
     updateDeviceToken,
 } loginReq;
+
 @interface LogInVC : UIViewController<UITextFieldDelegate,UIAlertViewDelegate,RequestDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property(strong, nonatomic) NSMutableData  *responseData;
 
@@ -26,7 +28,9 @@ typedef enum {
 // Outlets
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextOutlet;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextOutlet;
+
 //@property(strong,nonatomic) UINavigationController *navigationController;
+
 @property (assign, nonatomic) loginReq lReq;
 @property(strong) NSMutableArray *LoginDetails;
 
