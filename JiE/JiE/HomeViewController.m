@@ -67,7 +67,7 @@
                 obj.jieUnlike = [innerDic valueForKey:@"unlikeCount"];
                 obj.profilePicURL = [innerDic valueForKey:@"profilepic"];
                 
-       //         obj.profilepicURL = [innerDic valueForKey:@"profilepic"];
+     
                 
                 
                 [_jieArray addObject:obj];
@@ -122,9 +122,9 @@
     // cell.lblLastSeen.text = obj.time;
     
     
+   
     
-    
-    //////////////////////////////////// ////////imgProfile  , thumbImageURL , thumb_image
+    //////////////////////////////////// ////////
    
     
     if (obj.profilePicURL.length>0) {

@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtDOB;
 @property(strong, nonatomic) NSMutableData *responseData;
 
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+
+
 - (IBAction)buttonPress:(id)sender;
 
 @end

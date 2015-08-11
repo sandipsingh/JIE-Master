@@ -39,11 +39,53 @@
 /*----------------------------------------------------*/
 #pragma mark - Lifecycle -
 /*----------------------------------------------------*/
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadProfile:) name:@"LOADPROFILE" object:nil];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
+
+/////////////////////////////////
+
+
+
+- (void)loadProfile:(id)sender{
+    
+    ////////////////////////
+    NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    
+    NSString *filePath = [docDir stringByAppendingPathComponent:@"profile.png"];
+    
+    
+    
+    if ([[NSFileManager defaultManager]fileExistsAtPath:filePath]) {
+        
+        
+        
+        NSData *data = [[NSData alloc]initWithContentsOfFile:filePath];
+        
+        if (data) {
+            
+            UIImage *image = [[UIImage alloc]initWithData:data];
+            
+            if (image) {
+                
+                self.profileImageView.image = image;
+                
+            }
+        }
+    }
+}
+//////////////////////////////////
+
+
+
 
 - (void)openContentNavigationController:(UINavigationController *)nvc
 {
@@ -54,6 +96,7 @@
     NSLog(@"This methos is only for NON storyboard use! You must define AMSlideMenuWithoutStoryboards \n (e.g. #define AMSlideMenuWithoutStoryboards)");
 #endif
 }
+
 
 
 /*----------------------------------------------------*/
