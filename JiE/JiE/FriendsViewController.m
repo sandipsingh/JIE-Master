@@ -15,9 +15,30 @@
 @end
 
 @implementation FriendsViewController
+-(void)openAddFriends{
+    
+}
+- (UIBarButtonItem *)DoneButton {
+   
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openAddFriends)];;
+}
+-(void) removeRightItemOnBar
+{
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = -10.0f;
+    self.navigationItem.rightBarButtonItems = @[fixedItem];
+}
+-(void) addRightItemOnBar
+{
+    [self removeRightItemOnBar];
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = -10.0f;
+    self.navigationItem.rightBarButtonItems = @[fixedItem,[self DoneButton]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addRightItemOnBar];
     self.title = @"My Friend List";
     _myFriendsArray = [[NSMutableArray alloc] init];
     _usersArray = [[NSMutableArray alloc] init];
