@@ -1672,65 +1672,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2S-hf-MQh" userLabel="fb_Button">
-                                        <rect key="frame" x="20" y="353" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="1fF-mZ-g25">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="30" id="HHD-Aw-9Kd">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="fb_account">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMX-0L-aSE" userLabel="gmail_Button">
-                                        <rect key="frame" x="20" y="402" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="1W9-cg-1qP">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="30" id="5Mj-dc-LTf">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="gmail_account">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38h-8U-FcK">
-                                        <rect key="frame" x="76" y="407" width="70" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="UxM-D2-8Ye">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="25" id="hzn-op-91D">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                                            </constraint>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        </variation>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er4-mV-Zuz">
-                                        <rect key="frame" x="502" y="347" width="30" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="0ee-4l-Ame">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="25" id="XS1-mg-uAf">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="sign_account">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_Image_account" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-te-d52">
                                         <rect key="frame" x="20" y="0.0" width="528" height="100"/>
                                         <constraints>
@@ -1739,70 +1680,28 @@
                                             </constraint>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-ZM-GIh">
-                                        <rect key="frame" x="432" y="401" width="100" height="30"/>
-                                        <color key="backgroundColor" red="0.63529413940000001" green="0.89019614459999996" blue="0.31764706970000001" alpha="1" colorSpace="deviceRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="F9a-9O-GI3">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="150"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="30" id="Jzt-ue-dZk">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" title="Connect">
-                                            <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-ks-Uw1">
-                                        <rect key="frame" x="76" y="357" width="80" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="qHf-of-Q3L"/>
-                                            <constraint firstAttribute="width" constant="80" id="wvP-Gb-ltD">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
-                                            </constraint>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        </variation>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="cNa-ks-Uw1" firstAttribute="leading" secondItem="a2S-hf-MQh" secondAttribute="trailing" constant="26" id="2GN-vI-MwG"/>
                                     <constraint firstItem="x5b-Dz-KXy" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="30" id="6yb-dI-UNJ"/>
                                     <constraint firstItem="fLD-te-d52" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="7Ah-x1-pn2"/>
                                     <constraint firstItem="4hC-gg-fbp" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="7EV-SV-lXX"/>
                                     <constraint firstItem="UiD-Kd-SSq" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="9if-uN-kxm"/>
-                                    <constraint firstItem="a2S-hf-MQh" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="EmS-cb-cjZ"/>
                                     <constraint firstItem="tcB-Oa-rLt" firstAttribute="top" secondItem="fLD-te-d52" secondAttribute="bottom" constant="3" id="GgJ-hH-dky"/>
                                     <constraint firstItem="L61-tw-6h7" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="30" id="Kdx-Pf-cHa"/>
                                     <constraint firstItem="m20-uO-eVx" firstAttribute="top" secondItem="9VI-KY-sJh" secondAttribute="top" constant="150" id="L3f-WK-PPV">
                                         <variation key="heightClass=regular-widthClass=regular" constant="250"/>
                                     </constraint>
-                                    <constraint firstItem="cNa-ks-Uw1" firstAttribute="top" secondItem="eIk-Fz-gLf" secondAttribute="bottom" constant="17" id="LSy-X0-Co7">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="27"/>
-                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="m20-uO-eVx" secondAttribute="trailing" constant="20" id="LT4-xA-8Lh"/>
-                                    <constraint firstItem="er4-mV-Zuz" firstAttribute="top" secondItem="qaq-89-V84" secondAttribute="bottom" constant="7" id="NHn-HU-8dI"/>
                                     <constraint firstAttribute="trailing" secondItem="UiD-Kd-SSq" secondAttribute="trailing" constant="20" id="NUr-U5-Lcy"/>
                                     <constraint firstItem="x5b-Dz-KXy" firstAttribute="top" secondItem="9VI-KY-sJh" secondAttribute="top" constant="150" id="NaA-OW-CbQ">
                                         <variation key="heightClass=regular-widthClass=regular" constant="250"/>
                                     </constraint>
-                                    <constraint firstItem="MMX-0L-aSE" firstAttribute="top" secondItem="a2S-hf-MQh" secondAttribute="bottom" constant="19" id="NuQ-IS-xKA"/>
                                     <constraint firstAttribute="trailing" secondItem="0fv-5R-AbB" secondAttribute="trailing" constant="30" id="Sol-BA-tyS"/>
                                     <constraint firstItem="L61-tw-6h7" firstAttribute="top" secondItem="0fv-5R-AbB" secondAttribute="bottom" constant="20" id="StD-4x-2gI"/>
                                     <constraint firstAttribute="trailing" secondItem="fLD-te-d52" secondAttribute="trailing" constant="20" id="Std-Ei-KCf"/>
-                                    <constraint firstItem="38h-8U-FcK" firstAttribute="top" secondItem="cNa-ks-Uw1" secondAttribute="bottom" constant="29" id="TDk-hF-7Y6">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="62"/>
-                                    </constraint>
                                     <constraint firstItem="fLD-te-d52" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="Upd-u4-rTG"/>
                                     <constraint firstAttribute="trailing" secondItem="fLD-te-d52" secondAttribute="trailing" constant="20" id="X36-cF-W1H"/>
-                                    <constraint firstItem="a2S-hf-MQh" firstAttribute="top" secondItem="eIk-Fz-gLf" secondAttribute="bottom" constant="13" id="Yzd-sO-Uaw"/>
                                     <constraint firstItem="4hC-gg-fbp" firstAttribute="top" secondItem="x5b-Dz-KXy" secondAttribute="bottom" constant="20" id="aKN-Cs-95c"/>
                                     <constraint firstItem="0fv-5R-AbB" firstAttribute="top" secondItem="x5b-Dz-KXy" secondAttribute="bottom" constant="20" id="bJK-7K-3KH"/>
                                     <constraint firstItem="0fv-5R-AbB" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="30" id="boy-5h-6Ha"/>
@@ -1810,22 +1709,15 @@
                                     <constraint firstAttribute="trailing" secondItem="L61-tw-6h7" secondAttribute="trailing" constant="30" id="dOp-GN-APw"/>
                                     <constraint firstAttribute="trailing" secondItem="x5b-Dz-KXy" secondAttribute="trailing" constant="30" id="gL4-Ct-2C4"/>
                                     <constraint firstItem="EtG-No-akL" firstAttribute="top" secondItem="fLD-te-d52" secondAttribute="bottom" constant="20" id="het-YQ-YCi"/>
-                                    <constraint firstItem="RMm-ZM-GIh" firstAttribute="top" secondItem="er4-mV-Zuz" secondAttribute="bottom" constant="29" id="jgL-Fw-tuv">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="47"/>
-                                    </constraint>
                                     <constraint firstItem="UiD-Kd-SSq" firstAttribute="top" secondItem="0fv-5R-AbB" secondAttribute="bottom" constant="20" id="jpC-7h-fA4"/>
                                     <constraint firstAttribute="trailing" secondItem="qaq-89-V84" secondAttribute="trailing" constant="24" id="kEg-yD-cwX"/>
                                     <constraint firstItem="qaq-89-V84" firstAttribute="top" secondItem="L61-tw-6h7" secondAttribute="bottom" constant="15" id="kI3-Fv-N3q"/>
-                                    <constraint firstAttribute="trailing" secondItem="er4-mV-Zuz" secondAttribute="trailing" constant="36" id="lm9-Pb-UrM"/>
                                     <constraint firstItem="EtG-No-akL" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="pd6-kX-IUt"/>
                                     <constraint firstItem="fLD-te-d52" firstAttribute="top" secondItem="9VI-KY-sJh" secondAttribute="top" id="plc-qa-5RQ"/>
                                     <constraint firstAttribute="trailing" secondItem="4hC-gg-fbp" secondAttribute="trailing" constant="20" id="upM-GO-eb8"/>
-                                    <constraint firstAttribute="trailing" secondItem="RMm-ZM-GIh" secondAttribute="trailing" constant="36" id="wfM-7G-mql"/>
-                                    <constraint firstItem="MMX-0L-aSE" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="xRd-Hp-shq"/>
                                     <constraint firstAttribute="trailing" secondItem="tcB-Oa-rLt" secondAttribute="trailing" constant="20" id="y0V-t9-yCZ"/>
                                     <constraint firstItem="m20-uO-eVx" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="yqP-vs-BTO"/>
                                     <constraint firstItem="eIk-Fz-gLf" firstAttribute="leading" secondItem="9VI-KY-sJh" secondAttribute="leading" constant="20" id="ztS-X1-WYf"/>
-                                    <constraint firstItem="38h-8U-FcK" firstAttribute="leading" secondItem="MMX-0L-aSE" secondAttribute="trailing" constant="26" id="zwQ-pz-mx1"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -3628,12 +3520,10 @@
         <image name="check_box" width="13" height="12"/>
         <image name="close" width="172" height="14"/>
         <image name="email_icon" width="13" height="8"/>
-        <image name="fb_account" width="15" height="15"/>
         <image name="fb_login" width="231" height="32"/>
         <image name="fb_round" width="28" height="28"/>
         <image name="friend_list_active_icon" width="14" height="12"/>
         <image name="friend_list_icon" width="14" height="12"/>
-        <image name="gmail_account" width="15" height="15"/>
         <image name="help_active_icon" width="14" height="12"/>
         <image name="help_icon" width="14" height="12"/>
         <image name="home_active_icon" width="14" height="12"/>
@@ -3655,7 +3545,6 @@
         <image name="setting_active_icon" width="14" height="12"/>
         <image name="setting_icon" width="14" height="12"/>
         <image name="sign" width="102" height="30"/>
-        <image name="sign_account" width="13" height="10"/>
         <image name="tag_line.png" width="495" height="16"/>
         <image name="time-Calculator_1.png" width="283" height="52"/>
         <image name="tw_round" width="28" height="28"/>
