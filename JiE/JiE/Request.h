@@ -28,4 +28,6 @@
 -(void)postComments:(NSString *)postId comment:(NSString *)comment;
 -(void)sendFriendRequest:(NSString *)fid;
 -(void)updateDeviceToken:(NSString *)deviceToken WithUserId:(NSString *)userId;
+-(void)deleteNotification:(int)notificationId;
+-(void)getAllNotifications;
 @end

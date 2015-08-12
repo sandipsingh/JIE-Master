@@ -26,6 +26,29 @@
     return [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
 }
 
+-(void)getAllNotifications{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@jie/subjie.php?action=getnotification",Notification_Server_domain]];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)deleteNotification:(int)notificationId{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@jie/subjie.php?action=delnotification",Notification_Server_domain]];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"id=%d",notificationId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+
 //Get all user
 -(void)getAllUserForUser{
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=getFriends",Server_domain]];
@@ -64,7 +87,7 @@
 
 //AcceptFriend
 -(void)sendFriendRequest:(NSString *)fid{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=sendFriendReq",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@jie/subjie.php?action=sendFriendReq",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@",getUser().userId,fid];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];

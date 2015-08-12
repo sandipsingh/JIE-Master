@@ -21,6 +21,9 @@
 		18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EAB1B5D59BC00E649FD /* HomeTableViewCell.m */; };
 		18B07EB01B5D6A1B00E649FD /* JieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EAF1B5D6A1B00E649FD /* JieModel.m */; };
 		18B13E331B5AB47900FCE106 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B13E321B5AB47900FCE106 /* AVFoundation.framework */; };
+		18E24DD81B7BACE7007B7E84 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E24DD71B7BACE7007B7E84 /* NotificationsViewController.m */; };
+		18E24DDB1B7BAE98007B7E84 /* notificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E24DDA1B7BAE98007B7E84 /* notificationTableViewCell.m */; };
+		18E24DDE1B7BB089007B7E84 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E24DDD1B7BB089007B7E84 /* Notifications.m */; };
 		18F2A3591B4EDCF200BF426E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F2A3581B4EDCF200BF426E /* FacebookSDK.framework */; };
 		F90A09C41B4BA97600B6AB9F /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F90A09C21B4BA97600B6AB9F /* 1.png */; };
 		F90A09C51B4BA97600B6AB9F /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F90A09C31B4BA97600B6AB9F /* 2.png */; };
@@ -137,6 +140,12 @@
 		18B07EAF1B5D6A1B00E649FD /* JieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JieModel.m; sourceTree = "<group>"; };
 		18B13E301B5AAB5A00FCE106 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18B13E321B5AB47900FCE106 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18E24DD61B7BACE7007B7E84 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		18E24DD71B7BACE7007B7E84 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		18E24DD91B7BAE98007B7E84 /* notificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationTableViewCell.h; sourceTree = "<group>"; };
+		18E24DDA1B7BAE98007B7E84 /* notificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationTableViewCell.m; sourceTree = "<group>"; };
+		18E24DDC1B7BB089007B7E84 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		18E24DDD1B7BB089007B7E84 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
 		18F2A3581B4EDCF200BF426E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Facebook/FacebookSDK.framework; sourceTree = SOURCE_ROOT; };
 		F90A09C21B4BA97600B6AB9F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		F90A09C31B4BA97600B6AB9F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -325,6 +334,19 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
+		18E24DD51B7BACBF007B7E84 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				18E24DD61B7BACE7007B7E84 /* NotificationsViewController.h */,
+				18E24DD71B7BACE7007B7E84 /* NotificationsViewController.m */,
+				18E24DD91B7BAE98007B7E84 /* notificationTableViewCell.h */,
+				18E24DDA1B7BAE98007B7E84 /* notificationTableViewCell.m */,
+				18E24DDC1B7BB089007B7E84 /* Notifications.h */,
+				18E24DDD1B7BB089007B7E84 /* Notifications.m */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 		F9176CB81B39115200D6B7D1 = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +372,7 @@
 		F9176CC31B39115200D6B7D1 /* JiE */ = {
 			isa = PBXGroup;
 			children = (
+				18E24DD51B7BACBF007B7E84 /* Notifications */,
 				F92687D01B6785B500B36D75 /* Setting */,
 				18C0BEAF1B67D1A200E82A7C /* Request */,
 				18503F401B640D3400FD8B34 /* Addfriends */,
@@ -740,16 +763,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E24DDB1B7BAE98007B7E84 /* notificationTableViewCell.m in Sources */,
 				F9D1B9EA1B4573FF008E9616 /* AMSlideMenuContentSegue.m in Sources */,
 				F9BD00731B4A8B0900C17DB8 /* MainVC.m in Sources */,
 				F92687CF1B6756B400B36D75 /* Setting ViewController.m in Sources */,
 				F9F1CE1E1B399DF300D45540 /* LoggedInUserVC.m in Sources */,
+				18E24DDE1B7BB089007B7E84 /* Notifications.m in Sources */,
 				F9D1B9EF1B4573FF008E9616 /* AMSlideMenuRightTableViewController.m in Sources */,
 				18503F461B64152400FD8B34 /* UserDetail.m in Sources */,
 				18B07EB01B5D6A1B00E649FD /* JieModel.m in Sources */,
 				1866D33E1B6678430063227B /* CommentsViewController.m in Sources */,
 				1866D3481B668C6A0063227B /* Comments.m in Sources */,
 				18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */,
+				18E24DD81B7BACE7007B7E84 /* NotificationsViewController.m in Sources */,
 				F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */,
 				F9D1B9EB1B4573FF008E9616 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				F9D1B9ED1B4573FF008E9616 /* AMSlideMenuMainViewController.m in Sources */,
@@ -905,8 +931,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=*]" = "";
+				PROVISIONING_PROFILE = "4ff744a4-5451-4324-b033-d9fc301ca47e";
+				"PROVISIONING_PROFILE[sdk=*]" = "4ff744a4-5451-4324-b033-d9fc301ca47e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -932,7 +958,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4ff744a4-5451-4324-b033-d9fc301ca47e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
