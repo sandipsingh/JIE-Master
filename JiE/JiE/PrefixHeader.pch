@@ -15,5 +15,6 @@
 #define UserDetails @"UserDetail"
 #define pushtoken @"pushtoken"
 #define Server_domain @"http://www.support-4-pc.com/"
+#define Notification_Server_domain @"http://www.metrohero.com/"
 #import "Common.h"
 #endif
