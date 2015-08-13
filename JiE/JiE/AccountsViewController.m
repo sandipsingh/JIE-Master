@@ -18,6 +18,11 @@
     
       [super viewDidLoad];
     
+    ///////////////////////////////////////
+   
+    
+    //////////////////////////////////
+    
     NSString *MYString =[[NSUserDefaults standardUserDefaults]
                          stringForKey:@"USER_NAME_1"];
     
@@ -72,6 +77,12 @@
    
 }
 
+
+- (IBAction)editTextButton:(id)sender {
+}
+
+- (IBAction)changePasswordButton:(id)sender {
+}
 
 - (IBAction)buttonPress:(id)sender {
 }
