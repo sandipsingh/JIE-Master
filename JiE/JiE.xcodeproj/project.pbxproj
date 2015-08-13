@@ -25,6 +25,7 @@
 		18E24DDB1B7BAE98007B7E84 /* notificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E24DDA1B7BAE98007B7E84 /* notificationTableViewCell.m */; };
 		18E24DDE1B7BB089007B7E84 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E24DDD1B7BB089007B7E84 /* Notifications.m */; };
 		18F2A3591B4EDCF200BF426E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F2A3581B4EDCF200BF426E /* FacebookSDK.framework */; };
+		F900E9B51B7CB6FB0057315D /* PasswordUpdateHandlerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F900E9B41B7CB6FB0057315D /* PasswordUpdateHandlerVC.m */; };
 		F90A09C41B4BA97600B6AB9F /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F90A09C21B4BA97600B6AB9F /* 1.png */; };
 		F90A09C51B4BA97600B6AB9F /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F90A09C31B4BA97600B6AB9F /* 2.png */; };
 		F90A09C81B4BC88600B6AB9F /* Password.png in Resources */ = {isa = PBXBuildFile; fileRef = F90A09C61B4BC88600B6AB9F /* Password.png */; };
@@ -147,6 +148,8 @@
 		18E24DDC1B7BB089007B7E84 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		18E24DDD1B7BB089007B7E84 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
 		18F2A3581B4EDCF200BF426E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Facebook/FacebookSDK.framework; sourceTree = SOURCE_ROOT; };
+		F900E9B31B7CB6FB0057315D /* PasswordUpdateHandlerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordUpdateHandlerVC.h; sourceTree = "<group>"; };
+		F900E9B41B7CB6FB0057315D /* PasswordUpdateHandlerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordUpdateHandlerVC.m; sourceTree = "<group>"; };
 		F90A09C21B4BA97600B6AB9F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		F90A09C31B4BA97600B6AB9F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		F90A09C61B4BC88600B6AB9F /* Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Password.png; sourceTree = "<group>"; };
@@ -347,6 +350,15 @@
 			name = Notifications;
 			sourceTree = "<group>";
 		};
+		F900E9B61B7CB70A0057315D /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+				F900E9B31B7CB6FB0057315D /* PasswordUpdateHandlerVC.h */,
+				F900E9B41B7CB6FB0057315D /* PasswordUpdateHandlerVC.m */,
+			);
+			name = "Change Password";
+			sourceTree = "<group>";
+		};
 		F9176CB81B39115200D6B7D1 = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +419,7 @@
 				F96B1A961B6396C8007B5674 /* AccountsViewController.h */,
 				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
 				18551BA21B6522C20045BFC2 /* Common.h */,
+				F900E9B61B7CB70A0057315D /* Change Password */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -782,6 +795,7 @@
 				F9209F291B3AE389001C8BE5 /* SignUpVC.m in Sources */,
 				F9D1B9EE1B4573FF008E9616 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */,
+				F900E9B51B7CB6FB0057315D /* PasswordUpdateHandlerVC.m in Sources */,
 				18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */,
 				F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */,
 				F9176CCA1B39115200D6B7D1 /* AppDelegate.m in Sources */,
@@ -916,8 +930,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -931,7 +945,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4ff744a4-5451-4324-b033-d9fc301ca47e";
+				PROVISIONING_PROFILE = "6ed231f7-cd23-43ba-806a-3ac26a59765e";
 				"PROVISIONING_PROFILE[sdk=*]" = "4ff744a4-5451-4324-b033-d9fc301ca47e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -943,8 +957,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sandip Singh (3RTDW28U6N)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -958,7 +972,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4ff744a4-5451-4324-b033-d9fc301ca47e";
+				PROVISIONING_PROFILE = "6ed231f7-cd23-43ba-806a-3ac26a59765e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
