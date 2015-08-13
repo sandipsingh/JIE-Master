@@ -19,7 +19,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 
+- (IBAction)editTextButton:(id)sender;
 
-- (IBAction)buttonPress:(id)sender;
+- (IBAction)changePasswordButton:(id)sender;
+
 
 @end
