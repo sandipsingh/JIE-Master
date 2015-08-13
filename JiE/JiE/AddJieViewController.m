@@ -92,6 +92,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.jieScrollView setContentOffset:CGPointMake(0, self.mContentView.frame.origin.y)];
+    [self.jieScrollView setContentSize:CGSizeMake(0, CGRectGetMaxY(_containerView.frame))];
+    [_jieScrollView setUserInteractionEnabled:YES];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {

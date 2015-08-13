@@ -2358,7 +2358,7 @@
                                                         <constraint firstAttribute="width" constant="20" id="nLq-lf-mMR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85Z-2P-Fnm" userLabel="comment count">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85Z-2P-Fnm" userLabel="comment count">
                                                     <rect key="frame" x="36" y="322" width="17" height="21"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -2398,7 +2398,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-pE-TWS" userLabel="Comment button">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-pE-TWS" userLabel="Comment button">
                                                     <rect key="frame" x="50" y="318" width="55" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="3Nk-wf-tm4"/>
@@ -2548,6 +2548,7 @@
         <!--Add Jie View Controller-->
         <scene sceneID="NAh-00-mYG">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Awp-XE-tSC" sceneMemberID="firstResponder"/>
                 <viewController id="N4J-nM-Zzf" customClass="AddJieViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wmL-nV-wD2"/>
@@ -3445,7 +3446,6 @@
                         <outlet property="view" destination="Mum-1f-Ala" id="Pth-io-P8H"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Awp-XE-tSC" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4795" y="1555"/>
         </scene>
@@ -3501,6 +3501,6 @@
         <image name="video_icon.png" width="76" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ber-6a-FgI"/>
+        <segue reference="RLs-pC-liM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,7 @@
 		18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18977B741B554F3E005401C9 /* AddJieViewController.m */; };
 		18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B761B5583A6005401C9 /* CoreFoundation.framework */; };
 		18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B781B5583F8005401C9 /* MobileCoreServices.framework */; };
+		189A771C1B7CEAF90036B7A1 /* apnsSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 189A771B1B7CEAF90036B7A1 /* apnsSound.caf */; };
 		18B07EAC1B5D59BC00E649FD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EA91B5D59BC00E649FD /* HomeViewController.m */; };
 		18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EAB1B5D59BC00E649FD /* HomeTableViewCell.m */; };
 		18B07EB01B5D6A1B00E649FD /* JieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EAF1B5D6A1B00E649FD /* JieModel.m */; };
@@ -132,6 +133,7 @@
 		18977B741B554F3E005401C9 /* AddJieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJieViewController.m; sourceTree = "<group>"; };
 		18977B761B5583A6005401C9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		18977B781B5583F8005401C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		189A771B1B7CEAF90036B7A1 /* apnsSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apnsSound.caf; sourceTree = "<group>"; };
 		18B07EA81B5D59BC00E649FD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		18B07EA91B5D59BC00E649FD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		18B07EAA1B5D59BC00E649FD /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		F9176CC31B39115200D6B7D1 /* JiE */ = {
 			isa = PBXGroup;
 			children = (
+				189A771B1B7CEAF90036B7A1 /* apnsSound.caf */,
 				18E24DD51B7BACBF007B7E84 /* Notifications */,
 				F92687D01B6785B500B36D75 /* Setting */,
 				18C0BEAF1B67D1A200E82A7C /* Request */,
@@ -691,6 +694,7 @@
 				F9354D7A1B4AAACD0014B13D /* bg1.png in Resources */,
 				F9F1CE101B3992DE00D45540 /* fb.png in Resources */,
 				F93B38101B3ACFE2005F3769 /* profile_img.png in Resources */,
+				189A771C1B7CEAF90036B7A1 /* apnsSound.caf in Resources */,
 				F9F1CE111B3992DE00D45540 /* login.png in Resources */,
 				F9354D7C1B4AB4400014B13D /* login1.png in Resources */,
 				F9B5F9F11B44F6BF00C444F9 /* splash.png in Resources */,
