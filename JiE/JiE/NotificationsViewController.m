@@ -14,6 +14,7 @@
 @end
 
 @implementation NotificationsViewController
+
 -(void)getError{
     NSLog(@"Error");
 }
@@ -41,7 +42,9 @@
         case deleteNotifications:
         {
             id resultValue = [response valueForKey:@"result"];
-            if ([resultValue boolValue] == true) {
+            
+            if ([resultValue boolValue] == true)
+            {
                 [_notificationsArray removeObjectAtIndex:_rowNumber];
                 [self.tableView reloadData];
             }
