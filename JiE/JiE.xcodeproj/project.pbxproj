@@ -90,6 +90,8 @@
 		F9D1BA1F1B458072008E9616 /* time-Calculator_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0A1B458072008E9616 /* time-Calculator_2.png */; };
 		F9D1BA201B458072008E9616 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0B1B458072008E9616 /* Title.png */; };
 		F9D1BA211B458072008E9616 /* video_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0C1B458072008E9616 /* video_icon.png */; };
+		F9DF961E1B7E142500757408 /* MyJiePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF961D1B7E142500757408 /* MyJiePageViewController.m */; };
+		F9DF96211B7E183E00757408 /* MyJiePageCellsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */; };
 		F9F032701B6B547B003F39D3 /* jie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F0326F1B6B547B003F39D3 /* jie_1.png */; };
 		F9F032721B6B7FE9003F39D3 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */; };
 		F9F1CE0F1B3992DE00D45540 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F1CE091B3992DE00D45540 /* bg.png */; };
@@ -237,6 +239,10 @@
 		F9D1BA0A1B458072008E9616 /* time-Calculator_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time-Calculator_2.png"; sourceTree = "<group>"; };
 		F9D1BA0B1B458072008E9616 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
 		F9D1BA0C1B458072008E9616 /* video_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_icon.png; sourceTree = "<group>"; };
+		F9DF961C1B7E142500757408 /* MyJiePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJiePageViewController.h; sourceTree = "<group>"; };
+		F9DF961D1B7E142500757408 /* MyJiePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJiePageViewController.m; sourceTree = "<group>"; };
+		F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJiePageCellsController.h; sourceTree = "<group>"; };
+		F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJiePageCellsController.m; sourceTree = "<group>"; };
 		F9F032381B6B3585003F39D3 /* jie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie.png; sourceTree = "<group>"; };
 		F9F0326F1B6B547B003F39D3 /* jie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie_1.png; sourceTree = "<group>"; };
 		F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
@@ -420,6 +426,10 @@
 				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
 				18551BA21B6522C20045BFC2 /* Common.h */,
 				F900E9B61B7CB70A0057315D /* Change Password */,
+				F9DF961C1B7E142500757408 /* MyJiePageViewController.h */,
+				F9DF961D1B7E142500757408 /* MyJiePageViewController.m */,
+				F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */,
+				F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -788,6 +798,7 @@
 				1866D33E1B6678430063227B /* CommentsViewController.m in Sources */,
 				1866D3481B668C6A0063227B /* Comments.m in Sources */,
 				18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */,
+				F9DF961E1B7E142500757408 /* MyJiePageViewController.m in Sources */,
 				18E24DD81B7BACE7007B7E84 /* NotificationsViewController.m in Sources */,
 				F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */,
 				F9D1B9EB1B4573FF008E9616 /* AMSlideMenuLeftMenuSegue.m in Sources */,
@@ -798,6 +809,7 @@
 				F900E9B51B7CB6FB0057315D /* PasswordUpdateHandlerVC.m in Sources */,
 				18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */,
 				F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */,
+				F9DF96211B7E183E00757408 /* MyJiePageCellsController.m in Sources */,
 				F9176CCA1B39115200D6B7D1 /* AppDelegate.m in Sources */,
 				F9FCFF671B4D03950028F0B7 /* Request.m in Sources */,
 				F938E9531B3A69E6005A7224 /* ParsingLogInClasses.m in Sources */,
