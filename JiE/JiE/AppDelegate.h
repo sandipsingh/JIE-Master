@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <CoreData/CoreData.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
