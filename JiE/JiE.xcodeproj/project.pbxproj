@@ -14,6 +14,11 @@
 		1866D33E1B6678430063227B /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866D33D1B6678430063227B /* CommentsViewController.m */; };
 		1866D3421B667F770063227B /* commentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866D3411B667F770063227B /* commentsTableViewCell.m */; };
 		1866D3481B668C6A0063227B /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866D3471B668C6A0063227B /* Comments.m */; };
+		1873B2751B7F5ED400244574 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1873B2701B7F5ED400244574 /* FBAudienceNetwork.framework */; };
+		1873B2761B7F5ED400244574 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1873B2711B7F5ED400244574 /* FBSDKCoreKit.framework */; };
+		1873B2771B7F5ED400244574 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1873B2721B7F5ED400244574 /* FBSDKLoginKit.framework */; };
+		1873B2781B7F5ED400244574 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1873B2731B7F5ED400244574 /* FBSDKMessengerShareKit.framework */; };
+		1873B2791B7F5ED400244574 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1873B2741B7F5ED400244574 /* FBSDKShareKit.framework */; };
 		18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18977B741B554F3E005401C9 /* AddJieViewController.m */; };
 		18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B761B5583A6005401C9 /* CoreFoundation.framework */; };
 		18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B781B5583F8005401C9 /* MobileCoreServices.framework */; };
@@ -130,6 +135,16 @@
 		1866D3411B667F770063227B /* commentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentsTableViewCell.m; sourceTree = "<group>"; };
 		1866D3461B668C6A0063227B /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
 		1866D3471B668C6A0063227B /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
+		1873B2661B7F581200244574 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-20150813/FBAudienceNetwork.framework"; sourceTree = "<group>"; };
+		1873B2671B7F581200244574 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-20150813/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		1873B2681B7F581200244574 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-20150813/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		1873B2691B7F581200244574 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-20150813/FBSDKMessengerShareKit.framework"; sourceTree = "<group>"; };
+		1873B26A1B7F581200244574 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../../Downloads/FacebookSDKs-iOS-20150813/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		1873B2701B7F5ED400244574 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = Facebook/FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		1873B2711B7F5ED400244574 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1873B2721B7F5ED400244574 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1873B2731B7F5ED400244574 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = Facebook/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		1873B2741B7F5ED400244574 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Facebook/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		18977B731B554F3E005401C9 /* AddJieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddJieViewController.h; sourceTree = "<group>"; };
 		18977B741B554F3E005401C9 /* AddJieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJieViewController.m; sourceTree = "<group>"; };
 		18977B761B5583A6005401C9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -263,6 +278,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1873B2751B7F5ED400244574 /* FBAudienceNetwork.framework in Frameworks */,
+				1873B2761B7F5ED400244574 /* FBSDKCoreKit.framework in Frameworks */,
+				1873B2771B7F5ED400244574 /* FBSDKLoginKit.framework in Frameworks */,
+				1873B2781B7F5ED400244574 /* FBSDKMessengerShareKit.framework in Frameworks */,
+				1873B2791B7F5ED400244574 /* FBSDKShareKit.framework in Frameworks */,
 				18B13E331B5AB47900FCE106 /* AVFoundation.framework in Frameworks */,
 				18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */,
 				18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */,
@@ -364,6 +384,16 @@
 		F9176CB81B39115200D6B7D1 = {
 			isa = PBXGroup;
 			children = (
+				1873B2701B7F5ED400244574 /* FBAudienceNetwork.framework */,
+				1873B2711B7F5ED400244574 /* FBSDKCoreKit.framework */,
+				1873B2721B7F5ED400244574 /* FBSDKLoginKit.framework */,
+				1873B2731B7F5ED400244574 /* FBSDKMessengerShareKit.framework */,
+				1873B2741B7F5ED400244574 /* FBSDKShareKit.framework */,
+				1873B2661B7F581200244574 /* FBAudienceNetwork.framework */,
+				1873B2671B7F581200244574 /* FBSDKCoreKit.framework */,
+				1873B2681B7F581200244574 /* FBSDKLoginKit.framework */,
+				1873B2691B7F581200244574 /* FBSDKMessengerShareKit.framework */,
+				1873B26A1B7F581200244574 /* FBSDKShareKit.framework */,
 				F9638E341B68E39500647D70 /* logo.png */,
 				18B13E321B5AB47900FCE106 /* AVFoundation.framework */,
 				18977B781B5583F8005401C9 /* MobileCoreServices.framework */,
@@ -943,6 +973,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Facebook",
 					"$(PROJECT_DIR)",
+					"/Users/rajesh/Downloads/FacebookSDKs-iOS-20150813",
 				);
 				GCC_PREFIX_HEADER = JiE/PrefixHeader.pch;
 				INFOPLIST_FILE = JiE/Info.plist;
@@ -970,6 +1001,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Facebook",
 					"$(PROJECT_DIR)",
+					"/Users/rajesh/Downloads/FacebookSDKs-iOS-20150813",
 				);
 				GCC_PREFIX_HEADER = JiE/PrefixHeader.pch;
 				INFOPLIST_FILE = JiE/Info.plist;
