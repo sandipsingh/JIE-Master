@@ -16,15 +16,41 @@
 
 - (void)viewDidLoad {
     
+    
+    ////////////////////////////
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 5;
+   // self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height / 14;
+    self.profilePic.clipsToBounds = YES;
+    
+    //To give the Border and Border color of imageview
+    
+   self.profilePic.layer.borderWidth = 1.0f;
+   //self.profilePic.layer.borderColor = [UIColor colorWithRed:249/255.0f green:117/255.0f blue:44/255.0f alpha:1.0f].CGColor;
+    
+    //self.profilePic.layer.borderColor = [UIColor greenColor].CGColor;
+    //self.profilePic.layer.borderWidth = 1.f;
+    
+    ///////////////////////////
+    
+    
+    
+    
+    
+   // self.profilePic.layer.cornerRadius = 10.0f;
+    
+   // UIImage *PROFILEdEGAULTiMAGE = [UIImage imageNamed:@"profile_Image_account"    ];
+   // self.profilePic.image = PROFILEdEGAULTiMAGE;
       [super viewDidLoad];
     
-    ///////////////////////////////////////
-   
+ 
     
     //////////////////////////////////
     
     NSString *MYString =[[NSUserDefaults standardUserDefaults]
                          stringForKey:@"USER_NAME_1"];
+    
+   
+
     
     ////////////////////////////////////////////////////////
     
@@ -36,15 +62,15 @@
             dispatch_sync(dispatch_get_main_queue(), ^{
                 
                 self.profilePic.image = profileimage;
-                
-                //[cell setNeedsLayout];
-                
+          // [cell setNeedsLayout];
+            
+            
+              
             });
         });
     }
 
 
-    
     
     ///////////////////////////////////////////////////////////
     
