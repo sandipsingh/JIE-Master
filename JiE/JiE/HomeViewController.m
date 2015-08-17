@@ -11,6 +11,7 @@
 #import "CommentsViewController.h"
 #import "JieModel.h"
 #import "AddJieViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 @interface HomeViewController ()
 
 @end
@@ -109,9 +110,7 @@
     if (cell == nil) {
         cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    
-    
+
     JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
     cell.lbluserName.text = obj.username;
     cell.lblTitle.text = obj.title;
@@ -120,50 +119,54 @@
     cell.lblComment.text = obj.jiecomment;
     cell.lblLike.text = obj.jieLike;
     // cell.lblLastSeen.text = obj.time;
-    
-    
-   
-    
-    //////////////////////////////////// ////////
-   
-    
+    cell.rowIndex = indexPath.row;
+    if (obj.jieVideoURL.length>0) {
+        
+        if (obj.thumbImageURL.length>0) {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^{
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.thumbImageURL]]];
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    cell.imgPost.image = image;
+                    [cell setNeedsLayout];
+                });
+            });
+        }
+        else{
+            cell.imgPost.image = nil;
+        }
+        cell.btnVideo.hidden = NO;
+    }
+    else
+    {
+        cell.btnVideo.hidden = YES;
+        if (obj.jieImageURL.length>0) {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^{
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.jieImageURL]]];
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    cell.imgPost.image = image;
+                    [cell setNeedsLayout];
+                });
+            });
+        }
+        else{
+            cell.imgPost.image = nil;
+        }
+    }
+
     if (obj.profilePicURL.length>0) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
-            
             UIImage *profileimage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.profilePicURL]]];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 cell.imgProfile.image = profileimage;
-                
-                
-                [cell setNeedsLayout];
-                
-            });
-        });
-    }
-    
-    
-    
-    
-    ///////////////////////////////////////////////////
-    
-    if (obj.jieImageURL.length>0) {
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        dispatch_async(queue, ^{
-            
-            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.jieImageURL]]];
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                cell.imgPost.image = image;
-               //cell.imgProfile.image=image;
                 [cell setNeedsLayout];
             });
         });
     }
-    else{
-        cell.imgPost.image = nil;
-    }
-    
     [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     return cell;
 }
@@ -172,8 +175,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
+-(void)didClickOnVideo:(NSInteger)rowIndex{
+    JieModel *obj = [_jieArray objectAtIndex:rowIndex];
+    
+    NSURL *movieURL = [NSURL URLWithString:obj.jieVideoURL];
+    MPMoviePlayerViewController *movieController = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
+    [movieController.moviePlayer prepareToPlay];
+    [self presentMoviePlayerViewControllerAnimated:movieController];
+    [movieController.moviePlayer play];
+}
 
 -(void)didClickOnComment:(NSString *)postId
 

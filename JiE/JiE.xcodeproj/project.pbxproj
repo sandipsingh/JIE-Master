@@ -22,6 +22,7 @@
 		18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18977B741B554F3E005401C9 /* AddJieViewController.m */; };
 		18977B771B5583A6005401C9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B761B5583A6005401C9 /* CoreFoundation.framework */; };
 		18977B791B5583F8005401C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18977B781B5583F8005401C9 /* MobileCoreServices.framework */; };
+		189977571B82410900A311AA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189977561B82410900A311AA /* MediaPlayer.framework */; };
 		189A771C1B7CEAF90036B7A1 /* apnsSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 189A771B1B7CEAF90036B7A1 /* apnsSound.caf */; };
 		18B07EAC1B5D59BC00E649FD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EA91B5D59BC00E649FD /* HomeViewController.m */; };
 		18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B07EAB1B5D59BC00E649FD /* HomeTableViewCell.m */; };
@@ -151,6 +152,7 @@
 		18977B741B554F3E005401C9 /* AddJieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddJieViewController.m; sourceTree = "<group>"; };
 		18977B761B5583A6005401C9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		18977B781B5583F8005401C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		189977561B82410900A311AA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		189A771B1B7CEAF90036B7A1 /* apnsSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apnsSound.caf; sourceTree = "<group>"; };
 		18B07EA81B5D59BC00E649FD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		18B07EA91B5D59BC00E649FD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189977571B82410900A311AA /* MediaPlayer.framework in Frameworks */,
 				1873B2751B7F5ED400244574 /* FBAudienceNetwork.framework in Frameworks */,
 				1873B2761B7F5ED400244574 /* FBSDKCoreKit.framework in Frameworks */,
 				1873B2771B7F5ED400244574 /* FBSDKLoginKit.framework in Frameworks */,
@@ -390,6 +393,7 @@
 		F9176CB81B39115200D6B7D1 = {
 			isa = PBXGroup;
 			children = (
+				189977561B82410900A311AA /* MediaPlayer.framework */,
 				1873B2701B7F5ED400244574 /* FBAudienceNetwork.framework */,
 				1873B2711B7F5ED400244574 /* FBSDKCoreKit.framework */,
 				1873B2721B7F5ED400244574 /* FBSDKLoginKit.framework */,
