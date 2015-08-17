@@ -89,6 +89,33 @@
     [self presentViewController:picker animated:YES completion:nil];
 
 }
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    if (_isImage) {
+        self.image = nil;
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    else{
+        self.videoData = nil;
+        NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+        self.videoData = [NSData dataWithContentsOfURL:videoURL];
+        
+        AVAsset *avAsset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
+        _thumbImage = nil;
+        
+        if ([[avAsset tracksWithMediaType:AVMediaTypeVideo] count] > 0)
+        {
+            AVAssetImageGenerator *imageGenerator =[AVAssetImageGenerator assetImageGeneratorWithAsset:avAsset];
+            NSError *error;
+            CMTime actualTime;
+            CGImageRef halfWayImage = [imageGenerator copyCGImageAtTime:kCMTimeZero actualTime:&actualTime error:&error];
+            if (halfWayImage != NULL)
+            {
+                _thumbImage=[UIImage imageWithCGImage:halfWayImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+            }
+        }
+    }
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.jieScrollView setContentOffset:CGPointMake(0, self.mContentView.frame.origin.y)];

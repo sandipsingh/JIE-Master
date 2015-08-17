@@ -1311,7 +1311,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k61-tj-VQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4642" y="709"/>
+            <point key="canvasLocation" x="4746" y="660"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="tcz-Nn-w5j">
@@ -2361,6 +2361,7 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T08-b7-308" userLabel="post image">
                                                     <rect key="frame" x="5" y="143" width="590" height="170"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="170" id="CoT-hJ-mCe"/>
                                                     </constraints>
@@ -2448,9 +2449,20 @@
                                                         <action selector="onClickComment:" destination="A7P-2f-MY7" eventType="touchUpInside" id="ElN-OX-m6c"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcB-gd-j5h" userLabel="videoButton">
+                                                    <rect key="frame" x="5" y="143" width="590" height="170"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="videoClicked:" destination="A7P-2f-MY7" eventType="touchUpInside" id="wIA-Qp-x25"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="T08-b7-308" firstAttribute="top" secondItem="Za8-n9-IRd" secondAttribute="bottom" constant="30" id="2Ja-MG-3xK"/>
+                                                <constraint firstItem="T08-b7-308" firstAttribute="leading" secondItem="HcB-gd-j5h" secondAttribute="leading" id="2pm-lh-OWl"/>
                                                 <constraint firstItem="85Z-2P-Fnm" firstAttribute="top" secondItem="T08-b7-308" secondAttribute="bottom" constant="9" id="4HN-1M-0jW"/>
                                                 <constraint firstItem="4kt-7H-Gs9" firstAttribute="leading" secondItem="CHt-ba-w1M" secondAttribute="leadingMargin" id="CNB-a2-IN9"/>
                                                 <constraint firstAttribute="trailing" secondItem="Za8-n9-IRd" secondAttribute="trailing" constant="5" id="IZo-xz-Oaa"/>
@@ -2468,12 +2480,14 @@
                                                 <constraint firstItem="4kt-7H-Gs9" firstAttribute="leading" secondItem="CHt-ba-w1M" secondAttribute="leadingMargin" id="eko-7q-Sf8"/>
                                                 <constraint firstItem="85Z-2P-Fnm" firstAttribute="leading" secondItem="CHt-ba-w1M" secondAttribute="leadingMargin" constant="28" id="evS-yD-I04"/>
                                                 <constraint firstItem="Voh-uc-tou" firstAttribute="leading" secondItem="GTp-ql-0yX" secondAttribute="trailing" constant="13" id="ewC-c3-kee"/>
+                                                <constraint firstItem="T08-b7-308" firstAttribute="top" secondItem="HcB-gd-j5h" secondAttribute="top" id="g9t-gL-oBA"/>
                                                 <constraint firstItem="ngU-pE-TWS" firstAttribute="leading" secondItem="85Z-2P-Fnm" secondAttribute="trailing" constant="-3" id="hlU-xh-Szg">
                                                     <variation key="widthClass=compact" constant="1"/>
                                                 </constraint>
                                                 <constraint firstItem="ngU-pE-TWS" firstAttribute="top" secondItem="T08-b7-308" secondAttribute="bottom" constant="5" id="iRT-vU-nyn">
                                                     <variation key="widthClass=compact" constant="4"/>
                                                 </constraint>
+                                                <constraint firstItem="T08-b7-308" firstAttribute="height" secondItem="HcB-gd-j5h" secondAttribute="height" id="kdQ-y1-Bj7"/>
                                                 <constraint firstItem="Za8-n9-IRd" firstAttribute="leading" secondItem="CHt-ba-w1M" secondAttribute="leading" constant="50" id="mxO-Jc-Wfh"/>
                                                 <constraint firstItem="85Z-2P-Fnm" firstAttribute="leading" secondItem="4kt-7H-Gs9" secondAttribute="trailing" constant="8" id="nq9-It-2lz"/>
                                                 <constraint firstItem="ngU-pE-TWS" firstAttribute="leading" secondItem="85Z-2P-Fnm" secondAttribute="trailing" constant="20" id="p7W-WA-E8k">
@@ -2484,6 +2498,7 @@
                                                 <constraint firstItem="Voh-uc-tou" firstAttribute="trailing" secondItem="CHt-ba-w1M" secondAttribute="trailingMargin" id="rco-uV-NXc"/>
                                                 <constraint firstItem="ngU-pE-TWS" firstAttribute="leading" secondItem="85Z-2P-Fnm" secondAttribute="trailing" constant="20" id="sHF-Bx-0JO"/>
                                                 <constraint firstItem="rY2-I4-yUG" firstAttribute="top" secondItem="CHt-ba-w1M" secondAttribute="top" constant="5" id="tV0-0H-Z2W"/>
+                                                <constraint firstItem="T08-b7-308" firstAttribute="width" secondItem="HcB-gd-j5h" secondAttribute="width" id="thM-er-bLu"/>
                                                 <constraint firstItem="vdt-GV-aj0" firstAttribute="top" secondItem="rY2-I4-yUG" secondAttribute="bottom" constant="8" id="uUG-fB-fi1"/>
                                                 <constraint firstAttribute="trailing" secondItem="vdt-GV-aj0" secondAttribute="trailing" constant="5" id="zcf-wp-8MX"/>
                                             </constraints>
@@ -2494,6 +2509,9 @@
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="subviews">
+                                                    <include reference="HcB-gd-j5h"/>
+                                                </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="hlU-xh-Szg"/>
                                                     <include reference="p7W-WA-E8k"/>
@@ -2503,6 +2521,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnComment" destination="ngU-pE-TWS" id="8rd-el-LqM"/>
+                                            <outlet property="btnVideo" destination="HcB-gd-j5h" id="7kA-th-W4B"/>
                                             <outlet property="delegate" destination="dyV-sQ-Q3r" id="yjq-CY-5PB"/>
                                             <outlet property="imgPost" destination="T08-b7-308" id="nDW-KY-aVQ"/>
                                             <outlet property="imgProfile" destination="rY2-I4-yUG" id="Yqa-cP-O6T"/>
@@ -3278,8 +3297,7 @@
                                                         <exclude reference="80Q-nO-5Za"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="60" y="696" width="680" height="30"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
                                                     <mask key="constraints">
                                                         <include reference="80Q-nO-5Za"/>
                                                         <exclude reference="SgH-hx-Y2N"/>
@@ -3354,8 +3372,7 @@
                                                 <exclude reference="lZI-Bp-VVg"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="800" height="736"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <exclude reference="Hfm-HF-4oI"/>
                                                 <include reference="HxW-5G-OdK"/>
@@ -3404,8 +3421,7 @@
                                         <exclude reference="zQG-bo-TLd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="800" height="736"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="dW4-x2-fhr"/>
                                         <include reference="fjM-fV-grL"/>
@@ -3489,7 +3505,6 @@
         <!--My Jie Page View Controller-->
         <scene sceneID="Odd-0c-qKA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eAi-wC-Ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MyJiePageViewController" id="vq3-s8-MnN" customClass="MyJiePageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bur-Qu-ORF"/>
@@ -3604,14 +3619,14 @@
                                                     </state>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="wuP-z5-DZO"/>
                                                             <exclude reference="9PR-Bm-FTW"/>
+                                                            <exclude reference="wuP-z5-DZO"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <mask key="constraints">
-                                                            <include reference="wuP-z5-DZO"/>
                                                             <include reference="9PR-Bm-FTW"/>
+                                                            <include reference="wuP-z5-DZO"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
@@ -3652,15 +3667,15 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="8QH-Lr-t8q"/>
                                                     <exclude reference="17B-8K-2jL"/>
+                                                    <exclude reference="8QH-Lr-t8q"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
                                                 <mask key="constraints">
+                                                    <exclude reference="17B-8K-2jL"/>
                                                     <exclude reference="39r-KX-gLa"/>
                                                     <include reference="8QH-Lr-t8q"/>
-                                                    <exclude reference="17B-8K-2jL"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3712,6 +3727,7 @@
                         <outlet property="tblView" destination="hP8-ff-cRy" id="rwV-al-lp1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAi-wC-Ycy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4968" y="3031"/>
         </scene>
@@ -3767,6 +3783,6 @@
         <image name="video_icon.png" width="76" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RLs-pC-liM"/>
+        <segue reference="ber-6a-FgI"/>
     </inferredMetricsTieBreakers>
 </document>

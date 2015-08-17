@@ -10,7 +10,7 @@
 @protocol HomeTableViewCellDelegate<NSObject>
 
 -(void)didClickOnComment:(NSString *)postId;
-
+-(void)didClickOnVideo:(NSInteger )rowIndex;
 @end
 
 @interface HomeTableViewCell : UITableViewCell
@@ -24,7 +24,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnComment;
 @property (strong, nonatomic) IBOutlet UILabel *lblComment;
 @property (strong, nonatomic) NSString *postId;
-
+@property (assign, nonatomic) NSInteger rowIndex;
+@property (weak, nonatomic) IBOutlet UIButton *btnVideo;
+- (IBAction)videoClicked:(id)sender;
 
 - (IBAction)onClickComment:(id)sender;
 
