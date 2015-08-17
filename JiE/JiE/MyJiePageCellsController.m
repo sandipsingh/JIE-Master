@@ -3,7 +3,9 @@
 
 
 
+#import "MyJiePageViewController.h"
 #import "MyJiePageCellsController.h"
+
 #import "CommentsViewController.h"
 @implementation MyJiePageCellsController
 
