@@ -7,15 +7,19 @@
 //
 
 #import "AddJieViewController.h"
-
+#import "MBProgressHUD.h"
 @interface AddJieViewController ()
-
+@property(strong,nonatomic) MBProgressHUD *loadingView;
 @end
 
 @implementation  AddJieViewController
-
+-(void)getError{
+    [_loadingView hide:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)getResult:(id)response{
     NSLog(@" getResult ");
+    [_loadingView hide:YES];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -219,7 +223,10 @@
 }
 
 - (IBAction)openPost:(id)sender {
-    
+    _loadingView= [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:_loadingView];
+    [_loadingView show:YES];
+
     Request *reqObj = [[Request alloc] init];
     reqObj.delegate = self;
 
