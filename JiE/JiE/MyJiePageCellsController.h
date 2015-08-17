@@ -3,6 +3,9 @@
 
 
 #import <UIKit/UIKit.h>
+
+
+
 @protocol MyJiePageCellsControllerDelegate<NSObject>
 
 -(void)didClickOnComment:(NSString *)postId;
@@ -22,6 +25,7 @@
 @property (strong, nonatomic) NSString *postId;
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 - (IBAction)onClickComment:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblLike;
