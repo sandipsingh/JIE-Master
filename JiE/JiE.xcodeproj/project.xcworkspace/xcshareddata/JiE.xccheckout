@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D9FBB2A5-105B-426D-B1B2-F2F31B64A5BA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>JiE</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AAEF01A2536E0D5AF1EF7CD80D8D09B4EAB68324</key>
 		<string>https://github.com/sandipsingh/JIE-Master.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>JiE/JiE.xcodeproj</string>
+	<string>JiE/JiE.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AAEF01A2536E0D5AF1EF7CD80D8D09B4EAB68324</key>
