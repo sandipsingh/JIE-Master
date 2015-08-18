@@ -1,31 +1,27 @@
 //
-//  MyJiePageViewController.m
+//  NewHomeViewController.m
 //  JiE
 //
 //  Created by Rajesh on 14/07/15.
 //  Copyright (c) 2015 avigma. All rights reserved.
 //
 
-#import "MyJiePageViewController.h"
-#import "MyJiePageCellsController.h"
+#import "NewHomeViewController.h"
+#import "NewHomeTableViewCell.h"
+
 #import "CommentsViewController.h"
 #import "JieModel.h"
 #import "AddJieViewController.h"
-@interface MyJiePageViewController ()
+@interface NewHomeViewController ()
 
 @end
 
-@implementation MyJiePageViewController
+@implementation NewHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"MyJie";
-    
+    self.title = @"Home";
     _jieArray = [[NSMutableArray alloc] init];
-    [ _tblView setDataSource:self];
-    [_tblView setDelegate:self];
-    
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -38,12 +34,8 @@
     [_HUD hide:YES];
 }
 
-
--(void)getResult:(id)response
-{
-    if ([response isKindOfClass:[NSDictionary class]])
-    
-    {
+-(void)getResult:(id)response{
+    if ([response isKindOfClass:[NSDictionary class]]) {
         [_jieArray removeAllObjects];
         NSDictionary *resultDic = [NSDictionary dictionaryWithDictionary:response];
         id result = [resultDic valueForKey:@"result"];
@@ -107,58 +99,49 @@
     return 350;
 }
 
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    static NSString *CellIdentifier = @"MyJiePageCellsController";
+    static NSString *CellIdentifier = @"NewHomeTableViewCell";
     
-    MyJiePageCellsController *cell = (MyJiePageCellsController *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NewHomeTableViewCell *cell = (NewHomeTableViewCell     *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[MyJiePageCellsController alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[NewHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    /////////////////////////////////////////////
-    
-//    JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
-//    cell.lbluserName.text = obj.username;
-//    cell.lblTitle.text = obj.title;
-//    cell.postId = obj.jieId;
-//    cell.lblDescription.text = obj.jieDescription;
-//    cell.lblComment.text = obj.jiecomment;
-//    cell.lblLike.text = obj.jieLike;
-//    cell.lblLastSeen.text = obj.time;
-//    
-    
-    /////////////////////////////////////////////
     
     
-   JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
+    
+    JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
     if(indexPath.row==0){
 
+        //cell.nameImageBack.image=[UIImage imageNamed:@"logo1.png"];
+        cell.nameImageBack.image=[UIImage imageNamed:@"640x960"];
+        cell.nameTestName.text= @"pawansingh";
+        cell.nameProimage.image=[UIImage imageNamed:@"e"];
+        
         cell.lbluserName.text = nil;
-        cell.lblLastSeen.text=nil;
-        cell.imgProfile.image=[UIImage imageNamed:@"logo1.png"];
-        cell.btnComment.hidden   =YES;
         cell.lblTitle.text = nil;
         cell.postId = nil;
         cell.lblDescription.text = nil;
         cell.lblComment.text = nil;
         cell.lblLike.text = nil;
-        cell.backgroundImage.image = [UIImage imageNamed:@"logo1.png"];
-        
-        
-
-        
+        cell.lblLastSeen.text=nil;
+        cell.btnComment.hidden=YES;
     }
-    else if (indexPath.row!=0){
-        cell.backgroundImage.image = nil;
+    else{
     cell.lbluserName.text = obj.username;
     cell.lblTitle.text = obj.title;
     cell.postId = obj.jieId;
     cell.lblDescription.text = obj.jieDescription;
     cell.lblComment.text = obj.jiecomment;
     cell.lblLike.text = obj.jieLike;
-    cell.lblLastSeen.text = obj.time;
+    cell.nameImageBack.image=nil;
+    cell.nameProimage.image=nil;
+        cell.nameTestName.text=nil;
         
+        // cell.lblLastSeen.text = obj.time;
     }
     
     
@@ -172,7 +155,10 @@
             
             UIImage *profileimage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.profilePicURL]]];
             dispatch_sync(dispatch_get_main_queue(), ^{
-                if(indexPath.row!=0){
+                if(indexPath.row==0){
+                    cell.imgProfile.image = nil;
+                }else{
+                
                 cell.imgProfile.image = profileimage;
                 }
                 
@@ -194,7 +180,17 @@
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:obj.jieImageURL]]];
             
             dispatch_sync(dispatch_get_main_queue(), ^{
-                cell.imgPost.image = image;
+                if(indexPath.row==0){
+                    cell.imgPost.image = nil;
+                }else{
+                    
+                    cell.imgPost.image = image;
+                }
+                
+                
+                
+                
+                
                 //cell.imgProfile.image=image;
                 [cell setNeedsLayout];
             });
@@ -212,6 +208,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 -(void)didClickOnComment:(NSString *)postId

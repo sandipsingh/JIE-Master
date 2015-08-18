@@ -92,6 +92,8 @@
 		F9D1BA211B458072008E9616 /* video_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0C1B458072008E9616 /* video_icon.png */; };
 		F9DF961E1B7E142500757408 /* MyJiePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF961D1B7E142500757408 /* MyJiePageViewController.m */; };
 		F9DF96211B7E183E00757408 /* MyJiePageCellsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */; };
+		F9E32C321B834428000C17F0 /* NewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E32C311B834428000C17F0 /* NewHomeViewController.m */; };
+		F9E32C351B83443D000C17F0 /* NewHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E32C341B83443D000C17F0 /* NewHomeTableViewCell.m */; };
 		F9F032701B6B547B003F39D3 /* jie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F0326F1B6B547B003F39D3 /* jie_1.png */; };
 		F9F032721B6B7FE9003F39D3 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */; };
 		F9F1CE0F1B3992DE00D45540 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F1CE091B3992DE00D45540 /* bg.png */; };
@@ -243,6 +245,10 @@
 		F9DF961D1B7E142500757408 /* MyJiePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJiePageViewController.m; sourceTree = "<group>"; };
 		F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJiePageCellsController.h; sourceTree = "<group>"; };
 		F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJiePageCellsController.m; sourceTree = "<group>"; };
+		F9E32C301B834428000C17F0 /* NewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomeViewController.h; sourceTree = "<group>"; };
+		F9E32C311B834428000C17F0 /* NewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomeViewController.m; sourceTree = "<group>"; };
+		F9E32C331B83443D000C17F0 /* NewHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomeTableViewCell.h; sourceTree = "<group>"; };
+		F9E32C341B83443D000C17F0 /* NewHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomeTableViewCell.m; sourceTree = "<group>"; };
 		F9F032381B6B3585003F39D3 /* jie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie.png; sourceTree = "<group>"; };
 		F9F0326F1B6B547B003F39D3 /* jie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie_1.png; sourceTree = "<group>"; };
 		F9F032711B6B7FE9003F39D3 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
@@ -430,6 +436,10 @@
 				F9DF961D1B7E142500757408 /* MyJiePageViewController.m */,
 				F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */,
 				F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */,
+				F9E32C301B834428000C17F0 /* NewHomeViewController.h */,
+				F9E32C311B834428000C17F0 /* NewHomeViewController.m */,
+				F9E32C331B83443D000C17F0 /* NewHomeTableViewCell.h */,
+				F9E32C341B83443D000C17F0 /* NewHomeTableViewCell.m */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -807,6 +817,7 @@
 				F9D1B9EE1B4573FF008E9616 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				18977B751B554F3E005401C9 /* AddJieViewController.m in Sources */,
 				F900E9B51B7CB6FB0057315D /* PasswordUpdateHandlerVC.m in Sources */,
+				F9E32C321B834428000C17F0 /* NewHomeViewController.m in Sources */,
 				18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */,
 				F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */,
 				F9DF96211B7E183E00757408 /* MyJiePageCellsController.m in Sources */,
@@ -822,6 +833,7 @@
 				18B07EAC1B5D59BC00E649FD /* HomeViewController.m in Sources */,
 				F9D1B9EC1B4573FF008E9616 /* AMSlideMenuLeftTableViewController.m in Sources */,
 				1866D3421B667F770063227B /* commentsTableViewCell.m in Sources */,
+				F9E32C351B83443D000C17F0 /* NewHomeTableViewCell.m in Sources */,
 				F9D1B9F01B4573FF008E9616 /* UIViewController+AMSlideMenu.m in Sources */,
 				F9176CD01B39115200D6B7D1 /* ViewController.m in Sources */,
 				F9176CCD1B39115200D6B7D1 /* JiE.xcdatamodeld in Sources */,
