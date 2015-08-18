@@ -10,14 +10,19 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "JieClass.h"
 #import "Request.h"
-
+#import "MainVC.h"
+#import "MBProgressHUD.h"
 @interface ViewController ()
-
+@property(nonatomic,strong) MBProgressHUD *loadingView;
 @end
 
 @implementation ViewController
 -(void)getError{
-    
+    [_loadingView hide:YES];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Some error occured. Please try again" delegate:nil //or self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+    [alert show];
 }
 
 -(void)getFacebookProfileInfos {
@@ -39,6 +44,7 @@
             if ([result objectForKey:@"id"]) {
                 NSLog(@"User id : %@",[result objectForKey:@"id"]);
             }
+              [self SignUpWithFaceBook:result];
         }
     }];
     [connection start];
@@ -60,16 +66,22 @@
         }
     }];
 }
--(void)SignUpWithTwitter:(TWTRSession *)session{
-    Request *reqObj = [[Request alloc] init];
-    reqObj.delegate = self;
-    [reqObj signUp:session.userName email:@"" password:@"" profilePic:@"" dob:@""];
+-(void)showLoading{
+    _loadingView= [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:_loadingView];
+    [_loadingView show:YES];
 }
--(void)SignUpWithFaceBook:(id<FBGraphUser>)user{
+-(void)SignUpWithTwitter:(TWTRSession *)session{
+    [self showLoading];
     Request *reqObj = [[Request alloc] init];
     reqObj.delegate = self;
-    //user.id
-    [reqObj signUp:user.name email:[user objectForKey:@"email"] password:@"" profilePic:@"" dob:@""];
+    [reqObj siupWithTwitter:session.userID userName:session.userName decive:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken]];
+}
+-(void)SignUpWithFaceBook:(id)result{
+    [self showLoading];
+    Request *reqObj = [[Request alloc] init];
+    reqObj.delegate = self;
+    [reqObj siupWithFacebook:[result objectForKey:@"id"] userName:[result objectForKey:@"name"] userEmail:[result objectForKey:@"email"] decive:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken]];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -93,7 +105,56 @@
 
 -(void)getResult:(id)response
 {
-    
+    BOOL loginResult = NO;
+    if ([response isKindOfClass:[NSArray class]]) {
+        for(NSDictionary *dict in response) {
+            loginResult = [[dict objectForKey:@"result1"] boolValue];
+            id result = [dict objectForKey:@"result2"];
+            if ([result isKindOfClass:[NSArray class]])
+            {
+                NSArray *array = (NSArray *)result;
+                for (NSDictionary *dic in array) {
+                    
+                    UserDetail *obj = [[UserDetail alloc] init];
+                    obj.dob = [dic objectForKey:@"dob"];
+                    obj.email = [dic objectForKey:@"email"];
+                    obj.userId = [dic objectForKey:@"id"];
+                    obj.profilepic = [dic objectForKey:@"profilepic"];
+                    obj.username = [dic objectForKey:@"username"];
+                    saveUserData(obj);
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"email"] forKey:@"USER_EMAIL"];
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"dob"] forKey:@"USER_DOB"];
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"username"] forKey:@"USER_NAME"];
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"profilepic"]forKey:@"USER_NAME_1"];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^(void){
+                        
+                        NSURL *profileURL = [NSURL URLWithString:[obj.profilepic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                        NSData *profilePic = [NSData dataWithContentsOfURL:profileURL];
+                        if (profilePic!=nil) {
+                            UIImage *profileImage = [[UIImage alloc]initWithData:profilePic];
+                            if (profileImage!=nil) {
+                                NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+                                NSData *profileImageData = UIImagePNGRepresentation(profileImage);
+                                [[NSFileManager defaultManager]createFileAtPath:[docDir stringByAppendingPathComponent:@"profile.png"] contents:profileImageData attributes:nil];
+                            }
+                        }
+                    });
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    break;
+                }
+            }
+        }
+        [_loadingView hide:YES];
+        // redirection user to the app as per login status
+        if(loginResult  == YES){
+            MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
+            [self.navigationController pushViewController:mainVCObj animated:YES];
+        }
+        else{
+            [self getError];
+        }
+    }
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -117,7 +178,7 @@
     
 }
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
-    [self SignUpWithFaceBook:user];
+  
 }
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
 }

@@ -134,9 +134,30 @@
 }
 
 //SignUp
--(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob{
+-(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob device:(NSString *)deviceToken{
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=register",Server_domain]];
-    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"username=%@&email=%@&pass=%@&profilepic=%@&dob=%@",username,email,password,profilePic,dob];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"username=%@&email=%@&pass=%@&profilepic=%@&dob=%@&deviceToken=%@",username,email,password,profilePic,dob,deviceToken];
+    NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    [postRequest setHTTPBody:POSTData];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+-(void)siupWithTwitter:(NSString *)userId userName:(NSString *)userName decive:(NSString *)deviceToken{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=registerWithTwitter",Server_domain]];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&username=%@&deviceToken=%@",userId,userName,deviceToken];
+    NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    [postRequest setHTTPBody:POSTData];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+-(void)siupWithFacebook:(NSString *)userId userName:(NSString *)userName userEmail:(NSString *)email decive:(NSString *)deviceToken{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=registerWithFB",Server_domain]];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&email=%@&username=%@&deviceToken=%@",userId,email,userName,deviceToken];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     [postRequest setHTTPBody:POSTData];

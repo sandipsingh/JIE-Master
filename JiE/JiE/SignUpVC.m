@@ -8,7 +8,7 @@
 
 #import "SignUpVC.h"
 #import "MBProgressHUD.h"
-
+#import "MainVC.h"
 @interface SignUpVC (){
     UIImage *newImage;
     NSString *signInURLString;
@@ -20,7 +20,13 @@
 
 @implementation SignUpVC
 
-
+-(void)getError{
+    [HUD hide:YES];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Some error occured. Please try again" delegate:nil //or self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+    [alert show];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -81,25 +87,60 @@
 {
     Request *reqObj = [[Request alloc] init];
     reqObj.delegate = self;
-    [reqObj signUp:self.userName_OutLet.text email:self.email_OutLet.text password:self.passw0rd_OutLet.text profilePic:imageIn64 dob:self.DOB_Outlet.text];
+    [reqObj signUp:self.userName_OutLet.text email:self.email_OutLet.text password:self.passw0rd_OutLet.text profilePic:imageIn64 dob:self.DOB_Outlet.text device:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken]];
 }
 -(void)getResult:(id)response{
+    
+    BOOL loginResult = NO;
     if ([response isKindOfClass:[NSArray class]]) {
         for(NSDictionary *dict in response) {
-            BOOL resultFromServer=[[dict objectForKey:@"result"] boolValue];
-            if(resultFromServer == true){
-                NSLog(@"SUCCESSFULLY SIGNED IN )))))))))))))");
+            loginResult = [[dict objectForKey:@"result1"] boolValue];
+            id result = [dict objectForKey:@"result2"];
+            if ([result isKindOfClass:[NSArray class]])
                 
-                
-            }else{
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Some error occured. Please try again" delegate:nil //or self
-                                                     cancelButtonTitle:@"OK"
-                                                     otherButtonTitles:nil];
-                [alert show];
-                
+            {
+                NSArray *array = (NSArray *)result;
+                for (NSDictionary *dic in array) {
+                    
+                    UserDetail *obj = [[UserDetail alloc] init];
+                    
+                    obj.dob = [dic objectForKey:@"dob"];
+                    obj.email = [dic objectForKey:@"email"];
+                    obj.userId = [dic objectForKey:@"id"];
+                    obj.profilepic = [dic objectForKey:@"profilepic"];
+                    obj.username = [dic objectForKey:@"username"];
+                    saveUserData(obj);
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"email"] forKey:@"USER_EMAIL"];
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"dob"] forKey:@"USER_DOB"];
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"username"] forKey:@"USER_NAME"];
+                    [[NSUserDefaults standardUserDefaults] setObject: [dic objectForKey:@"profilepic"]forKey:@"USER_NAME_1"];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^(void){
+                        
+                        NSURL *profileURL = [NSURL URLWithString:[obj.profilepic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                        NSData *profilePic = [NSData dataWithContentsOfURL:profileURL];
+                        if (profilePic!=nil) {
+                            UIImage *profileImage = [[UIImage alloc]initWithData:profilePic];
+                            if (profileImage!=nil) {
+                                NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+                                NSData *profileImageData = UIImagePNGRepresentation(profileImage);
+                                [[NSFileManager defaultManager]createFileAtPath:[docDir stringByAppendingPathComponent:@"profile.png"] contents:profileImageData attributes:nil];
+                            }
+                        }
+                    });
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    break;
+                }
             }
         }
         [HUD hide:YES];
+        // redirection user to the app as per login status
+        if(loginResult  == YES){
+            MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
+            [self.navigationController pushViewController:mainVCObj animated:YES];
+        } else{
+            [self getError];
+        }
     }
 }
 -(void)validateSignUP
