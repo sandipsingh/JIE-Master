@@ -19,7 +19,7 @@
 -(void)addJieWithParameter:(JieClass *)jObj;
 -(void)loginWithUserName:(NSString *)userName withPassword:(NSString *)password;
 -(void)resetPasswordWithEmail:(NSString *)email;
--(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob;
+-(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob device:(NSString *)deviceToken;
 -(void)getAllJie;
 -(void)getAllUserForUser;
 -(void)getUserForSearchString:(NSString *)str;
@@ -30,4 +30,6 @@
 -(void)updateDeviceToken:(NSString *)deviceToken WithUserId:(NSString *)userId;
 -(void)deleteNotification:(int)notificationId;
 -(void)getAllNotifications;
+-(void)siupWithTwitter:(NSString *)userId userName:(NSString *)userName decive:(NSString *)deviceToken;
+-(void)siupWithFacebook:(NSString *)userId userName:(NSString *)userName userEmail:(NSString *)email decive:(NSString *)deviceToken;
 @end
