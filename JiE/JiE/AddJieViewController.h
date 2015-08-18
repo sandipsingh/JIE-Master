@@ -44,6 +44,7 @@
 @property (assign, nonatomic) BOOL isImage;
 @property (assign, nonatomic) BOOL isMoneySelected;
 @property (strong, nonatomic) UIImage *thumbImage;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 
 - (IBAction)openImagePicker:(id)sender;

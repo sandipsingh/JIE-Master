@@ -7,15 +7,19 @@
 //
 
 #import "AddJieViewController.h"
-
+#import "MBProgressHUD.h"
 @interface AddJieViewController ()
-
+@property(strong,nonatomic) MBProgressHUD *loadingView;
 @end
 
 @implementation  AddJieViewController
-
+-(void)getError{
+    [_loadingView hide:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)getResult:(id)response{
     NSLog(@" getResult ");
+    [_loadingView hide:YES];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -89,9 +93,38 @@
     [self presentViewController:picker animated:YES completion:nil];
 
 }
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    if (_isImage) {
+        self.image = nil;
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    else{
+        self.videoData = nil;
+        NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+        self.videoData = [NSData dataWithContentsOfURL:videoURL];
+        
+        AVAsset *avAsset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
+        _thumbImage = nil;
+        
+        if ([[avAsset tracksWithMediaType:AVMediaTypeVideo] count] > 0)
+        {
+            AVAssetImageGenerator *imageGenerator =[AVAssetImageGenerator assetImageGeneratorWithAsset:avAsset];
+            NSError *error;
+            CMTime actualTime;
+            CGImageRef halfWayImage = [imageGenerator copyCGImageAtTime:kCMTimeZero actualTime:&actualTime error:&error];
+            if (halfWayImage != NULL)
+            {
+                _thumbImage=[UIImage imageWithCGImage:halfWayImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+            }
+        }
+    }
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.jieScrollView setContentOffset:CGPointMake(0, self.mContentView.frame.origin.y)];
+    [self.jieScrollView setContentSize:CGSizeMake(0, CGRectGetMaxY(_containerView.frame))];
+    [_jieScrollView setUserInteractionEnabled:YES];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -190,7 +223,10 @@
 }
 
 - (IBAction)openPost:(id)sender {
-    
+    _loadingView= [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:_loadingView];
+    [_loadingView show:YES];
+
     Request *reqObj = [[Request alloc] init];
     reqObj.delegate = self;
 

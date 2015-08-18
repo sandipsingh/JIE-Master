@@ -106,7 +106,7 @@
                             
                             dispatch_async(dispatch_get_main_queue(), ^(void){
                                 
-        NSURL *profileURL = [NSURL URLWithString:[obj.profilepic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                             NSURL *profileURL = [NSURL URLWithString:[obj.profilepic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
                                 
                         // NSURL *profileURL = [NSURL URLWithString:[@"http://static.dnaindia.com/sites/default/files/2015/08/05/362359-salman-khan.jpg" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -118,7 +118,7 @@
                                    if (profileImage!=nil) {
                                     NSString *docDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
                                     NSData *profileImageData = UIImagePNGRepresentation(profileImage);
-                        [[NSFileManager defaultManager]createFileAtPath:[docDir stringByAppendingPathComponent:@"profile.png"] contents:profileImageData attributes:nil];
+                                [[NSFileManager defaultManager]createFileAtPath:[docDir stringByAppendingPathComponent:@"profile.png"] contents:profileImageData attributes:nil];
                                         
                                     }
                                 }
