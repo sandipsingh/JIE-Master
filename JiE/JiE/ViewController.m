@@ -148,8 +148,14 @@
         [_loadingView hide:YES];
         // redirection user to the app as per login status
         if(loginResult  == YES){
-            MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
-            [self.navigationController pushViewController:mainVCObj animated:YES];
+            UINavigationController *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+            if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0){
+                [self.navigationController showViewController:mainVCObj sender:nil];
+            }
+            else{
+                [self.navigationController pushViewController:mainVCObj animated:YES];
+            }
+            
         }
         else{
             [self getError];
@@ -173,16 +179,5 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
-}
--(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
-    
-}
--(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
-  
-}
--(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
-}
--(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error{
-    NSLog(@"%@", [error localizedDescription]);
 }
 @end
