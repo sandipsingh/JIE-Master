@@ -1,7 +1,5 @@
-
-
 //
-// MyJiePageViewController.h
+//  NewHomeViewController.h
 //  JiE
 //
 //  Created by Rajesh on 14/07/15.
@@ -12,7 +10,7 @@
 #import "Request.h"
 #import "MBProgressHUD.h"
 
-@interface MyJiePageViewController : UIViewController<RequestDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface NewHomeViewController : UIViewController<RequestDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property(strong,nonatomic) NSMutableArray *jieArray;
 @property(strong,nonatomic) MBProgressHUD *HUD;
