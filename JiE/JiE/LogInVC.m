@@ -13,7 +13,7 @@
 #import "ForgotPassword.h"
 #import "MainVC.h"
 #import "UserDetail.h"
-
+#import "AppDelegate.h"
 @interface LogInVC (){
     NSString *logInURLString;
     MBProgressHUD *HUD;
@@ -149,8 +149,9 @@
                 [HUD hide:YES];
                 // redirection user to the app as per login status
                 if(loginResult  == true){
-                    MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
-                    [self.navigationController pushViewController:mainVCObj animated:YES];
+                    UINavigationController *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+                    [((AppDelegate *)[UIApplication sharedApplication].delegate).window setRootViewController:mainVCObj];
+                    [((AppDelegate *)[UIApplication sharedApplication].delegate).window makeKeyAndVisible];
                 }else{
                     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Incorrect Username/Password" delegate:nil //or self
                                                          cancelButtonTitle:@"OK"
