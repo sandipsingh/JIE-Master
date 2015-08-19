@@ -12,6 +12,7 @@
 #import "Request.h"
 #import "MainVC.h"
 #import "MBProgressHUD.h"
+#import "AppDelegate.h"
 @interface ViewController ()
 @property(nonatomic,strong) MBProgressHUD *loadingView;
 @end
@@ -149,13 +150,8 @@
         // redirection user to the app as per login status
         if(loginResult  == YES){
             UINavigationController *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
-            if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0){
-                [self.navigationController showViewController:mainVCObj sender:nil];
-            }
-            else{
-                [self.navigationController pushViewController:mainVCObj animated:YES];
-            }
-            
+            [((AppDelegate *)[UIApplication sharedApplication].delegate).window setRootViewController:mainVCObj];
+            [((AppDelegate *)[UIApplication sharedApplication].delegate).window makeKeyAndVisible];
         }
         else{
             [self getError];
