@@ -70,4 +70,134 @@
     [button setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
 }
 
+- (NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath
+
+{
+    NSString *identifier = @"";
+    
+    NSLog(@"indexPath = %ld", (long)indexPath.row);
+    switch (indexPath.row) {
+        case 0:
+            identifier = @"RighrFirst";
+            break;
+           }
+    
+    return identifier;
+}
+
+
+
+- (void)configureRightMenuButton:(UIButton *)button
+
+{
+    CGRect frame = button.frame;
+    frame = CGRectMake(0, 0, 28, 20);
+    button.frame = frame;
+    button.backgroundColor = [UIColor clearColor];
+    
+    [button setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
