@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.title = @"Home";
     _jieArray = [[NSMutableArray alloc] init];
-    // Do any additional setup after loading the view.
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -39,6 +39,8 @@
         [_jieArray removeAllObjects];
         NSDictionary *resultDic = [NSDictionary dictionaryWithDictionary:response];
         id result = [resultDic valueForKey:@"result"];
+        
+        NSLog(@" Now we have result  +++++%@",result);
         if ([result  isKindOfClass:[NSArray class]])
             
         {
@@ -49,10 +51,11 @@
                 
             {
                 NSDictionary *innerDic = [array objectAtIndex:i];
+                
                 JieModel *obj = [[JieModel alloc] init];
                 obj.jieId = [innerDic valueForKey:@"id"];
                 obj.userId = [innerDic valueForKey:@"userid"];
-                obj.username = [innerDic valueForKey:@"username"];
+                obj.username = [innerDic valueForKey:@"title"];
                 obj.title = [innerDic valueForKey:@"title"];
                 obj.jieDescription = [innerDic valueForKey:@"des"];
                 obj.jieImageURL = [innerDic valueForKey:@"image"];
@@ -67,6 +70,7 @@
                 obj.jiecomment = [innerDic valueForKey:@"comments"];
                 obj.jieUnlike = [innerDic valueForKey:@"unlikeCount"];
                 obj.profilePicURL = [innerDic valueForKey:@"profilepic"];
+               
                 
                 
                 
@@ -88,7 +92,7 @@
     
     Request *req = [[Request alloc] init];
     req.delegate = self;
-    [req getAllJie];
+    [req getMyUser:@"102"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
@@ -118,10 +122,8 @@
 
         //cell.nameImageBack.image=[UIImage imageNamed:@"logo1.png"];
         cell.nameImageBack.image=[UIImage imageNamed:@"640x960"];
-        cell.nameTestName.text= @"pawansingh";
+        cell.nameTestName.text=  obj.username;
         cell.nameProimage.image=[UIImage imageNamed:@"e"];
-        
-        cell.lbluserName.text = nil;
         cell.lblTitle.text = nil;
         cell.postId = nil;
         cell.lblDescription.text = nil;
@@ -129,8 +131,29 @@
         cell.lblLike.text = nil;
         cell.lblLastSeen.text=nil;
         cell.btnComment.hidden=YES;
-    }
-    else{
+        cell.buttonJie.hidden=NO;
+        cell.buttonFriends.hidden=NO;
+        
+        if ([[NSUserDefaults standardUserDefaults]
+             stringForKey:@"USER_NAME_1"].length>0) {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^{
+                
+                UIImage *profileimage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[NSUserDefaults standardUserDefaults]
+                                                                                                                   stringForKey:@"USER_NAME_1"]]]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                   
+                    cell.nameProimage.image = profileimage;
+                    
+                    cell.nameProimage.layer.cornerRadius = cell.nameProimage.frame.size.width / 3;
+                    cell.nameProimage.clipsToBounds = YES;
+
+                });
+            });
+        }    }
+    else
+    
+    {
     cell.lbluserName.text = obj.username;
     cell.lblTitle.text = obj.title;
     cell.postId = obj.jieId;
@@ -139,7 +162,10 @@
     cell.lblLike.text = obj.jieLike;
     cell.nameImageBack.image=nil;
     cell.nameProimage.image=nil;
-        cell.nameTestName.text=nil;
+    cell.nameTestName.text=nil;
+    cell.buttonJie.hidden=YES;
+    cell.buttonFriends.hidden=YES;
+        
         
         // cell.lblLastSeen.text = obj.time;
     }
@@ -168,10 +194,7 @@
         });
     }
     
-    
-    
-    
-    ///////////////////////////////////////////////////
+  
     
     if (obj.jieImageURL.length>0) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);

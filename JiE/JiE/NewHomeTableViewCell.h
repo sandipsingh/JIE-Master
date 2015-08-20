@@ -30,7 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *nameProimage;
 - (IBAction)onClickComment:(id)sender;
-- (IBAction)buttonJie:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonJie;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonFriends;
 @property (strong, nonatomic) IBOutlet UILabel *lblLike;

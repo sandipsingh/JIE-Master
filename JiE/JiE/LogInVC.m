@@ -131,8 +131,7 @@
                             ////////////////////////
                             
                             
-                            
-                            [[NSUserDefaults standardUserDefaults] synchronize];
+                                                       [[NSUserDefaults standardUserDefaults] synchronize];
                             
                        
                             

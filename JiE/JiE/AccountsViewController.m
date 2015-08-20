@@ -64,9 +64,8 @@
                 self.profilePic.image = profileimage;
           // [cell setNeedsLayout];
             
-            
-              
-            });
+       
+                       });
         });
     }
 

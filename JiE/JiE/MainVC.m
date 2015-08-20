@@ -50,7 +50,9 @@
         case 6:
             identifier = @"sixthSegue";
             break;
-    }
+        case 7:
+            identifier = @"seventhSegue";
+        break;    }
     
     return identifier;
 }

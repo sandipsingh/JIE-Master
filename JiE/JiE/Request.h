@@ -30,4 +30,5 @@
 -(void)updateDeviceToken:(NSString *)deviceToken WithUserId:(NSString *)userId;
 -(void)deleteNotification:(int)notificationId;
 -(void)getAllNotifications;
+-(void)getMyUser:(NSString *)userId;
 @end

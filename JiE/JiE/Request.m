@@ -316,6 +316,54 @@
     [self createConnection:postRequest];
 }
 
+
+
+
+
+
+
+
+
+-(void)getMyUser:(NSString *)userId{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/jie1.php?action=getpost",Server_domain]];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userid=%@",userId];
+    NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
+    [postRequest setHTTPBody:body];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [self createConnection:postRequest];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     [_webData setLength: 0];

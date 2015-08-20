@@ -469,14 +469,7 @@
 				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
 				18551BA21B6522C20045BFC2 /* Common.h */,
 				F900E9B61B7CB70A0057315D /* Change Password */,
-				F9DF961C1B7E142500757408 /* MyJiePageViewController.h */,
-				F9DF961D1B7E142500757408 /* MyJiePageViewController.m */,
-				F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */,
-				F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */,
-				F9E32C301B834428000C17F0 /* NewHomeViewController.h */,
-				F9E32C311B834428000C17F0 /* NewHomeViewController.m */,
-				F9E32C331B83443D000C17F0 /* NewHomeTableViewCell.h */,
-				F9E32C341B83443D000C17F0 /* NewHomeTableViewCell.m */,
+				F9DF80741B85AD37005D8D62 /* MyJie */,
 			);
 			path = JiE;
 			sourceTree = "<group>";
@@ -623,6 +616,21 @@
 			name = add_jie;
 			path = images/add_jie;
 			sourceTree = SOURCE_ROOT;
+		};
+		F9DF80741B85AD37005D8D62 /* MyJie */ = {
+			isa = PBXGroup;
+			children = (
+				F9DF961C1B7E142500757408 /* MyJiePageViewController.h */,
+				F9DF961D1B7E142500757408 /* MyJiePageViewController.m */,
+				F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */,
+				F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */,
+				F9E32C301B834428000C17F0 /* NewHomeViewController.h */,
+				F9E32C311B834428000C17F0 /* NewHomeViewController.m */,
+				F9E32C331B83443D000C17F0 /* NewHomeTableViewCell.h */,
+				F9E32C341B83443D000C17F0 /* NewHomeTableViewCell.m */,
+			);
+			name = MyJie;
+			sourceTree = "<group>";
 		};
 		F9F1CE151B3992EC00D45540 /* images */ = {
 			isa = PBXGroup;
