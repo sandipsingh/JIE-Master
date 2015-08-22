@@ -12,7 +12,7 @@
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import "Request.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate,RequestDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,RequestDelegate,UIAlertViewDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

@@ -51,7 +51,7 @@
 
 //Get all user
 -(void)getAllUserForUser{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=getFriends",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=getFriends",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -63,7 +63,7 @@
 
 //Get user with search
 -(void)getUserForSearchString:(NSString *)string{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=getAllUsers",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=getAllUsers",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"searchString=%@",string];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -75,7 +75,7 @@
 
 //AcceptFriend
 -(void)addFriendWithFriendId:(NSString *)fid{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=acceptFriend",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=acceptFriend",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@",getUser().userId,fid];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -99,7 +99,7 @@
 
 //Get post
 -(void)getAllJie{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=retrive",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=retrive",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -125,7 +125,7 @@
 
 //GetComments
 -(void)getComments:(NSString *)postId{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=getComment",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=getComment",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@",postId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -137,7 +137,7 @@
 
 //PostComment
 -(void)postComments:(NSString *)postId comment:(NSString *)comment{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=addComment",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=addComment",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"postId=%@&userId=%@&comment=%@&time=%@",postId,getUser().userId,comment,TimeStamp];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
@@ -149,7 +149,7 @@
 
 //SignUp
 -(void)signUp:(NSString *)username email:(NSString *)email password:(NSString *)password profilePic:(NSString *)profilePic dob:(NSString *)dob device:(NSString *)deviceToken{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=register",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subscriber.php?action=register",Notification_Server_domain]];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"username=%@&email=%@&pass=%@&profilepic=%@&dob=%@&deviceToken=%@",username,email,password,profilePic,dob,deviceToken];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
@@ -160,7 +160,7 @@
 }
 
 -(void)siupWithTwitter:(NSString *)userId userName:(NSString *)userName decive:(NSString *)deviceToken{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=registerWithTwitter",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subscriber.php?action=registerWithTwitter",Notification_Server_domain]];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&username=%@&deviceToken=%@",userId,userName,deviceToken];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
@@ -170,7 +170,7 @@
     [self createConnection:postRequest];
 }
 -(void)siupWithFacebook:(NSString *)userId userName:(NSString *)userName userEmail:(NSString *)email decive:(NSString *)deviceToken{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=registerWithFB",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subscriber.php?action=registerWithFB",Notification_Server_domain]];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&email=%@&username=%@&deviceToken=%@",userId,email,userName,deviceToken];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
@@ -183,7 +183,7 @@
 //Forgot password
 -(void)resetPasswordWithEmail:(NSString *)email
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/sub.php?action=pwd",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/sub.php?action=pwd",Notification_Server_domain]];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"email=%@",email];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
@@ -194,7 +194,7 @@
 }
 
 -(void)updateDeviceToken:(NSString *)deviceToken WithUserId:(NSString *)userId{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=updateDevice",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=updateDevice",Notification_Server_domain]];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userID=%@&deviceToken=%@&deviceID=iOS",userId,deviceToken];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
@@ -206,7 +206,7 @@
 
 //Login
 -(void)loginWithUserName:(NSString *)userName withPassword:(NSString *)password{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subscriber.php?action=login",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subscriber.php?action=login",Notification_Server_domain]];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"email=%@&pass=%@",userName,password];
     NSData *POSTData = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
@@ -218,7 +218,7 @@
 
 //Method to add Jie into server
 -(void)addJieWithParameter:(JieClass *)jObj{
-   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=addjie",Server_domain]];
+   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=addjie",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:45.0];
     [postRequest setValue:@"900" forHTTPHeaderField:@"Keep-Alive"];
     [postRequest setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
