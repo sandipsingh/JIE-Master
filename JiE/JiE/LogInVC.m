@@ -64,6 +64,9 @@
     reqObj.delegate = self;
     [reqObj updateDeviceToken:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken] WithUserId:userId];
 }
+-(void)getError{
+    [HUD hide:YES];
+}
 -(void)getResult:(id)response{
     switch (_lReq) {
         case getLogin:
