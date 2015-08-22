@@ -12,6 +12,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @interface ViewController : UIViewController<RequestDelegate,FBLoginViewDelegate>
+@property (nonatomic,assign) BOOL isUpdateDevice;
 @property(strong,nonatomic) UINavigationController *localNavigationController123;
 @property (weak, nonatomic) IBOutlet UIView *startingView;
 

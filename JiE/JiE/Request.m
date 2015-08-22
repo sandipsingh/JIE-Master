@@ -29,7 +29,7 @@
 -(void)getAllNotifications{
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@jie/subjie.php?action=getnotification",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@",getUser().userId];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"senderId=%@",getUser().userId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
@@ -40,7 +40,7 @@
 -(void)deleteNotification:(int)notificationId{
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@jie/subjie.php?action=delnotification",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"id=%d",notificationId];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"notifyId=%d",notificationId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];

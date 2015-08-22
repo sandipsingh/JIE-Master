@@ -1558,7 +1558,7 @@
                             <outlet property="delegate" destination="fRs-a1-uRi" id="BwP-OL-xH9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="H2r-jt-474"/>
+                    <navigationItem key="navigationItem" id="H2r-jt-474"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKo-G7-20x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3607,18 +3607,6 @@
                                                         <color key="titleColor" red="0.043137256059999997" green="0.1215686351" blue="0.031372550870000002" alpha="1" colorSpace="deviceRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="9PR-Bm-FTW"/>
-                                                            <exclude reference="wuP-z5-DZO"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                        <mask key="constraints">
-                                                            <include reference="9PR-Bm-FTW"/>
-                                                            <include reference="wuP-z5-DZO"/>
-                                                        </mask>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="onClickComment:" destination="8VD-6w-nTl" eventType="touchUpInside" id="e9v-Pr-Dfa"/>
                                                     </connections>
@@ -3720,19 +3708,6 @@
                                                 </constraint>
                                                 <constraint firstItem="K6M-e8-i9t" firstAttribute="top" secondItem="HR6-w4-riW" secondAttribute="top" constant="5" id="ysJ-mH-jjs"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="17B-8K-2jL"/>
-                                                    <exclude reference="8QH-Lr-t8q"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <mask key="constraints">
-                                                    <exclude reference="17B-8K-2jL"/>
-                                                    <exclude reference="39r-KX-gLa"/>
-                                                    <include reference="8QH-Lr-t8q"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnComment" destination="BRx-eF-3om" id="2Lj-Ae-Bcb"/>
