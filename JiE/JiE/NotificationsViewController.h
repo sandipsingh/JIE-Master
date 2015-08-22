@@ -15,12 +15,12 @@ typedef enum NotificationsRequest{
 }NotificationsRequest;
 
 
-@interface NotificationsViewController : UITableViewController<notificationDelegate,RequestDelegate>
+@interface NotificationsViewController : UITableViewController<notificationDelegate,RequestDelegate,UIAlertViewDelegate>
 
 @property(nonatomic, strong) NSMutableArray *notificationsArray;
 
 @property (nonatomic, assign) NotificationsRequest requestType;
 
 @property (nonatomic, assign) int rowNumber;
-
+@property (nonatomic,strong) NSString *fId;
 @end
