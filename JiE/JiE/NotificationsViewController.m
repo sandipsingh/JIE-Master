@@ -16,7 +16,7 @@
 @implementation NotificationsViewController
 
 -(void)getError{
-   // NSLog(@"Error");
+    NSLog(@"Error");
 }
 -(void)getResult:(id)response{
     switch (_requestType) {
@@ -28,11 +28,11 @@
                 for (int i = 0; i< [array count]; i++) {
                     NSDictionary *dic = [array objectAtIndex:i];
                     Notifications *obj = [[Notifications alloc] init];
-                    obj.comment = [dic valueForKey:@""];
-                    obj.senderId = [[dic valueForKey:@""] intValue];
-                    obj.profileImagePath = [dic valueForKey:@""];
-                    obj.time = [dic valueForKey:@""];
-                    obj.notificationId = [[dic valueForKey:@""] intValue];
+                    obj.comment = [dic valueForKey:@"message"];
+                    obj.senderId = [[dic valueForKey:@"senderId"] intValue];
+                    obj.profileImagePath = [dic valueForKey:@"profilepic"];
+                    obj.time = [dic valueForKey:@"time"];
+                    obj.notificationId = [[dic valueForKey:@"notifyId"] intValue];
                     [_notificationsArray addObject:obj];
                 }
             }
@@ -56,6 +56,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Notifications";
     // Do any additional setup after loading the view.
 }
 
@@ -88,6 +89,71 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
+}
+
+-(void)showAlertWithFriendRequest:(Notifications *)obj {
+    _fId = [NSString stringWithFormat:@"%d",obj.senderId];
+    if ([[UIDevice currentDevice].systemVersion floatValue] > 8.0) {
+        
+        UIAlertController *actionView = [UIAlertController alertControllerWithTitle:nil message:obj.comment preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+            UIAlertAction* Reject = [UIAlertAction
+                                  actionWithTitle:@"Reject"
+                                  style:UIAlertActionStyleDefault
+                                  handler:^(UIAlertAction * action)
+                                  {
+                                      _fId = nil;
+                                  }];
+            [actionView addAction:Reject];
+            UIAlertAction* Accept = [UIAlertAction
+                                 actionWithTitle:@"Accept"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [self acceptFriendRequest];
+                                 }];
+        
+         [actionView addAction:Accept];
+        
+    }
+    else{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:obj.comment delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+        [alertView show];
+    }
+}
+
+-(void)acceptFriendRequest{
+    Request *req = [[Request alloc] init];
+    req.delegate = self;
+    [req addFriendWithFriendId:_fId];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 1:
+        {
+            [self acceptFriendRequest];
+        }
+            break;
+        case 0:
+        {
+            _fId = nil;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Notifications *obj = [_notificationsArray objectAtIndex:indexPath.row];
+    if ([obj.comment rangeOfString:@"friend"].length>0) {
+        //show popup for acceptFriend request
+        [self showAlertWithFriendRequest:obj];
+    }
+    else{
+        //show popup for show comment
+    }
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:

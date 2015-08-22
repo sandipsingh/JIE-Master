@@ -104,9 +104,20 @@
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
 }
 
+-(void)updateDeviceTokenWithUser:(NSString *)userId
+{
+    _isUpdateDevice = YES;
+    Request * reqObj = [[Request alloc] init];
+    reqObj.delegate = self;
+    [reqObj updateDeviceToken:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken] WithUserId:userId];
+}
 -(void)getResult:(id)response
 {
     BOOL loginResult = NO;
+    if (_isUpdateDevice == YES) {
+        _isUpdateDevice = NO;
+        return;
+    }
     if ([response isKindOfClass:[NSArray class]]) {
         for(NSDictionary *dict in response) {
             loginResult = [[dict objectForKey:@"result1"] boolValue];
@@ -149,6 +160,7 @@
         [_loadingView hide:YES];
         // redirection user to the app as per login status
         if(loginResult  == YES){
+            [self updateDeviceTokenWithUser:getUser().userId];
             UINavigationController *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
             [((AppDelegate *)[UIApplication sharedApplication].delegate).window setRootViewController:mainVCObj];
             [((AppDelegate *)[UIApplication sharedApplication].delegate).window makeKeyAndVisible];
@@ -157,6 +169,7 @@
             [self getError];
         }
     }
+   
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];

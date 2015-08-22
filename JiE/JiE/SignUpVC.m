@@ -27,6 +27,13 @@
                                          otherButtonTitles:nil];
     [alert show];
 }
+-(void)updateDeviceTokenWithUser:(NSString *)userId
+{
+     _isUpdateDevice = YES;
+    Request * reqObj = [[Request alloc] init];
+    reqObj.delegate = self;
+    [reqObj updateDeviceToken:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken] WithUserId:userId];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -92,6 +99,10 @@
 -(void)getResult:(id)response{
     
     BOOL loginResult = NO;
+    if (_isUpdateDevice == YES) {
+        _isUpdateDevice = NO;
+        return;
+    }
     if ([response isKindOfClass:[NSArray class]]) {
         for(NSDictionary *dict in response) {
             loginResult = [[dict objectForKey:@"result1"] boolValue];
@@ -136,6 +147,7 @@
         [HUD hide:YES];
         // redirection user to the app as per login status
         if(loginResult  == YES){
+            [self updateDeviceTokenWithUser:getUser().userId];
             MainVC *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
             [self.navigationController pushViewController:mainVCObj animated:YES];
         } else{
