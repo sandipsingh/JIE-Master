@@ -16,7 +16,7 @@
 @implementation NotificationsViewController
 
 -(void)getError{
-    NSLog(@"Error");
+   // NSLog(@"Error");
 }
 -(void)getResult:(id)response{
     switch (_requestType) {
