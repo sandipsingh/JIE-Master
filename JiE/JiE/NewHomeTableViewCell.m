@@ -24,7 +24,7 @@
     if (_delegate != nil && [_delegate respondsToSelector:@selector(didClickOnComment:)]) {
         
         
-        [_delegate didClickOnComment:_postId];
+       // [_delegate didClickOnComment:_postId];
     }
 }
 

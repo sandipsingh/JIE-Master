@@ -8,7 +8,7 @@
 
 #import "NewHomeViewController.h"
 #import "NewHomeTableViewCell.h"
-
+#import "HomeTableViewCell.h"
 #import "CommentsViewController.h"
 #import "JieModel.h"
 #import "AddJieViewController.h"
@@ -19,14 +19,18 @@
 @implementation NewHomeViewController
 
 - (void)viewDidLoad {
+    
+   
     [super viewDidLoad];
-    self.title = @"Home";
+    self.title = @"My JIE";
     _jieArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self getJie];
+    
+     //NSLog(@"imgUserImage = %@",@"Privacy.png");
 }
 
 -(void)getError{
@@ -67,9 +71,8 @@
                 obj.jiecomment = [innerDic valueForKey:@"comments"];
                 obj.jieUnlike = [innerDic valueForKey:@"unlikeCount"];
                 obj.profilePicURL = [innerDic valueForKey:@"profilepic"];
-                
-                
-                
+
+            
                 
                 [_jieArray addObject:obj];
             }
@@ -88,14 +91,25 @@
     
     Request *req = [[Request alloc] init];
     req.delegate = self;
-    [req getAllJie];
+    [req getMyJIE];
 }
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
+    if (section == 0) {
+        return 1;
+    }
+   
+
     return [_jieArray count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 170;
+    }
     return 350;
 }
 
@@ -104,56 +118,57 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    static NSString *CellIdentifier = @"NewHomeTableViewCell";
     
-    NewHomeTableViewCell *cell = (NewHomeTableViewCell     *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (indexPath.section == 0) {
+        static NSString *CellIdentifier = @"NewHomeTableViewCell";
+        NewHomeTableViewCell *cell = (NewHomeTableViewCell     *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (cell == nil) {
+            cell = [[NewHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        if (getUser().profilepic.length>0) {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^{
+                
+                UIImage *profileimage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:getUser().profilepic]]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                        cell.imgUserImage.image = profileimage;
+                    
+                    [cell setNeedsLayout];
+                    
+                });
+            });
+        }
+       
+
+        return cell;
+    }
+    
+    
+    else
+    
+    {
+        
+        
+        static NSString *CellIdentifier = @"HomeTableViewCell";
+    
+    HomeTableViewCell *cell = (HomeTableViewCell     *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[NewHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    
-    
-    JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
-    if(indexPath.row==0){
         
-        //cell.nameImageBack.image=[UIImage imageNamed:@"logo1.png"];
-        cell.nameImageBack.image=[UIImage imageNamed:@"640x960"];
-        cell.nameTestName.text= @"pawansingh";
-        cell.nameProimage.image=[UIImage imageNamed:@"e"];
-        
-        cell.lbluserName.text = nil;
-        cell.lblTitle.text = nil;
-        cell.postId = nil;
-        cell.lblDescription.text = nil;
-        cell.lblComment.text = nil;
-        cell.lblLike.text = nil;
-        cell.lblLastSeen.text=nil;
-        cell.btnComment.hidden=YES;
-        cell.buttonJie.hidden=NO;
-        cell.buttonFriends.hidden=NO;
-        
-    }
-    else{
+        JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
         cell.lbluserName.text = obj.username;
         cell.lblTitle.text = obj.title;
         cell.postId = obj.jieId;
         cell.lblDescription.text = obj.jieDescription;
         cell.lblComment.text = obj.jiecomment;
         cell.lblLike.text = obj.jieLike;
-        cell.nameImageBack.image=nil;
-        cell.nameProimage.image=nil;
-        cell.nameTestName.text=nil;
-        cell.buttonJie.hidden=YES;
-        cell.buttonFriends.hidden=YES;
         
-        // cell.lblLastSeen.text = obj.time;
-    }
-    
-    
-    
-    //////////////////////////////////// ////////
-    
-    
+        
+        
     if (obj.profilePicURL.length>0) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
@@ -172,12 +187,6 @@
             });
         });
     }
-    
-    
-    
-    
-    ///////////////////////////////////////////////////
-    
     if (obj.jieImageURL.length>0) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
@@ -191,12 +200,6 @@
                     
                     cell.imgPost.image = image;
                 }
-                
-                
-                
-                
-                
-                //cell.imgProfile.image=image;
                 [cell setNeedsLayout];
             });
         });
@@ -207,15 +210,13 @@
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     return cell;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 -(void)didClickOnComment:(NSString *)postId
 
 {

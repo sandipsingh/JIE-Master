@@ -32,4 +32,5 @@
 -(void)getAllNotifications;
 -(void)siupWithTwitter:(NSString *)userId userName:(NSString *)userName decive:(NSString *)deviceToken;
 -(void)siupWithFacebook:(NSString *)userId userName:(NSString *)userName userEmail:(NSString *)email decive:(NSString *)deviceToken;
+-(void)getMyJIE;
 @end

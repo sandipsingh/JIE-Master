@@ -97,8 +97,6 @@
 		F9D1BA1F1B458072008E9616 /* time-Calculator_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0A1B458072008E9616 /* time-Calculator_2.png */; };
 		F9D1BA201B458072008E9616 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0B1B458072008E9616 /* Title.png */; };
 		F9D1BA211B458072008E9616 /* video_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D1BA0C1B458072008E9616 /* video_icon.png */; };
-		F9DF961E1B7E142500757408 /* MyJiePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF961D1B7E142500757408 /* MyJiePageViewController.m */; };
-		F9DF96211B7E183E00757408 /* MyJiePageCellsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */; };
 		F9E32C321B834428000C17F0 /* NewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E32C311B834428000C17F0 /* NewHomeViewController.m */; };
 		F9E32C351B83443D000C17F0 /* NewHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E32C341B83443D000C17F0 /* NewHomeTableViewCell.m */; };
 		F9F032701B6B547B003F39D3 /* jie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F0326F1B6B547B003F39D3 /* jie_1.png */; };
@@ -260,10 +258,6 @@
 		F9D1BA0A1B458072008E9616 /* time-Calculator_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time-Calculator_2.png"; sourceTree = "<group>"; };
 		F9D1BA0B1B458072008E9616 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
 		F9D1BA0C1B458072008E9616 /* video_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_icon.png; sourceTree = "<group>"; };
-		F9DF961C1B7E142500757408 /* MyJiePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJiePageViewController.h; sourceTree = "<group>"; };
-		F9DF961D1B7E142500757408 /* MyJiePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJiePageViewController.m; sourceTree = "<group>"; };
-		F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJiePageCellsController.h; sourceTree = "<group>"; };
-		F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJiePageCellsController.m; sourceTree = "<group>"; };
 		F9E32C301B834428000C17F0 /* NewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomeViewController.h; sourceTree = "<group>"; };
 		F9E32C311B834428000C17F0 /* NewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomeViewController.m; sourceTree = "<group>"; };
 		F9E32C331B83443D000C17F0 /* NewHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomeTableViewCell.h; sourceTree = "<group>"; };
@@ -349,17 +343,6 @@
 				F96B1A971B6396C8007B5674 /* AccountsViewController.m */,
 			);
 			name = Account;
-			sourceTree = "<group>";
-		};
-		1809452B1B88634700C65A31 /* MyJIE */ = {
-			isa = PBXGroup;
-			children = (
-				F9DF961C1B7E142500757408 /* MyJiePageViewController.h */,
-				F9DF961D1B7E142500757408 /* MyJiePageViewController.m */,
-				F9DF961F1B7E183E00757408 /* MyJiePageCellsController.h */,
-				F9DF96201B7E183E00757408 /* MyJiePageCellsController.m */,
-			);
-			name = MyJIE;
 			sourceTree = "<group>";
 		};
 		1809452C1B88635A00C65A31 /* NewHomePage */ = {
@@ -474,7 +457,6 @@
 			isa = PBXGroup;
 			children = (
 				1809452C1B88635A00C65A31 /* NewHomePage */,
-				1809452B1B88634700C65A31 /* MyJIE */,
 				1809452A1B88633600C65A31 /* Account */,
 				180945291B88631100C65A31 /* Responder */,
 				180945281B8862CE00C65A31 /* common */,
@@ -886,7 +868,6 @@
 				1866D33E1B6678430063227B /* CommentsViewController.m in Sources */,
 				1866D3481B668C6A0063227B /* Comments.m in Sources */,
 				18503F431B640D7000FD8B34 /* FriendsTableViewCell.m in Sources */,
-				F9DF961E1B7E142500757408 /* MyJiePageViewController.m in Sources */,
 				18E24DD81B7BACE7007B7E84 /* NotificationsViewController.m in Sources */,
 				F9176CF21B391A6600D6B7D1 /* FaceBookControllerVC.m in Sources */,
 				F9D1B9EB1B4573FF008E9616 /* AMSlideMenuLeftMenuSegue.m in Sources */,
@@ -898,7 +879,6 @@
 				F9E32C321B834428000C17F0 /* NewHomeViewController.m in Sources */,
 				18B07EAD1B5D59BC00E649FD /* HomeTableViewCell.m in Sources */,
 				F96B1A951B63864A007B5674 /* FriendsViewController.m in Sources */,
-				F9DF96211B7E183E00757408 /* MyJiePageCellsController.m in Sources */,
 				F9176CCA1B39115200D6B7D1 /* AppDelegate.m in Sources */,
 				F9FCFF671B4D03950028F0B7 /* Request.m in Sources */,
 				F938E9531B3A69E6005A7224 /* ParsingLogInClasses.m in Sources */,
