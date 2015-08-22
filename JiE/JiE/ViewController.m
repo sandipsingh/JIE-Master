@@ -161,6 +161,7 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     _twitterlogInButton.frame = CGRectMake(_logInButton.frame.origin.x, _logInButton.frame.origin.y, _logInButton.frame.size.width, _logInButton.frame.size.height);
+    [_twitterlogInButton setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
