@@ -14,7 +14,7 @@
 - (IBAction)imagePicker:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *imagePickerOutLet;
-
+@property (nonatomic,assign) BOOL isUpdateDevice;
 
 
 

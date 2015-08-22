@@ -1558,7 +1558,7 @@
                             <outlet property="delegate" destination="fRs-a1-uRi" id="BwP-OL-xH9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="H2r-jt-474"/>
+                    <navigationItem key="navigationItem" id="H2r-jt-474"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKo-G7-20x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
