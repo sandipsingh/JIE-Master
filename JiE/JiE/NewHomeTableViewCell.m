@@ -22,12 +22,13 @@
 
 - (IBAction)onClickComment:(id)sender {
     if (_delegate != nil && [_delegate respondsToSelector:@selector(didClickOnComment:)]) {
-        
-        
-       // [_delegate didClickOnComment:_postId];
+       [_delegate didClickOnComment:_postId];
     }
 }
 
-- (IBAction)buttonJie:(id)sender {
+- (IBAction)buttonJie:(id)sender{
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(didClickOnJIE:)]) {
+        [_delegate didClickOnJIE:_postId];
+    }
 }
 @end

@@ -115,7 +115,12 @@
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-
+-(void)didClickOnJIE:(NSString *)userId{
+    
+}
+-(void)didClickOnFriends:(NSString *)userId{
+    
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     
@@ -217,11 +222,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)didClickOnComment:(NSString *)postId
-
+-(void)didClickOnComment:(NSString *)userId
 {
     CommentsViewController * cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"commentsView"];
-    cvc.postId = postId;
+    cvc.postId = userId;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:cvc];
     cvc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:navController animated:YES completion:nil];
