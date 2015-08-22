@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRU-Xt-mo3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRU-Xt-mo3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -3497,11 +3497,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="224" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-Qk-nsV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="359" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-Qk-nsV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="NewHomeTableViewCell" rowHeight="224" id="8VD-6w-nTl" userLabel="NewHomeTableViewCell" customClass="NewHomeTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="NewHomeTableViewCell" rowHeight="359" id="8VD-6w-nTl" userLabel="NewHomeTableViewCell" customClass="NewHomeTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8VD-6w-nTl" id="HR6-w4-riW">
@@ -3607,23 +3607,11 @@
                                                         <color key="titleColor" red="0.043137256059999997" green="0.1215686351" blue="0.031372550870000002" alpha="1" colorSpace="deviceRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="9PR-Bm-FTW"/>
-                                                            <exclude reference="wuP-z5-DZO"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                        <mask key="constraints">
-                                                            <include reference="9PR-Bm-FTW"/>
-                                                            <include reference="wuP-z5-DZO"/>
-                                                        </mask>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="onClickComment:" destination="8VD-6w-nTl" eventType="touchUpInside" id="e9v-Pr-Dfa"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="0ic-VC-gB8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ic-VC-gB8">
                                                     <rect key="frame" x="-19" y="-27" width="631" height="258"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBA-tR-EU0" userLabel="description">
@@ -3720,23 +3708,11 @@
                                                 </constraint>
                                                 <constraint firstItem="K6M-e8-i9t" firstAttribute="top" secondItem="HR6-w4-riW" secondAttribute="top" constant="5" id="ysJ-mH-jjs"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="17B-8K-2jL"/>
-                                                    <exclude reference="8QH-Lr-t8q"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <mask key="constraints">
-                                                    <exclude reference="17B-8K-2jL"/>
-                                                    <exclude reference="39r-KX-gLa"/>
-                                                    <include reference="8QH-Lr-t8q"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnComment" destination="BRx-eF-3om" id="2Lj-Ae-Bcb"/>
                                             <outlet property="buttonFriends" destination="CpU-Fw-OgW" id="qjK-aK-UKG"/>
+                                            <outlet property="buttonJie" destination="cqb-i7-dm4" id="WZP-gm-InD"/>
                                             <outlet property="delegate" destination="w3h-XK-EKv" id="KVe-cY-fp8"/>
                                             <outlet property="imgPost" destination="GfZ-hD-zdx" id="jZa-kl-sQ8"/>
                                             <outlet property="imgProfile" destination="K6M-e8-i9t" id="b5c-2s-cvF"/>

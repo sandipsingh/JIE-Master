@@ -18,6 +18,7 @@
 @end
 
 @implementation ViewController
+
 -(void)getError{
     [_loadingView hide:YES];
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Validation" message:@"Some error occured. Please try again" delegate:nil //or self
@@ -26,7 +27,9 @@
     [alert show];
 }
 
--(void)getFacebookProfileInfos {
+-(void)getFacebookProfileInfos
+
+{
     
     FBSDKGraphRequest *requestMe = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:nil];
     
@@ -50,12 +53,17 @@
     }];
     [connection start];
 }
-- (IBAction)loginWithFacebook:(id) sender {
+- (IBAction)loginWithFacebook:(id) sender
+
+{
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logInWithReadPermissions:@[@"public_profile",@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (error) {
             // Process error
-        } else if (result.isCancelled) {
+            
+        } else if (result.isCancelled)
+        
+        {
             // Handle cancellations
         } else {
             // Login Successful here
@@ -67,7 +75,9 @@
         }
     }];
 }
--(void)showLoading{
+-(void)showLoading
+
+{
     _loadingView= [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:_loadingView];
     [_loadingView show:YES];

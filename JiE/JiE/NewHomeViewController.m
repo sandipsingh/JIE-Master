@@ -115,7 +115,7 @@
     
     JieModel *obj = [_jieArray objectAtIndex:indexPath.row];
     if(indexPath.row==0){
-
+        
         //cell.nameImageBack.image=[UIImage imageNamed:@"logo1.png"];
         cell.nameImageBack.image=[UIImage imageNamed:@"640x960"];
         cell.nameTestName.text= @"pawansingh";
@@ -129,17 +129,22 @@
         cell.lblLike.text = nil;
         cell.lblLastSeen.text=nil;
         cell.btnComment.hidden=YES;
+        cell.buttonJie.hidden=NO;
+        cell.buttonFriends.hidden=NO;
+        
     }
     else{
-    cell.lbluserName.text = obj.username;
-    cell.lblTitle.text = obj.title;
-    cell.postId = obj.jieId;
-    cell.lblDescription.text = obj.jieDescription;
-    cell.lblComment.text = obj.jiecomment;
-    cell.lblLike.text = obj.jieLike;
-    cell.nameImageBack.image=nil;
-    cell.nameProimage.image=nil;
+        cell.lbluserName.text = obj.username;
+        cell.lblTitle.text = obj.title;
+        cell.postId = obj.jieId;
+        cell.lblDescription.text = obj.jieDescription;
+        cell.lblComment.text = obj.jiecomment;
+        cell.lblLike.text = obj.jieLike;
+        cell.nameImageBack.image=nil;
+        cell.nameProimage.image=nil;
         cell.nameTestName.text=nil;
+        cell.buttonJie.hidden=YES;
+        cell.buttonFriends.hidden=YES;
         
         // cell.lblLastSeen.text = obj.time;
     }
@@ -158,8 +163,8 @@
                 if(indexPath.row==0){
                     cell.imgProfile.image = nil;
                 }else{
-                
-                cell.imgProfile.image = profileimage;
+                    
+                    cell.imgProfile.image = profileimage;
                 }
                 
                 [cell setNeedsLayout];
