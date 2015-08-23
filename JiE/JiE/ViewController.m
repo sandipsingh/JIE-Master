@@ -109,7 +109,7 @@
             [self SignUpWithTwitter:session];
         }
     }];
-    [self.view addSubview:_twitterlogInButton];
+    [self.twitterView addSubview:_twitterlogInButton];
     // Do any additional setup after loading the view, typically from a nib.
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
 }
@@ -183,7 +183,7 @@
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    _twitterlogInButton.frame = CGRectMake(_logInButton.frame.origin.x, _logInButton.frame.origin.y, _logInButton.frame.size.width, _logInButton.frame.size.height);
+    _twitterlogInButton.frame = CGRectMake(0, 0, _twitterView.frame.size.width, _twitterView.frame.size.height);
     [_twitterlogInButton setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning {

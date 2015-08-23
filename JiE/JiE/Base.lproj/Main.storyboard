@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRU-Xt-mo3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRU-Xt-mo3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -165,6 +165,13 @@
                                             <segue destination="Bpe-Ci-N6e" kind="show" id="Gml-vB-OZ5"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmw-Ke-LvT">
+                                        <rect key="frame" x="53" y="324" width="464" height="37"/>
+                                        <color key="backgroundColor" red="0.584294231" green="0.84390169900000001" blue="0.28569232700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="vB8-UN-KEn"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -196,15 +203,18 @@
                                     <constraint firstItem="gYp-Ys-CJE" firstAttribute="trailing" secondItem="m3S-FM-Zax" secondAttribute="trailing" constant="-40" id="UOy-dD-CX0"/>
                                     <constraint firstAttribute="centerX" secondItem="yCi-Q9-NHX" secondAttribute="centerX" constant="33.5" id="Vae-P0-6xv"/>
                                     <constraint firstItem="hW5-xG-Wir" firstAttribute="top" secondItem="pnj-Un-stk" secondAttribute="bottom" constant="53" id="WUu-TT-tTe"/>
+                                    <constraint firstItem="nmw-Ke-LvT" firstAttribute="leading" secondItem="m3S-FM-Zax" secondAttribute="leading" constant="1" id="ZTD-YW-peN"/>
                                     <constraint firstItem="YU5-zh-F3X" firstAttribute="leading" secondItem="IUS-i2-LhO" secondAttribute="leading" constant="-16" id="dLs-HV-rC2">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                                     </constraint>
+                                    <constraint firstItem="nmw-Ke-LvT" firstAttribute="trailing" secondItem="m3S-FM-Zax" secondAttribute="trailing" constant="1" id="gqh-oF-UHR"/>
                                     <constraint firstItem="m3S-FM-Zax" firstAttribute="leading" secondItem="IUS-i2-LhO" secondAttribute="leading" constant="52" id="hwE-zG-RmG">
                                         <variation key="widthClass=compact" constant="25"/>
                                         <variation key="heightClass=regular-widthClass=regular" constant="72"/>
                                     </constraint>
                                     <constraint firstAttribute="centerY" secondItem="m3S-FM-Zax" secondAttribute="centerY" id="l02-Qa-M5R"/>
                                     <constraint firstItem="ko6-0s-UdA" firstAttribute="top" secondItem="pnj-Un-stk" secondAttribute="bottom" constant="53" id="qmw-DZ-KYh"/>
+                                    <constraint firstItem="nmw-Ke-LvT" firstAttribute="top" secondItem="pnj-Un-stk" secondAttribute="bottom" constant="-37" id="scA-DE-DFW"/>
                                     <constraint firstItem="ko6-0s-UdA" firstAttribute="height" secondItem="m3S-FM-Zax" secondAttribute="height" id="tDq-nI-MFR">
                                         <variation key="heightClass=regular" constant="0.0"/>
                                     </constraint>
@@ -233,6 +243,7 @@
                     <navigationItem key="navigationItem" id="NT3-FU-geI"/>
                     <connections>
                         <outlet property="logInButton" destination="pnj-Un-stk" id="I6U-pK-wul"/>
+                        <outlet property="twitterView" destination="nmw-Ke-LvT" id="KOJ-ay-SDm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hn-9Z-Gv6" sceneMemberID="firstResponder"/>
@@ -3634,14 +3645,14 @@
                                                     </state>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="Cvo-YW-gri"/>
                                                             <exclude reference="Ab5-hK-D7f"/>
+                                                            <exclude reference="Cvo-YW-gri"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <mask key="constraints">
-                                                            <include reference="Cvo-YW-gri"/>
                                                             <include reference="Ab5-hK-D7f"/>
+                                                            <include reference="Cvo-YW-gri"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
@@ -3703,8 +3714,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="dJj-tn-Dsq"/>
                                                     <exclude reference="WEj-qv-giU"/>
+                                                    <exclude reference="dJj-tn-Dsq"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
@@ -3713,8 +3724,8 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="22w-cW-HP2"/>
-                                                    <include reference="dJj-tn-Dsq"/>
                                                     <exclude reference="WEj-qv-giU"/>
+                                                    <include reference="dJj-tn-Dsq"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3754,7 +3765,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="KDg-t6-tmd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="business zone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaL-81-pQj" userLabel="lblDescription">
@@ -3763,7 +3774,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="k0b-Zq-LBP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-1h-o11" userLabel="lblLine">
@@ -3773,7 +3784,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="UK6-yD-HxJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DM-gn-w0C">

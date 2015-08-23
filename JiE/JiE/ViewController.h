@@ -15,7 +15,7 @@
 @property (nonatomic,assign) BOOL isUpdateDevice;
 @property(strong,nonatomic) UINavigationController *localNavigationController123;
 @property (weak, nonatomic) IBOutlet UIView *startingView;
-
+@property (strong,nonatomic) IBOutlet UIView *twitterView;
 @property (weak, nonatomic) IBOutlet UIButton *logInButton;
 @property (weak, nonatomic) IBOutlet FBLoginView *FBLogInButton;
 @property (strong,nonatomic) TWTRLogInButton *twitterlogInButton;
