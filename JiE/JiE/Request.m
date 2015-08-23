@@ -87,9 +87,9 @@
 
 //AcceptFriend
 -(void)sendFriendRequest:(NSString *)fid{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@jie/subjie.php?action=sendFriendReq",Notification_Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=sendFriendReq",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
-    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@",getUser().userId,fid];
+    NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userId=%@&friendId=%@&message=%@",getUser().userId,fid,[NSString stringWithFormat:@"%@ send a friend request.",getUser().username]];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];
     [postRequest setHTTPBody:body];
     [postRequest setHTTPMethod:@"POST"];
@@ -111,7 +111,7 @@
 
 ////////////////////
 -(void)getMyJIE{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@clients/jie/subjie.php?action=getpost",Server_domain]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/jie/subjie.php?action=getpost",Notification_Server_domain]];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
     NSString *parameterStringInRequestBody =[NSString stringWithFormat:@"userid=%@",getUser().userId];
     NSData *body = [parameterStringInRequestBody dataUsingEncoding:NSUTF8StringEncoding];

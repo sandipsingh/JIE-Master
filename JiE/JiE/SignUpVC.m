@@ -103,8 +103,8 @@
         _isUpdateDevice = NO;
         return;
     }
-    if ([response isKindOfClass:[NSArray class]]) {
-        for(NSDictionary *dict in response) {
+    if ([response isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary *)response;
             loginResult = [[dict objectForKey:@"result1"] boolValue];
             id result = [dict objectForKey:@"result2"];
             if ([result isKindOfClass:[NSArray class]])
@@ -143,7 +143,6 @@
                     break;
                 }
             }
-        }
         [HUD hide:YES];
         // redirection user to the app as per login status
         if(loginResult  == YES){
