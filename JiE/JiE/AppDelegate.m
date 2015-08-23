@@ -9,11 +9,13 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "ViewController.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
 
 #ifdef __IPHONE_8_0
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
@@ -92,14 +94,27 @@
             break;
     }
 }
+-(void)dismissAlertView{
+    for (UIWindow* window in [UIApplication sharedApplication].windows) {
+        NSArray* subviews = window.subviews;
+        if ([subviews count] > 0)
+            if ([[subviews objectAtIndex:0] isKindOfClass:[UIAlertView class]])
+                [(UIAlertView *)[subviews objectAtIndex:0] dismissWithClickedButtonIndex:[(UIAlertView *)[subviews objectAtIndex:0] cancelButtonIndex] animated:NO];
+    }
+}
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
  {
-     NSLog(@"remote notification: %@",[userInfo description]);
-     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
-     NSString *alert = [apsInfo objectForKey:@"alert"];
-     _fId = [userInfo objectForKey:@"friendId"];
-     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:alert delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
-     [alertView show];
+     if (getUser() != nil) {
+         NSLog(@"remote notification: %@",[userInfo description]);
+         NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+         NSString *alert = [apsInfo objectForKey:@"alert"];
+         _fId = [userInfo objectForKey:@"friendId"];
+         
+         [self dismissAlertView];
+         
+         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:alert delegate:self cancelButtonTitle:@"Reject" otherButtonTitles:@"Accept", nil];
+         [alertView show];
+     }
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

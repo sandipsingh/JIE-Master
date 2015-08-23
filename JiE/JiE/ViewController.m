@@ -96,9 +96,14 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.logInButton.readPermissions = @[@"public_profile", @"email"];
-    //self.logInButton.delegate = self;
     
+    if (getUser() != nil) {
+        UINavigationController *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+        [((AppDelegate *)[UIApplication sharedApplication].delegate).window setRootViewController:mainVCObj];
+        [((AppDelegate *)[UIApplication sharedApplication].delegate).window makeKeyAndVisible];
+        return;
+    }
+
     _twitterlogInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error) {
         if (error != nil) {
             NSLog(@"error: %@", [error localizedDescription]);
@@ -109,6 +114,7 @@
             [self SignUpWithTwitter:session];
         }
     }];
+    
     [self.twitterView addSubview:_twitterlogInButton];
     // Do any additional setup after loading the view, typically from a nib.
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
@@ -128,8 +134,8 @@
         _isUpdateDevice = NO;
         return;
     }
-    if ([response isKindOfClass:[NSArray class]]) {
-        for(NSDictionary *dict in response) {
+    if ([response isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary *)response;
             loginResult = [[dict objectForKey:@"result1"] boolValue];
             id result = [dict objectForKey:@"result2"];
             if ([result isKindOfClass:[NSArray class]])
@@ -166,7 +172,6 @@
                     break;
                 }
             }
-        }
         [_loadingView hide:YES];
         // redirection user to the app as per login status
         if(loginResult  == YES){
@@ -183,14 +188,15 @@
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    _twitterlogInButton.frame = CGRectMake(0, 0, _twitterView.frame.size.width, _twitterView.frame.size.height);
-    [_twitterlogInButton setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+     _twitterlogInButton.frame = CGRectMake(0, 0, _twitterView.frame.size.width, _twitterView.frame.size.height);
+}
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];

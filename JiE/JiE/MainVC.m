@@ -7,7 +7,7 @@
 //
 
 #import "MainVC.h"
-
+#import "AppDelegate.h"
 @interface MainVC ()
 
 @end
@@ -20,7 +20,12 @@
     
     // Do any additional setup after loading the view.
 }
-
+-(void)logOut{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:UserDetails];
+    UINavigationController *mainVCObj = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstView"];
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).window setRootViewController:mainVCObj];
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).window makeKeyAndVisible];
+}
 
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath
 
@@ -49,6 +54,14 @@
             break;
         case 6:
             identifier = @"sixthSegue";
+            break;
+        case 7:
+            identifier = @"";
+            break;
+        case 8:
+        {
+            [self logOut];
+        }
             break;
     }
     

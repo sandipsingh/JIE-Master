@@ -54,12 +54,14 @@
 
 - (void)logInWebService:(NSString*)userName andpassword:(NSString*)password
 {
+    _lReq = getLogin;
     Request * reqObj = [[Request alloc] init];
     reqObj.delegate = self;
     [reqObj loginWithUserName:userName withPassword:password];
 }
 -(void)updateDeviceTokenWithUser:(NSString *)userId
 {
+     _lReq = updateDeviceToken;
     Request * reqObj = [[Request alloc] init];
     reqObj.delegate = self;
     [reqObj updateDeviceToken:[[NSUserDefaults standardUserDefaults] objectForKey:pushtoken] WithUserId:userId];
@@ -71,12 +73,12 @@
     switch (_lReq) {
         case getLogin:
         {
-            if ([response isKindOfClass:[NSArray class]]) {
-                for(NSDictionary *dict in response) {
+            if ([response isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *dict = (NSDictionary *)response;
                     loginResult = [[dict objectForKey:@"result"] boolValue];
                     id result = [dict objectForKey:@"result1"];
                     if ([result isKindOfClass:[NSArray class]])
-                    
+                     
                     {
                         NSArray *array = (NSArray *)result;
                         for (NSDictionary *dic in array) {
@@ -147,7 +149,7 @@
                             break;
                         }
                     }
-                }
+                
                 
                 [HUD hide:YES];
                 // redirection user to the app as per login status
