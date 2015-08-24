@@ -24,6 +24,7 @@ typedef enum {
 - (IBAction)logInButtonAction:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet UIScrollView *loginScrollView;
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextOutlet;

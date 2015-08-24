@@ -15,6 +15,7 @@
     MBProgressHUD *HUD;
     NSString *imageIn64;
     UIDatePicker* picker;
+    UITextField *activeField;
 }
 @end
 
@@ -49,8 +50,18 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.topItem.title = @"";
     self.navigationController.navigationBar.tintColor=[UIColor colorWithRed:0 green:255 blue:0 alpha:.4];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -230,7 +241,9 @@
 }
 
 - (IBAction)DOB_Action:(id)sender {
+    [activeField resignFirstResponder];
     [self.DOB_Outlet resignFirstResponder];
+    self.DOB_Outlet.enabled = NO;
     picker = [[UIDatePicker alloc] init];
     picker.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     picker.datePickerMode = UIDatePickerModeDate;
@@ -251,18 +264,44 @@
     NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
     self.DOB_Outlet.text=[dateFormatter stringFromDate:[sender date]];
     //[self.userName_OutLet reg];
-    [self.userName_OutLet becomeFirstResponder];
     [self.userName_OutLet resignFirstResponder];
+    self.DOB_Outlet.enabled = YES;
     [picker removeFromSuperview];
 }
 
-//-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-//{
-//    // Here You can do additional code or task instead of writing with keyboard
-//
-////    [self.DOB_Outlet resignFirstResponder];
-//    return NO;
-//}
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    activeField = textField;
+}
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    if (activeField == self.DOB_Outlet) {
+        [self.DOB_Outlet resignFirstResponder];
+        return;
+    }
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    _signUpScrollView.contentInset = contentInsets;
+    _signUpScrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height);
+        [_signUpScrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    _signUpScrollView.contentInset = contentInsets;
+    _signUpScrollView.scrollIndicatorInsets = contentInsets;
+}
 
 
 
