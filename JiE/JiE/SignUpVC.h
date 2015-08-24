@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *imagePickerOutLet;
 @property (nonatomic,assign) BOOL isUpdateDevice;
+@property (weak, nonatomic) IBOutlet UIScrollView *signUpScrollView;
 
 
 
