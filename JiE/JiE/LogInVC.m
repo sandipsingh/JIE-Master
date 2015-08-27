@@ -55,7 +55,12 @@
 #pragma mark - text field
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    if (textField == _userNameTextOutlet) {
+        [_passwordTextField becomeFirstResponder];
+    }
+    else{
+         [textField resignFirstResponder];
+    }
     return YES;
 }
 //****************************** Web Service call *************************

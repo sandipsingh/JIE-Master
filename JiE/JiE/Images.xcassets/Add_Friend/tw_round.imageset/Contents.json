@@ -7,12 +7,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "tw@2x.png"
+      "filename" : "tw.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "tw@3x.png"
+      "filename" : "tw-1.png"
     }
   ],
   "info" : {

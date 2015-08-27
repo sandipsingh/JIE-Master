@@ -462,7 +462,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rpatel9630@yahoo.com" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYw-fz-hdW">
                                                         <rect key="frame" x="40" y="0.0" width="456" height="37"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                         <variation key="widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         </variation>
@@ -502,7 +502,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc123" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjS-H6-TV0">
                                                         <rect key="frame" x="40" y="0.0" width="456" height="37"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                                         <variation key="widthClass=compact">
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         </variation>
@@ -663,14 +663,6 @@
                                                     <action selector="imagePicker:" destination="nmt-8G-3o8" eventType="touchUpInside" id="2Gm-jZ-VdU"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="center" minimumFontSize="17" background="4.png" translatesAutoresizingMaskIntoConstraints="NO" id="r2M-jG-DA1">
-                                                <rect key="frame" x="0.0" y="-30" width="85" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="nmt-8G-3o8" id="Coa-mK-k50"/>
-                                                </connections>
-                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoH-ZP-v1V">
                                                 <rect key="frame" x="52" y="482" width="496" height="37"/>
                                                 <color key="backgroundColor" red="0.63529413938522339" green="0.89019614458084106" blue="0.31764706969261169" alpha="1" colorSpace="deviceRGB"/>
@@ -717,7 +709,7 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="nmt-8G-3o8" id="pKW-Pg-LzL"/>
                                                 </connections>
@@ -730,7 +722,7 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="nmt-8G-3o8" id="nvA-tc-wzS"/>
                                                 </connections>
@@ -754,7 +746,7 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="nmt-8G-3o8" id="I7Y-XO-D5v"/>
                                                 </connections>
@@ -4104,7 +4096,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4.png" width="260" height="30"/>
         <image name="640x960" width="640" height="326"/>
         <image name="Add_friend_Button" width="101" height="23"/>
         <image name="Contact_Button" width="28" height="28"/>

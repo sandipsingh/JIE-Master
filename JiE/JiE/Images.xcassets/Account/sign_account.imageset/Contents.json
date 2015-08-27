@@ -7,12 +7,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "sine@2x.png"
+      "filename" : "sine.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "sign@3x.png"
+      "filename" : "sign.png"
     }
   ],
   "info" : {

@@ -7,12 +7,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "fb@2x.png"
+      "filename" : "fb.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "fb@3x.png"
+      "filename" : "fb-1.png"
     }
   ],
   "info" : {

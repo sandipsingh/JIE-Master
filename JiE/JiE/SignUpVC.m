@@ -232,8 +232,15 @@
 
 //text field delegate
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
+    if (textField == _userName_OutLet) {
+        [_email_OutLet becomeFirstResponder];
+    }
+    else  if (textField == _email_OutLet) {
+        [_passw0rd_OutLet becomeFirstResponder];
+    }
+    else{
+        [textField resignFirstResponder];
+    }
     return YES;
 }
 - (IBAction)btn:(id)sender {
